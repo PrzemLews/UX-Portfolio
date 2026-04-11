@@ -108,21 +108,21 @@ export default function CaseIng() {
       </section>
 
       {/* Process: two phase columns with icons */}
-      <section className="border-b border-gray-200">
+      <section className="bg-[#374151] border-b-8 border-[#FFC133]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-sm uppercase tracking-widest font-bold text-[#374151] mb-10">
+          <h2 className="text-sm uppercase tracking-widest font-bold text-[#FFC133] mb-10">
             Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Phase 1 */}
-            <div>
+            <div className="border-4 border-[#FFC133] p-6">
               <ImageWithFallback
                 src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6104639f2f3ee94b66347ddc_loupe.png"
                 alt=""
                 className="w-12 h-12 object-contain mb-4"
               />
-              <p className="text-base text-gray-600 leading-relaxed">
-                <strong className="text-[#374151]">Product \u2013 Customer fit phase</strong>
+              <p className="text-base text-gray-300 leading-relaxed">
+                <strong className="text-[#FFC133]">Product \u2013 Customer fit phase</strong>
                 <br />Individual interviews
                 <br />Advert tests
                 <br />5 second tests
@@ -132,14 +132,14 @@ export default function CaseIng() {
               </p>
             </div>
             {/* Phase 2 */}
-            <div>
+            <div className="border-4 border-[#FFC133] p-6">
               <ImageWithFallback
                 src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109bdd46ca2ebce89a4c6bc_growth.png"
                 alt=""
                 className="w-12 h-12 object-contain mb-4"
               />
-              <p className="text-base text-gray-600 leading-relaxed">
-                <strong className="text-[#374151]">Product \u2013 Market fit phase</strong>
+              <p className="text-base text-gray-300 leading-relaxed">
+                <strong className="text-[#FFC133]">Product \u2013 Market fit phase</strong>
                 <br />Surveys
                 <br />Hypothesis canvas
                 <br />Fake door tests
