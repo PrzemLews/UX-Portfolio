@@ -6,7 +6,7 @@ export default function Root() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navigation />
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-16">
         <Outlet />
       </main>
       <Footer />

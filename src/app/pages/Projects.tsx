@@ -108,7 +108,7 @@ export default function Projects() {
       {/* Hero Section */}
       <section className="bg-[#FFF8F0] py-20 border-b-8 border-[#374151]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-[#374151] mb-6">
+          <h1 className="text-[60px] font-bold text-[#261d08] mb-6 leading-[60px]">
             MY <span className="bg-[#FFC133] px-4 py-2 border-4 border-[#374151]">PROJECTS</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto border-l-6 border-[#FF8A5B] pl-4 inline-block text-left">
@@ -146,37 +146,26 @@ export default function Projects() {
             {filteredProjects.map((project) => {
               const Icon = project.icon;
               return (
-                <div
-                  key={project.id}
-                  className="group bg-white border-4 border-[#374151] overflow-hidden hover:border-[#FFC133] transition-all hover:translate-x-2 hover:translate-y-[-8px]"
-                >
-                  <div className="relative overflow-hidden aspect-video border-b-4 border-[#374151]">
-                    <ImageWithFallback
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Link
-                        to={project.link}
-                        className="p-3 bg-[#FFC133] border-4 border-[#374151] text-[#374151] hover:bg-[#FF8A5B] transition-colors block"
-                        aria-label="View project"
-                      >
-                        <ExternalLink size={20} />
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center mb-3">
-                      <div className="w-10 h-10 bg-[#FFC133] border-4 border-[#374151] flex items-center justify-center mr-3">
-                        <Icon size={20} className="text-[#374151]" />
+                <div key={project.id} className="relative group">
+                  <div className="absolute inset-0 bg-[#FFC133] group-hover:bg-[#F09065] transform translate-x-4 translate-y-4 border-4 border-[#374151] transition-colors"></div>
+                  <div className="relative bg-white border-4 border-[#374151] overflow-hidden">
+                    <div className="relative overflow-hidden aspect-video border-b-4 border-[#374151]">
+                      <ImageWithFallback
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute top-4 right-4">
+                        <Link
+                          to={project.link}
+                          className="p-3 bg-[#FFC133] border-4 border-[#374151] text-[#374151] hover:bg-[#FF8A5B] transition-colors block"
+                          aria-label="View project"
+                        >
+                          <ExternalLink size={20} />
+                        </Link>
                       </div>
-                      <h3 className="text-xl font-bold text-[#374151] border-b-4 border-[#FF8A5B] pb-1">
-                        {project.title}
-                      </h3>
                     </div>
-                    <p className="text-gray-600 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 px-6 pt-4 border-b-4 border-[#374151] pb-4">
                       {project.tags.map((tag, index) => (
                         <span
                           key={index}
@@ -185,6 +174,17 @@ export default function Projects() {
                           {tag}
                         </span>
                       ))}
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 bg-[#FFC133] border-4 border-[#374151] flex items-center justify-center mr-3">
+                          <Icon size={20} className="text-[#374151]" />
+                        </div>
+                        <h3 className="text-[40px] font-bold text-[#261d08] border-b-4 border-[#FF8A5B] pb-1">
+                          {project.title}
+                        </h3>
+                      </div>
+                      <p className="text-gray-600 mb-4">{project.description}</p>
                     </div>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function Projects() {
       <section className="py-20 bg-[#FFF8F0] border-t-8 border-[#374151]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="border-8 border-[#374151] p-12 bg-white">
-            <h2 className="text-4xl font-bold text-[#374151] mb-6 border-b-8 border-[#FFC133] inline-block pb-2">
+            <h2 className="text-[48px] font-bold text-[#261d08] mb-6 border-b-8 border-[#FFC133] inline-block pb-2">
               INTERESTED IN WORKING TOGETHER?
             </h2>
             <p className="text-xl text-gray-600 mb-8 mt-6">

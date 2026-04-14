@@ -1,13 +1,14 @@
 import { Link } from "react-router";
-import { ArrowRight, Sparkles, Users, Lightbulb } from "lucide-react";
+import { Sparkles, Users, Lightbulb } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import prmImage from "../../imports/jaja4.png";
 
 export default function Home() {
   const stats = [
-    { label: "Projects Completed", value: "50+" },
-    { label: "Happy Clients", value: "30+" },
-    { label: "Years Experience", value: "5+" },
-    { label: "Awards Won", value: "12" },
+    { label: "Years of experience in UX", value: "~10" },
+    { label: "People I trained in UX", value: "60+" },
+    { label: "Formal design degrees", value: "2" },
+    { label: "Research studies done", value: "30+" },
   ];
 
   const services = [
@@ -34,38 +35,33 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#FFF8F0] border-b-8 border-[#374151]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-[#FFF8F0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block px-4 py-2 bg-[#FFC133] border-4 border-[#374151] mb-6">
-                <span className="text-[#374151] font-bold">UX DESIGNER & CREATIVE THINKER</span>
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-[#374151] mb-6">
-                Designing{" "}
-                <span className="relative inline-block">
-                  <span className="relative z-10">Meaningful</span>
-                  <span className="absolute bottom-2 left-0 w-full h-4 bg-[#FFC133] transform -skew-x-12"></span>
-                </span>{" "}
-                Digital Experiences
+              <p className="text-[32px] font-semibold text-[#261d08] leading-[40px] mb-2">Hi, I'm Przemek</p>
+              <h1 className="text-[60px] font-bold text-[#261d08] mb-4 leading-[60px]">
+                UX Designer<br />& Researcher
               </h1>
-              <p className="text-xl text-gray-600 mb-8 border-l-6 border-[#FF8A5B] pl-4">
-                I craft user-centered designs that blend creativity with functionality,
-                turning complex problems into elegant solutions.
+              <div className="inline-block mb-6">
+                <p className="text-[20px] font-semibold text-[#261d08] leading-[20px] whitespace-nowrap">Based in Prague</p>
+                <div className="mt-[4px] h-[5px] w-full bg-[#FFC133] -skew-x-12" />
+              </div>
+              <p className="text-base text-gray-700 mb-8 leading-relaxed">
+                With nearly a <strong>decade of experience in UX</strong>, I specialize in supporting <strong>complex systems</strong>, covering all the activities in the <strong>end-to-end design process</strong>. I can help you improve your <strong>product metrics</strong> with my up-to the newest standards skillset and academic background in <strong>Human-Computer Interaction</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  to="/projects"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#FFC133] text-[#374151] border-4 border-[#374151] hover:bg-[#FF8A5B] transition-all hover:translate-x-1 hover:translate-y-[-4px] font-bold"
+                  to="/about"
+                  className="inline-flex items-center justify-center px-9 py-5 bg-white text-[#374151] border-4 border-[#374151] hover:bg-[#fbe3d8] hover:text-[#f09065] hover:border-[#f09065] transition-all font-bold text-[16px] leading-[24px] tracking-[-0.3125px]"
                 >
-                  VIEW MY WORK
-                  <ArrowRight className="ml-2" size={20} />
+                  MORE ABOUT ME
                 </Link>
                 <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#374151] border-4 border-[#374151] hover:bg-[#FFF8F0] transition-all hover:translate-x-1 hover:translate-y-[-4px] font-bold"
+                  to="/projects"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-[#FFC133] text-[#374151] border-4 border-[#374151] hover:bg-[#FF8A5B] transition-all font-bold text-[16px] leading-[24px] tracking-[-0.3125px]"
                 >
-                  LET'S TALK
+                  VIEW MY WORK
                 </Link>
               </div>
             </div>
@@ -73,9 +69,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
               <div className="relative border-4 border-[#374151] overflow-hidden">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1753162657332-4f061398c38c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMGRlc2lnbmVyJTIwd29ya3NwYWNlJTIwbGFwdG9wfGVufDF8fHx8MTc3NDUzNTQ0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Designer at work"
-                  className="w-full h-[500px] object-cover"
+                  src={prmImage}
+                  alt="Przemek - UX Designer"
+                  className="w-full aspect-square object-cover"
                 />
               </div>
             </div>
@@ -84,13 +80,13 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-[#374151] border-b-8 border-[#FFC133]">
+      <section className="py-12 bg-[#2c3e50] border-y-4 border-[#FFC133]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center border-4 border-[#FFC133] bg-[#374151] p-6">
-                <div className="text-4xl font-bold text-[#FFC133] mb-2">{stat.value}</div>
-                <div className="text-gray-300 font-bold">{stat.label}</div>
+              <div key={index} className="text-center border-3 border-[#FFC133] bg-[#2c3e50] p-6">
+                <div className="text-3xl font-bold text-[#FFC133] mb-2">{stat.value}</div>
+                <div className="text-white text-sm font-normal">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -102,54 +98,33 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <div className="inline-block border-b-8 border-[#FFC133] pb-2 mb-4">
-              <h2 className="text-4xl font-bold text-[#374151]">WHAT I DO</h2>
+              <h2 className="text-[48px] font-bold text-[#261d08]">WHAT I DO</h2>
             </div>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Combining research, strategy, and design to create exceptional user experiences
-            </p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">I use my design expertise to drive business outcomes through your product.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={index}
-                  className="group p-8 bg-white border-4 border-[#374151] hover:border-[#FFC133] transition-all hover:translate-x-2 hover:translate-y-[-8px]"
-                >
-                  <div
-                    className="w-16 h-16 border-4 border-[#374151] flex items-center justify-center mb-6"
-                    style={{ backgroundColor: service.color }}
-                  >
-                    <Icon size={32} className="text-[#374151]" />
+                <div key={index} className="relative group">
+                  <div className="absolute inset-0 bg-[#FFC133] group-hover:bg-[#F09065] transform translate-x-4 translate-y-4 border-4 border-[#374151] transition-colors"></div>
+                  <div className="relative p-8 bg-white border-4 border-[#374151]">
+                    <div
+                      className="w-16 h-16 border-4 border-[#374151] flex items-center justify-center mb-6"
+                      style={{ backgroundColor: service.color }}
+                    >
+                      <Icon size={32} className="text-[#374151]" />
+                    </div>
+                    <h3 className="font-bold text-[#261d08] mb-4 border-b-4 border-[#FFC133] inline-block pb-1 text-[36px]">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600">{service.description} {service.description}</p>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#374151] mb-4 border-b-4 border-[#FFC133] inline-block pb-1">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600">{service.description}</p>
                 </div>
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-[#FFC133] border-y-8 border-[#374151]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-[#374151] mb-6 border-b-8 border-[#374151] inline-block pb-2">
-            LET'S CREATE SOMETHING AMAZING TOGETHER
-          </h2>
-          <p className="text-xl text-[#374151] mb-8 font-medium">
-            I'm always excited to collaborate on new projects and bring ideas to life
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#374151] border-4 border-[#374151] hover:bg-[#FF8A5B] transition-all hover:translate-y-[-4px] font-bold"
-          >
-            GET IN TOUCH
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
         </div>
       </section>
     </div>

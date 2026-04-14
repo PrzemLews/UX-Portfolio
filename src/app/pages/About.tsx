@@ -73,7 +73,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl font-bold text-[#374151] mb-6">
+              <h1 className="text-[60px] font-bold text-[#261d08] mb-6 leading-[60px]">
                 ABOUT <span className="bg-[#FFC133] px-2 border-4 border-[#374151]">ME</span>
               </h1>
               <p className="text-xl text-gray-600 mb-6 border-l-6 border-[#FF8A5B] pl-4">
@@ -108,7 +108,7 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#374151] mb-4 inline-block border-b-8 border-[#FFC133] pb-2">
+            <h2 className="text-[48px] font-bold text-[#261d08] mb-4 inline-block border-b-8 border-[#FFC133] pb-2">
               MY VALUES
             </h2>
             <p className="text-xl text-gray-600 mt-4">The principles that guide my work</p>
@@ -125,7 +125,7 @@ export default function About() {
                   <div className="w-16 h-16 mx-auto bg-[#FFC133] border-4 border-[#374151] flex items-center justify-center mb-4">
                     <Icon size={32} className="text-[#374151]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#374151] mb-2 border-b-4 border-[#FF8A5B] inline-block pb-1">
+                  <h3 className="text-[40px] font-bold text-[#261d08] mb-2 border-b-4 border-[#FF8A5B] inline-block pb-1">
                     {value.title}
                   </h3>
                   <p className="text-gray-600 mt-4">{value.description}</p>
@@ -140,7 +140,7 @@ export default function About() {
       <section className="py-20 bg-[#FFF8F0] border-y-8 border-[#374151]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#374151] mb-4 inline-block border-b-8 border-[#FFC133] pb-2">
+            <h2 className="text-[48px] font-bold text-[#261d08] mb-4 inline-block border-b-8 border-[#FFC133] pb-2">
               SKILLS & EXPERTISE
             </h2>
           </div>
@@ -148,7 +148,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Skills Progress */}
             <div className="bg-white p-8 border-4 border-[#374151]">
-              <h3 className="text-2xl font-bold text-[#374151] mb-8 border-b-4 border-[#FFC133] inline-block pb-2">
+              <h3 className="text-[40px] font-bold text-[#261d08] mb-8 border-b-4 border-[#FFC133] inline-block pb-2">
                 CORE COMPETENCIES
               </h3>
               <div className="space-y-6">
@@ -171,7 +171,7 @@ export default function About() {
 
             {/* Tools */}
             <div className="bg-white p-8 border-4 border-[#374151]">
-              <h3 className="text-2xl font-bold text-[#374151] mb-8 border-b-4 border-[#FFC133] inline-block pb-2">
+              <h3 className="text-[40px] font-bold text-[#261d08] mb-8 border-b-4 border-[#FFC133] inline-block pb-2">
                 TOOLS I USE
               </h3>
               <div className="grid grid-cols-2 gap-4">
@@ -193,7 +193,7 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#374151] mb-4 inline-block border-b-8 border-[#FFC133] pb-2">
+            <h2 className="text-[48px] font-bold text-[#261d08] mb-4 inline-block border-b-8 border-[#FFC133] pb-2">
               EXPERIENCE
             </h2>
           </div>
@@ -207,7 +207,7 @@ export default function About() {
                 <div className="absolute left-[-14px] top-0 w-6 h-6 bg-[#FFC133] border-4 border-[#374151]"></div>
                 <div className="bg-[#FFF8F0] p-6 border-4 border-[#374151]">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-                    <h3 className="text-2xl font-bold text-[#374151] border-b-4 border-[#FFC133] inline-block pb-1">
+                    <h3 className="text-[40px] font-bold text-[#261d08] border-b-4 border-[#FFC133] inline-block pb-1">
                       {exp.role}
                     </h3>
                     <span className="bg-[#FF8A5B] text-white px-3 py-1 font-bold border-2 border-[#374151] mt-2 sm:mt-0 inline-block">
