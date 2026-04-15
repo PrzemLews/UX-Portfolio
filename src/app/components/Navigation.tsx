@@ -21,7 +21,7 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white z-50 border-b-4 border-[#374151]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-[69px]">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <LogoIcon className="h-[40px] w-auto" />
@@ -33,7 +33,7 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 to={item.path}
-                className="px-4 py-2 font-semibold transition-all text-[#374151] hover:text-[#F09065]"
+                className="px-4 py-2 font-semibold transition-all text-[#374151] hover:text-[#F09065] text-[18px]"
               >
                 <span className="inline-block">
                   {item.label}

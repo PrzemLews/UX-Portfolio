@@ -10,49 +10,29 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             {/* Brand / CTA */}
             <div className="md:col-span-1">
-              <h2 className="text-[32px] font-bold text-[#FFC133] mb-3 leading-tight">
-                LET'S CREATE SOMETHING AMAZING TOGETHER
-              </h2>
+              <h2 className="text-[32px] font-bold text-[#FFC133] mb-3 leading-tight">Let's design great products together              ☺</h2>
 
             </div>
 
             {/* Social Links */}
             <div>
-              <h3 className="font-bold mb-4 border-b-4 border-[#FFC133] inline-block pb-1">Connect</h3>
+              <h3 className="font-bold mb-4 border-b-4 border-[#FFC133] inline-block pb-1 text-[32px] text-[#ffc133]">Reach out</h3>
               <div className="flex space-x-4">
                 <a
-                  href="mailto:alex@example.com"
-                  className="p-2 bg-[#FFC133] hover:bg-[#FF8A5B] border-4 border-white transition-all hover:translate-y-[-4px]"
+                  href="mailto:przemyslaw.lewandowski92@gmail.com"
+                  className="p-2 bg-[#FFC133] hover:bg-[#FF8A5B] border-4 border-[#374151] transition-all hover:translate-y-[-4px]"
                   aria-label="Email"
                 >
                   <Mail size={20} className="text-[#374151]" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/p-lewandowski-ux/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-[#FFC133] hover:bg-[#FF8A5B] border-4 border-white transition-all hover:translate-y-[-4px]"
+                  className="p-2 bg-[#FFC133] hover:bg-[#FF8A5B] border-4 border-[#374151] transition-all hover:translate-y-[-4px]"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={20} className="text-[#374151]" />
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-[#FFC133] hover:bg-[#FF8A5B] border-4 border-white transition-all hover:translate-y-[-4px]"
-                  aria-label="GitHub"
-                >
-                  <Github size={20} className="text-[#374151]" />
-                </a>
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-[#FFC133] hover:bg-[#FF8A5B] border-4 border-white transition-all hover:translate-y-[-4px]"
-                  aria-label="Twitter"
-                >
-                  <Twitter size={20} className="text-[#374151]" />
                 </a>
               </div>
             </div>

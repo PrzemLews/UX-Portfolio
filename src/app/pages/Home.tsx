@@ -14,20 +14,20 @@ export default function Home() {
   const services = [
     {
       icon: Sparkles,
-      title: "User Research",
-      description: "Deep dive into user needs and behaviors to inform design decisions",
+      title: "UX Strategy",
+      description: "I can set up the right metrics for your product and build a design strategy focused on improving them. Every decision we make together is tied to measurable outcomes — so you always know what's working and why",
       color: "#FFC133",
     },
     {
       icon: Lightbulb,
-      title: "Product Design",
-      description: "Creating intuitive and beautiful interfaces that users love",
+      title: "User Research",
+      description: "I can help you resolve business challenges related to your users with the deep-dive qualitative and quantize research. Even if you are not sure about the questions you have in your head.",
       color: "#FF8A5B",
     },
     {
       icon: Users,
-      title: "Usability Testing",
-      description: "Validating designs through comprehensive user testing",
+      title: "Product Design",
+      description: "I specialize in design for complex commercial/in-house systems - so they can serve users well, look good, and fulfill their business goal. I know how to cooperate with developers, engage business in the process.",
       color: "#10B981",
     },
   ];
@@ -37,8 +37,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#FFF8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-12 lg:items-center">
+            <div className="order-1">
               <p className="text-[32px] font-semibold text-[#261d08] leading-[40px] mb-2">Hi, I'm Przemek</p>
               <h1 className="text-[60px] font-bold text-[#261d08] mb-4 leading-[60px]">
                 UX Designer<br />& Researcher
@@ -47,6 +47,18 @@ export default function Home() {
                 <p className="text-[20px] font-semibold text-[#261d08] leading-[20px] whitespace-nowrap">Based in Prague</p>
                 <div className="mt-[4px] h-[5px] w-full bg-[#FFC133] -skew-x-12" />
               </div>
+            </div>
+            <div className="relative order-2 lg:row-span-2">
+              <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
+              <div className="relative border-4 border-[#374151] overflow-hidden">
+                <ImageWithFallback
+                  src={prmImage}
+                  alt="Przemek - UX Designer"
+                  className="w-full aspect-square object-cover"
+                />
+              </div>
+            </div>
+            <div className="order-3">
               <p className="text-base text-gray-700 mb-8 leading-relaxed">
                 With nearly a <strong>decade of experience in UX</strong>, I specialize in supporting <strong>complex systems</strong>, covering all the activities in the <strong>end-to-end design process</strong>. I can help you improve your <strong>product metrics</strong> with my up-to the newest standards skillset and academic background in <strong>Human-Computer Interaction</strong>.
               </p>
@@ -65,16 +77,6 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
-              <div className="relative border-4 border-[#374151] overflow-hidden">
-                <ImageWithFallback
-                  src={prmImage}
-                  alt="Przemek - UX Designer"
-                  className="w-full aspect-square object-cover"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -86,7 +88,7 @@ export default function Home() {
             {stats.map((stat, index) => (
               <div key={index} className="text-center border-3 border-[#FFC133] bg-[#2c3e50] p-6">
                 <div className="text-3xl font-bold text-[#FFC133] mb-2">{stat.value}</div>
-                <div className="text-white text-sm font-normal">{stat.label}</div>
+                <div className="text-white font-normal text-[16px]">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -119,7 +121,7 @@ export default function Home() {
                     <h3 className="font-bold text-[#261d08] mb-4 border-b-4 border-[#FFC133] inline-block pb-1 text-[36px]">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600">{service.description} {service.description}</p>
+                    <p className="text-gray-600">{service.description}</p>
                   </div>
                 </div>
               );
