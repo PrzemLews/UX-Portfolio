@@ -14,7 +14,7 @@ export default function CaseIng() {
                 ING Netherlands
               </h1>
               <p className="text-lg uppercase tracking-widest text-gray-500 font-semibold mb-8">
-                Is "netflix for flats" a good idea?
+                Is "??? for flats" a good idea?
               </p>
               <Link
                 to="/projects"
