@@ -71,7 +71,7 @@ export default function Home() {
                 </Link>
                 <Link
                   to="/projects"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-[#FFC133] text-[#374151] border-4 border-[#374151] hover:bg-[#FF8A5B] transition-all font-bold text-[16px] leading-[24px] tracking-[-0.3125px]"
+                  className="inline-flex items-center justify-center px-6 py-5 bg-[#FFC133] text-[#374151] border-4 border-[#374151] hover:bg-[#FF8A5B] transition-all font-bold text-[16px] leading-[24px] tracking-[-0.3125px]"
                 >
                   VIEW MY CASES
                 </Link>
@@ -109,8 +109,8 @@ export default function Home() {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div key={index} className="relative group">
-                  <div className="absolute inset-0 bg-[#FFC133] group-hover:bg-[#F09065] transform translate-x-4 translate-y-4 border-4 border-[#374151] transition-colors"></div>
+                <div key={index} className="relative">
+                  <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
                   <div className="relative p-8 bg-white border-4 border-[#374151]">
                     <div
                       className="w-16 h-16 border-4 border-[#374151] flex items-center justify-center mb-6"
@@ -118,9 +118,11 @@ export default function Home() {
                     >
                       <Icon size={32} className="text-[#374151]" />
                     </div>
-                    <h3 className="font-bold text-[#261d08] mb-4 border-b-4 border-[#FFC133] inline-block pb-1 text-[36px]">
-                      {service.title}
-                    </h3>
+                    <div className="mb-4">
+                      <h3 className="font-bold text-[#261d08] border-b-4 border-[#FFC133] inline pb-1 text-[36px]">
+                        {service.title}
+                      </h3>
+                    </div>
                     <p className="text-gray-600">{service.description}</p>
                   </div>
                 </div>

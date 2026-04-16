@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { ExternalLink, FlaskConical, Cpu, Glasses, MapPin, Utensils, Monitor, FolderOpen } from "lucide-react";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
+  const navigate = useNavigate();
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -105,23 +106,13 @@ export default function Projects() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-[#FFF8F0] py-20 border-b-4 border-[#374151]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-          <h1 className="text-[60px] font-bold text-[#261d08] mb-6 leading-[60px]">
+      {/* Hero + Projects Grid */}
+      <section className="bg-[#FFF8F0] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-[60px] font-bold text-[#261d08] mb-[54px] leading-[60px]">
             My Cases
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
-            A collection of my recent work showcasing user-centered design solutions
-            across various industries and platforms.
-          </p>
-        </div>
-      </section>
 
-      {/* Filter Section */}
-{/* Projects Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => {
               const Icon = project.icon;
@@ -135,7 +126,7 @@ export default function Projects() {
                         if (project.link.startsWith('http')) {
                           window.open(project.link, '_blank');
                         } else {
-                          window.location.href = project.link;
+                          navigate(project.link);
                         }
                       }
                     }}
@@ -168,8 +159,8 @@ export default function Projects() {
                           <ExternalLink size={20} />
                         </Link>
                       </div>
-                      <div className="mb-3">
-                        <h3 className="text-[40px] font-bold text-[#261d08] border-b-4 border-[#FF8A5B] pb-1 pr-16">
+                      <div className="mb-3 pr-16">
+                        <h3 className="text-[40px] font-bold text-[#261d08] inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>
                           {project.title}
                         </h3>
                       </div>
@@ -183,26 +174,6 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#FFF8F0] border-t-8 border-[#374151]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="border-8 border-[#374151] p-12 bg-white">
-            <h2 className="text-[48px] font-bold text-[#261d08] mb-6 border-b-8 border-[#FFC133] inline-block pb-2">
-              INTERESTED IN WORKING TOGETHER?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 mt-6">
-              I'm always open to discussing new projects and creative opportunities.
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#FFC133] text-[#374151] border-4 border-[#374151] hover:bg-[#FF8A5B] transition-all hover:translate-y-[-4px] font-bold"
-            >
-              START A CONVERSATION
-              <ExternalLink className="ml-2" size={20} />
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

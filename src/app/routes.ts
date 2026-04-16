@@ -16,4 +16,4 @@ export const router = createBrowserRouter([
       { path: "projects/ing", Component: CaseIng },
     ],
   },
-]);
+], { basename: "/Portfoliofigma" });

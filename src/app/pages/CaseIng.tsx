@@ -1,8 +1,37 @@
+import { useRef, useState } from "react";
 import { Link } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
+const otherProjects = [
+  { title: "Ericsson IoT", tags: ["Customer Research", "Iterative Prototyping"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61030d6e7ff1602f83c7a8e2_erikson2.png", link: "#" },
+  { title: "UX Research in VR", tags: ["VR", "Usability Tests", "Scientific Research"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317f629928f84e0f3b3f_vrcover.png", link: "#" },
+  { title: "AR Navigation", tags: ["UX Research", "AR", "Rapid Prototyping"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317e4d5af21060f0c9d3_arcover.jpg", link: "#" },
+  { title: "UX & Food Allergy", tags: ["UX Research", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109612e8870c62666a65f78_squirrel.jpg", link: "#" },
+  { title: "PSE Innovation", tags: ["UX Audit", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317e3e51cbc7dbd228bf_psecover.jpg", link: "#" },
+  { title: "Other Projects", tags: ["Commercial", "Non-commercial"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61040d72bf74a0e0f9ca5b4b_others2.jpg", link: "#" },
+];
+
+const DOT_COUNT = 5;
+
 export default function CaseIng() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeDot, setActiveDot] = useState(0);
+
+  function handleWheel(e: React.WheelEvent) {
+    if (scrollRef.current) {
+      e.preventDefault();
+      scrollRef.current.scrollLeft += e.deltaY + e.deltaX;
+    }
+  }
+
+  function handleScroll() {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+    setActiveDot(Math.round(progress * (DOT_COUNT - 1)));
+  }
   return (
     <div className="bg-white">
       {/* Hero: title left (5/12) + cover image right (7/12) */}
@@ -10,18 +39,19 @@ export default function CaseIng() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-5 flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16 lg:py-24">
-              <h1 className="text-5xl lg:text-6xl font-black text-[#374151] mb-4 tracking-tight">
-                ING Netherlands
+              <h1 className="text-[60px] font-bold text-[#000000] mb-4 leading-tight">
+                Case 1
               </h1>
-              <p className="text-lg uppercase tracking-widest text-gray-500 font-semibold mb-8">
-                Is "??? for flats" a good idea?
-              </p>
+              <div className="w-fit mb-8">
+                <p className="text-[20px] font-semibold text-[#261d08] leading-[20px] whitespace-nowrap">Is "??? for flats" a good idea?</p>
+                <div className="mt-[4px] h-[5px] w-full bg-[#FFC133] -skew-x-12" />
+              </div>
               <Link
                 to="/projects"
-                className="inline-flex items-center text-gray-500 hover:text-[#374151] transition-colors text-sm font-medium"
+                className="inline-flex items-center text-[#374151] hover:text-[#F09065] transition-colors text-[20px] font-medium underline underline-offset-4"
               >
                 <ArrowLeft className="mr-2" size={16} />
-                Back to all cases
+                Back to all the cases
               </Link>
             </div>
             <div className="lg:col-span-7">
@@ -35,46 +65,32 @@ export default function CaseIng() {
         </div>
       </section>
 
-      {/* Overview (6/12) + Context (5/12) side by side, with icon gutter (1/12) */}
+      {/* Overview + Context */}
       <section className="bg-[#fdf7f2] border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Icon column */}
-            <div className="hidden lg:flex lg:col-span-1 justify-center pt-2">
-              <ImageWithFallback
-                src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6104639f2f3ee94b66347ddc_loupe.png"
-                alt=""
-                className="w-10 h-10 object-contain"
-              />
-            </div>
-
             {/* Overview */}
-            <div className="lg:col-span-6">
-              <h2 className="text-sm uppercase tracking-widest font-bold text-[#374151] mb-6">
+            <div className="lg:col-span-7">
+              <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Overview
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
-                The purpose of the project was to validate the given example of a business model (in fintech-real
-                estates industry) by a series of experiments and alternatively steer a new, pivoted model. My team
-                realized the project in ING Innovation Studio in Amsterdam and it was conducted in authorial lean
-                startup methodology. The role of mine was to plan, prepare, and conduct validation experiments. So
-                far it was my the most intensive learning experience, thanks to my teammates, who were senior
-                specialists.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
               </p>
             </div>
 
             {/* Context */}
             <div className="lg:col-span-5">
-              <h2 className="text-sm uppercase tracking-widest font-bold text-[#374151] mb-6">
+              <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Context
               </h2>
               <dl className="space-y-3 text-base">
                 {[
-                  { label: "Contribution:", value: "UX research, Business research" },
-                  { label: "Context:", value: "Commercial project, 6-months duration" },
-                  { label: "Team size:", value: "5-7 people (other roles: business lead, customer lead, tech lead, experiment leads)" },
-                  { label: "Dates:", value: "09.2017 \u2013 02.2018" },
-                  { label: "Tools:", value: "Instapages (landing page generator), Google AdWords" },
+                  { label: "Contribution:", value: "Lorem ipsum, dolor sit amet" },
+                  { label: "Context:", value: "Lorem ipsum project, X-months duration" },
+                  { label: "Team size:", value: "X people (other roles: lorem, ipsum, dolor)" },
+                  { label: "Dates:", value: "MM.YYYY – MM.YYYY" },
+                  { label: "Tools:", value: "Lorem ipsum tool, dolor sit amet" },
                 ].map((item) => (
                   <div key={item.label}>
                     <dt className="inline font-bold text-[#374151]">{item.label} </dt>
@@ -89,257 +105,242 @@ export default function CaseIng() {
 
       {/* Deliverables */}
       <section className="border-b border-gray-200">
-        <div className="max-w-3xl mx-auto px-8 sm:px-12 py-16">
-          <h2 className="text-sm uppercase tracking-widest font-bold text-[#374151] mb-6">
-            The main deliverables/learning points
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
+          <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
+            The Main Outcomes
           </h2>
-          <div className="text-base text-gray-600 leading-relaxed space-y-2">
-            <p>&ndash; Understanding and practising PACE framework (lean-startup methodology framework designed by ING) for business model validation</p>
-            <p>&ndash; The pivot of the original idea, changing focus from renting service to maintenance service, the change based on research insight</p>
-            <p>&ndash; Quantitative measurements of interest by using smoke tests (landing pages) shown which country are the best markets to obtain customers</p>
-            <p>&ndash; Understanding the usage of analytics to conduct online experiments</p>
-          </div>
+          <ul className="text-base text-gray-600 leading-relaxed list-disc pl-6 space-y-2">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquip ex ea commodo</li>
+            <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consequat</li>
+            <li>Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi</li>
+            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</li>
+          </ul>
           <p className="text-base text-gray-600 leading-relaxed mt-6">
-            As a team, we obtained substantial knowledge about the problems and needs of the real estate market
-            and in qualitative research. The final prototype of the solution was rated positively by test
-            participants, quantitative tests in the Netherlands shown a good potential of the idea.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </div>
       </section>
 
-      {/* Process: two phase columns with icons */}
+      {/* Process */}
       <section className="bg-[#374151] border-b-8 border-[#FFC133]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-sm uppercase tracking-widest font-bold text-[#FFC133] mb-10">
+          <h2 className="text-[48px] font-bold text-[#FFC133] mb-10 leading-tight">
             Process
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Phase 1 */}
-            <div className="border-4 border-[#FFC133] p-6">
+            <div className="p-6">
               <ImageWithFallback
                 src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6104639f2f3ee94b66347ddc_loupe.png"
                 alt=""
-                className="w-12 h-12 object-contain mb-4"
+                className="w-[100px] h-[100px] object-contain mb-4" style={{filter: 'brightness(0) saturate(100%) invert(79%) sepia(59%) saturate(700%) hue-rotate(358deg) brightness(103%)'}}
               />
-              <p className="text-base text-gray-300 leading-relaxed">
-                <strong className="text-[#FFC133]">Product \u2013 Customer fit phase</strong>
-                <br />Individual interviews
-                <br />Advert tests
-                <br />5 second tests
-                <br />Hypothesis canvas
-                <br />Ideation workshop
-                <br />Fake door tests
+              <p className="text-base text-gray-300 leading-relaxed w-full">
+                <a href="#phase-one" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Lorem ipsum – Phase one</strong></a>
+                <br />Lorem ipsum dolor
+                <br />Sit amet consectetur
+                <br />Adipiscing elit sed
+                <br />Eiusmod tempor
+                <br />Incididunt ut labore
+                <br />Dolore magna aliqua
               </p>
             </div>
             {/* Phase 2 */}
-            <div className="border-4 border-[#FFC133] p-6">
+            <div className="p-6">
               <ImageWithFallback
                 src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109bdd46ca2ebce89a4c6bc_growth.png"
                 alt=""
-                className="w-12 h-12 object-contain mb-4"
+                className="w-[100px] h-[100px] object-contain mb-4" style={{filter: 'brightness(0) saturate(100%) invert(79%) sepia(59%) saturate(700%) hue-rotate(358deg) brightness(103%)'}}
               />
-              <p className="text-base text-gray-300 leading-relaxed">
-                <strong className="text-[#FFC133]">Product \u2013 Market fit phase</strong>
-                <br />Surveys
-                <br />Hypothesis canvas
-                <br />Fake door tests
+              <p className="text-base text-gray-300 leading-relaxed w-full">
+                <a href="#phase-two" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Lorem ipsum – Phase two</strong></a>
+                <br />Ut enim ad minim
+                <br />Veniam quis nostrud
+                <br />Exercitation ullamco
               </p>
             </div>
-            {/* Empty third column like original */}
-            <div />
+            {/* Phase 3 */}
+            <div className="p-6">
+              <ImageWithFallback
+                src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6104639f2f3ee94b66347ddc_loupe.png"
+                alt=""
+                className="w-[100px] h-[100px] object-contain mb-4" style={{filter: 'brightness(0) saturate(100%) invert(79%) sepia(59%) saturate(700%) hue-rotate(358deg) brightness(103%)'}}
+              />
+              <p className="text-base text-gray-300 leading-relaxed w-full">
+                <a href="#phase-three" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Lorem ipsum – Phase three</strong></a>
+                <br />Lorem ipsum dolor
+                <br />Sit amet consectetur
+                <br />Adipiscing elit sed
+                <br />Eiusmod tempor
+                <br />Incididunt ut labore
+                <br />Dolore magna aliqua
+              </p>
+            </div>
+            {/* Phase 4 */}
+            <div className="p-6">
+              <ImageWithFallback
+                src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109bdd46ca2ebce89a4c6bc_growth.png"
+                alt=""
+                className="w-[100px] h-[100px] object-contain mb-4" style={{filter: 'brightness(0) saturate(100%) invert(79%) sepia(59%) saturate(700%) hue-rotate(358deg) brightness(103%)'}}
+              />
+              <p className="text-base text-gray-300 leading-relaxed w-full">
+                <a href="#phase-four" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Lorem ipsum – Phase four</strong></a>
+                <br />Ut enim ad minim
+                <br />Veniam quis nostrud
+                <br />Exercitation ullamco
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Case body: centered rich-text column */}
-      <section className="py-16">
-        <div className="max-w-3xl mx-auto px-8 sm:px-12">
-          {/* Product - Customer fit phase */}
-          <h2 className="text-2xl font-bold text-[#374151] mb-6">
-            Product \u2013 Customer fit phase
+      {/* Phase 1 */}
+      <section id="phase-one" className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
+          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+            Lorem ipsum – Phase one
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-8">
-            The starting point of our project was receiving a draft of a business model. Our goal was to check
-            whatever proposed BM is based on accurate assumptions. The original idea was subscription-based
-            service for tenants, who often change the place where they live. By paying a fixed amount of money
-            per month, they could change their long-term accommodation across different countries. The business
-            model also assumed that landlords might have a problem with 100% utilisation of their properties.
-            We were conscious that mentioned assumptions could be false or positive depending on different
-            countries.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
           </p>
-
-          <figure className="mb-10">
-            <ImageWithFallback
-              src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6106831943afc0e194b33ca1_ing1.png"
-              alt="Classification of assumptions"
-              className="w-full"
-            />
-            <figcaption className="text-sm text-gray-400 mt-2 italic">
-              From the very beginning, we were working with hypothesis canvas, according to ING PACE methodology.
-            </figcaption>
-          </figure>
-
           <p className="text-base text-gray-600 leading-relaxed mb-8">
-            So our first test, which I conducted was a test of general interest in{" "}
-            <strong>different value propositions in 3 countries \u2013 the Netherlands, France and Germany.</strong>{" "}
-            A tool that was used was Google Ads \u2013 We posted 3 different ads emphasising on 3 different
-            aspects of the value proposition (for the tenant side) \u2013 safety looking for a flat, finding a
-            flat quickly, moving abroad services. The biggest CTR in all countries was related to the trust
-            aspect, that gave us preliminary feeling about the main value for tenants.
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <strong>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</strong> Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
           </p>
-
-          <figure className="mb-10">
-            <ImageWithFallback
-              src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/610683cb6dcf0e5846cbdeb6_ing2.png"
-              alt="Visualization of adverts"
-              className="w-full"
-            />
-            <figcaption className="text-sm text-gray-400 mt-2 italic">
-              One type of advert, that was used to compare interest in different issues among set of countries
-            </figcaption>
-          </figure>
-
-          <p className="text-base text-gray-600 leading-relaxed mb-8">
-            Yet the biggest role in research played individual interviews \u2013{" "}
-            <strong>we conducted 32 interviews</strong> both with tenants and landlords (Dutch people). Based on
-            them we discovered that tenants don't want to think about moving when they just find a flat \u2013 they
-            didn't really see a value in subscription housing service. Mostly their problems were related to
-            finding a flat at all. On the other side,{" "}
-            <strong>landlords didn't complain about breaks in rents</strong> and surprisingly{" "}
-            <strong>the biggest problem was a maintenance part.</strong> Landlords were not satisfied with the
-            current market situation with handymen \u2013 according to the landlord's opinion craftsmen are
-            difficult to reach also, often not trustworthy.
+          <p className="text-base text-gray-600 leading-relaxed">
+            Temporibus autem quibusdam et aut officiis debitis rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint molestiae non recusandae. <strong>Itaque earum rerum hic tenetur a sapiente delectus.</strong>
           </p>
+        </div>
+      </section>
 
-          <figure className="mb-10">
-            <ImageWithFallback
-              src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/610684b01d53d1bd3d07201d_ing3.png"
-              alt="Pains and needs from a landlord's perspective"
-              className="w-full"
-            />
-            <figcaption className="text-sm text-gray-400 mt-2 italic">
-              Pains and needs from a landlord's perspective
-            </figcaption>
-          </figure>
-
-          <figure className="mb-10">
-            <ImageWithFallback
-              src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61068522b1dafe255c67ca64_ing4.png"
-              alt="Generation of ideas"
-              className="w-full"
-            />
-            <figcaption className="text-sm text-gray-400 mt-2 italic">
-              Generation of ideas
-            </figcaption>
-          </figure>
-
-          <p className="text-base text-gray-600 leading-relaxed mb-8">
-            Based on those insights we decided to pivot proposed business models to tools for landlords, which
-            would help with a maintenance property. To help ourselves to formulate a business idea in a better
-            way, we organized <strong>an ideation workshop.</strong>
-          </p>
-
-          <p className="text-base text-gray-600 leading-relaxed mb-8">
-            Still, the new idea required quantitative validation. For that,{" "}
-            <strong>we used fake door tests.</strong> We created a website which promoted service as it would
-            already exist, asking users for leaving their contact data if they would like to participate in beta
-            tests. From our perspective, such registration could be proof of value proposition appreciation. To
-            make sure that the website is understandable and present the value proposition as good as it is
-            possible, <strong>I conducted a session of 5-second tests.</strong>
-          </p>
-
-          <figure className="mb-10">
-            <ImageWithFallback
-              src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6106879769245430119343ce_ing6.png"
-              alt="Fragment of landing page addressed for the Dutch market"
-              className="w-full"
-            />
-            <figcaption className="text-sm text-gray-400 mt-2 italic">
-              Fragment of landing page addressed for the Dutch market
-            </figcaption>
-          </figure>
-
-          <p className="text-base text-gray-600 leading-relaxed mb-16">
-            The results of smoke tests went slightly below the expected conversion rate (around 2% comparing to
-            2,5%). Fake door tests for a side of handymen went above the expected conversion rate. The tests
-            were performed on the Dutch market. The result classified the team to move to the next stage of the
-            validation process \u2013 market fit.
-          </p>
-
-          {/* Product - Market fit phase */}
-          <h2 className="text-2xl font-bold text-[#374151] mb-6">
-            Product \u2013 Market fit phase
+      {/* Phase 2 */}
+      <section id="phase-two" className="border-b border-gray-200 bg-[#FDF7F2]">
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
+          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+            Lorem ipsum – Phase two
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-8">
-            According to our business research German market was more promising than explored Dutch market.
-            Therefore we moved our all tests there. To explore the needs of german landlords and handymen we
-            hired German UX research agency, which conducted qualitative research connected with prototype
-            testing \u2013 we just had to analyse the results.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
           </p>
-
-          <figure className="mb-10">
-            <ImageWithFallback
-              src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/610688dc46a51142e21c3ca0_ing7.png"
-              alt="Exemplary screens of the app prototype tested with the German users"
-              className="w-full"
-            />
-            <figcaption className="text-sm text-gray-400 mt-2 italic">
-              Exemplary screens of the app prototype tested with the German users
-            </figcaption>
-          </figure>
-
           <p className="text-base text-gray-600 leading-relaxed mb-4">
-            We also needed quantitative validation \u2013 so we wanted do develop another landing page, for the
-            German market. However this time, we also decided to conduct a survey addressed for craftsmen \u2013 to
-            adjust value proposition to that market.{" "}
-            <strong>In total, we got around 50 responses and main conclusions were:</strong>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. <strong>In total, lorem ipsum conclusions were:</strong>
           </p>
-          <ul className="text-base text-gray-600 leading-relaxed mb-8 list-disc pl-6 space-y-1">
-            <li>Payment of time is sometimes an issue</li>
-            <li>Suppliers don't like lead generation \u2013 they prefer to get assured jobs</li>
-            <li>Suppliers believe that current bidding systems contribute to worse quality of jobs</li>
+          <ul className="text-base text-gray-600 leading-relaxed list-disc pl-6 space-y-1">
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>Adipiscing elit sed do eiusmod tempor</li>
+            <li>Incididunt ut labore et dolore magna aliqua</li>
           </ul>
+        </div>
+      </section>
 
-          <figure className="mb-16">
-            <ImageWithFallback
-              src="https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/610689d0be8cd0614356aa26_ingscreens.jpg"
-              alt="Screens of German landing page"
-              className="w-full"
-            />
-            <figcaption className="text-sm text-gray-400 mt-2 italic">
-              Screens of German landing page \u2013 state before fixing copywriting/visual issues
-            </figcaption>
-          </figure>
+      {/* Phase 3 */}
+      <section id="phase-three" className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
+          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+            Lorem ipsum – Phase three
+          </h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
+          </p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. <strong>In total, lorem ipsum conclusions were:</strong>
+          </p>
+          <ul className="text-base text-gray-600 leading-relaxed list-disc pl-6 space-y-1">
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>Adipiscing elit sed do eiusmod tempor</li>
+            <li>Incididunt ut labore et dolore magna aliqua</li>
+          </ul>
+        </div>
+      </section>
 
-          {/* Outcomes */}
-          <h2 className="text-2xl font-bold text-[#374151] mb-6">
+      {/* Phase 4 */}
+      <section id="phase-four" className="border-b border-gray-200 bg-[#FDF7F2]">
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
+          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+            Lorem ipsum – Phase four
+          </h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-8">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
+          </p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. <strong>In total, lorem ipsum conclusions were:</strong>
+          </p>
+          <ul className="text-base text-gray-600 leading-relaxed list-disc pl-6 space-y-1">
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>Adipiscing elit sed do eiusmod tempor</li>
+            <li>Incididunt ut labore et dolore magna aliqua</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Outcomes */}
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
+          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             The outcomes
           </h2>
           <p className="text-base text-gray-600 leading-relaxed">
-            Thanks to this complex research project I had an opportunity to learn how to mix different research
-            methods and how to cooperate in lean methodology. I could understand how to design more difficult
-            research methods like fake door tests. Finally, we bring a lot of knowledge to the organization
-            (ING) in the area of real estates, which could be used in similar projects.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#FFF8F0] border-t-8 border-[#374151]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="border-8 border-[#374151] p-12 bg-white">
-            <h2 className="text-4xl font-bold text-[#374151] mb-6 border-b-8 border-[#FFC133] inline-block pb-2">
-              INTERESTED IN WORKING TOGETHER?
+      <section className="bg-[#FFF8F0] border-t-8 border-[#374151]">
+        <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
+          <div className="mb-8">
+            <h2 className="text-[48px] font-bold text-[#374151] leading-tight inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>
+              See more cases
             </h2>
-            <p className="text-xl text-gray-600 mb-8 mt-6">
-              I'm always open to discussing new projects and creative opportunities.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#FFC133] text-[#374151] border-4 border-[#374151] hover:bg-[#FF8A5B] transition-all hover:translate-y-[-4px] font-bold"
-            >
-              START A CONVERSATION
-            </Link>
+          </div>
+          <div
+            ref={scrollRef}
+            onWheel={handleWheel}
+            onScroll={handleScroll}
+            className="flex gap-8 overflow-x-auto pb-6 cursor-grab active:cursor-grabbing scroll-smooth"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {otherProjects.map((p) => (
+              <div key={p.title} className="relative group flex-shrink-0 w-[340px]">
+                <div className="absolute inset-0 bg-[#FFC133] group-hover:bg-[#F09065] transform translate-x-4 translate-y-4 border-4 border-[#374151] transition-colors"></div>
+                <div className="relative bg-white border-4 border-[#374151] overflow-hidden">
+                  <div className="relative overflow-hidden aspect-[16/12] border-b-4 border-[#374151]">
+                    <ImageWithFallback
+                      src={p.image}
+                      alt={p.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                      {p.tags.map((tag) => (
+                        <span key={tag} className="px-3 py-1 bg-[#FFF8F0] text-[#374151] border-2 border-[#374151] text-sm font-bold">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="p-6 relative">
+                    <div className="absolute top-6 right-6">
+                      <Link
+                        to={p.link}
+                        className="p-3 bg-[#FFC133] border-4 border-[#374151] text-[#374151] hover:bg-[#FF8A5B] group-hover:bg-[#FF8A5B] transition-colors block shrink-0"
+                        aria-label="View project"
+                      >
+                        <ExternalLink size={20} />
+                      </Link>
+                    </div>
+                    <div className="mb-1 pr-16">
+                      <h3 className="text-[28px] font-bold text-[#261d08] inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>{p.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex gap-2 mt-4 justify-center">
+            {Array.from({ length: DOT_COUNT }).map((_, i) => (
+              <div
+                key={i}
+                className="w-2.5 h-2.5 rounded-full transition-colors duration-300"
+                style={{ backgroundColor: i === activeDot ? '#FF8A5B' : '#D1D5DB' }}
+              />
+            ))}
           </div>
         </div>
       </section>

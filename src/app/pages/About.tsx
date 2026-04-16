@@ -70,12 +70,12 @@ export default function About() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-[#FFF8F0] py-20 border-b-8 border-[#374151]">
+      <section className="bg-[#FFF8F0] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:items-center">
             <div className="order-1">
               <h1 className="text-[60px] font-bold text-[#261d08] mb-6 leading-[60px]">
-                More about me
+                More About Me
               </h1>
               <p className="text-xl text-gray-600 mb-6">
                 My full name is Przemyslaw Lewandowski, but you can call me Pshemek (or Přemek).
@@ -85,7 +85,7 @@ export default function About() {
               <div className="absolute inset-0 bg-[#FFC133] transform translate-x-6 translate-y-6 border-4 border-[#374151]"></div>
               <div className="relative border-4 border-[#374151] overflow-hidden">
                 <ImageWithFallback
-                  src="/src/imports/jabiureczko-1.png"
+                  src="/Portfoliofigma/jabiureczko-1.png"
                   alt="Workspace"
                   className="w-full aspect-square object-cover"
                 />
