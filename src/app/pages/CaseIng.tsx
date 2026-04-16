@@ -122,7 +122,7 @@ export default function CaseIng() {
       </section>
 
       {/* Process */}
-      <section className="bg-[#374151] border-b-8 border-[#FFC133]">
+      <section className="bg-[#374151] border-y-4 border-[#FFC133]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <h2 className="text-[48px] font-bold text-[#FFC133] mb-10 leading-tight">
             Process
@@ -285,7 +285,7 @@ export default function CaseIng() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#FFF8F0] border-t-8 border-[#374151]">
+      <section className="bg-[#FFF8F0] border-t-4 border-[#374151]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="mb-8">
             <h2 className="text-[48px] font-bold text-[#374151] leading-tight inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>
