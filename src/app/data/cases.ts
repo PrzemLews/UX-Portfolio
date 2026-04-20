@@ -67,15 +67,14 @@ export const cases: CaseData[] = [
   {
     slug: "ing",
     id: 1,
-    title: "ING Netherlands",
-    subtitle: 'Is "??? for flats" a good idea?',
+    title: "Vendor Validation Solution",
+    subtitle: "UX-driven Business Transformation",
     category: "research",
     description:
-      "This is a story about working in the ING headquaters' startup accelerator. The task of my team was validating a business model with mix of different research methods. We followed the ING's custom lean-startup validation framework.",
-    image:
-      "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317ef70f2c3a950cf279_ingcover.jpg",
+      "A regulated vendor approval process moved from heavy manual review to full self-service. I joined after the pilot, ran a co-design workshop with stakeholders, shaped the flow in prototypes, and tested the parts we were least sure about with users before launch.",
+    image: "/UX-Portfolio/ing-cover.png",
     icon: FlaskConical,
-    tags: ["Customer Research", "Lean UX", "Ideation"],
+    tags: ["Business Transformation", "Co-Design", "Comprehension Testing"],
   },
   {
     slug: "ericsson",
@@ -499,7 +498,7 @@ export const cases: CaseData[] = [
     slug: "ar",
     id: 4,
     title: "AR Navigation",
-    subtitle: "Designing AR navigation for a museum experience",
+    subtitle: "Utilising GenAI where education, supporting materials, and providing examples failed",
     category: "research",
     description:
       "This non-commercial project taught me how to deal with physical space and AR technology, designing for smartwatch, as well as museum customer experience. Due to COVID issues I also learnt more about the remote user research.",

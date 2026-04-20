@@ -52,13 +52,13 @@ export default function About() {
       role: "Settling in Prague",
       company: "TechCorp Solutions",
       period: "2021 - Present",
-      description: "Leading design initiatives for B2B SaaS products",
+      description: "After my master's degree in HCI and gaining UX experience in Poland by working in an agency, I moved to Prague.",
     },
     {
       role: "Human-Computer Interaction studies",
       company: "Digital Innovations",
       period: "2019-2021",
-      description: "Designed mobile and web applications for e-commerce clients",
+      description: "During my studies in Madrid and Stockholm, I took courses about programming, user context discovery, interface testing, business development, innovation modeling, interaction design, and accessibility. I experienced designing and evaluating for Mobile, Wearable, Augmented Reality, Virtual Reality, Conversational/Robotic, physical IoT, and desktop interfaces. My thesis work, \"Investigating a Decision Support Tool for Designing the Internet of Things Solutions\" was graded with the best possible mark (A).",
     },
     {
       role: "Software Testing, UX Postgraduate studies",
@@ -99,13 +99,14 @@ export default function About() {
               </div>
             </div>
             <div className="order-3">
-              <p className="text-lg text-gray-600 mb-6">I put real effort into the early stages of working with someone. Because understanding everyone's real goals, makes me a better partner and produces better outcomes. I also tend to pull stakeholders into the design process early and often. In my experience, people who feel heard and involved become advocates for the work - and that momentum is what actually moves projects forward. I like working on long-term projects, as taking the best decisions comes with experience within the field. Speaking of the type of projects I have been working on:</p>
+              <p className="text-lg text-gray-600 mb-6">I put real effort into the <strong>early stages</strong> of working with someone. Because <strong>understanding everyone's real goals</strong> makes me a <strong>better partner</strong> and produces <strong>better outcomes</strong>. I also tend to <strong>pull stakeholders into the design process early and often</strong>. In my experience, people who feel heard and involved <strong>become advocates for the work</strong> - and that momentum is what actually <strong>moves projects forward</strong>. I like working on <strong>long-term projects</strong>, as taking the best decisions comes with <strong>experience within the field</strong>. Speaking of the type of projects I have been working on:</p>
               <div className="flex flex-wrap gap-2 mb-6">
                 <Chip label="Compliance" />
                 <Chip label="ERP systems" />
                 <Chip label="AI solutions" />
                 <Chip label="Developer Experience" />
                 <Chip label="Banking" />
+                <Chip label="Pharma Business" />
               </div>
             </div>
           </div>
