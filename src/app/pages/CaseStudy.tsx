@@ -54,17 +54,17 @@ const DEFAULT_PHASE_SECTIONS: { id: string; title: string; blocks: ContentBlock[
     id: "phase-one",
     title: "Project Origins",
     blocks: [
-      { type: "p", html: "The system which is the baseline for this case was used for filling out a certain process documentation that had to be completed by members of the company. The document forms contained open-ended questions, which couldn't be replaced by more granular closed questions. Even though the completed documents were reviewed by other members, filling out these forms was not the core job of these authors or reviewers, therefore the content and reviewers often did not pay enough attention to the quality of the content." },
-      { type: "p", html: "Due to the complex nature of the questions, provided answers were often only partial — or the same piece of information was repeated across multiple questions, sometimes the answers were even contradicting. Still, from the business perspective the accurate answers were crucial, as these documents could be a subject of investigation of external audits." },
-      { type: "p", html: "As the owner of the system, we knew about the problem and we tried to solve it before in various ways: providing webinars, reframing questions, putting additional guidance on the website, including examples. That was helpful to some extent, but never resolved the issues. After the burst of GenAI, business started to see the opportunity of applying this technology to provide better governance over the user inputs, and this high-level idea was the starting point for the project." },
+      { type: "p", html: "The system which is the baseline for this case was used for filling out a certain process documentation that had to be completed by members of the company. The document forms contained <strong>open-ended questions, which couldn't be replaced by more granular closed questions</strong>. Even though the completed documents were reviewed by other members, filling out these forms was not the core job of these authors or reviewers, therefore the content and reviewers often did not pay enough attention to the quality of the content." },
+      { type: "p", html: "Due to the complex nature of the questions, provided answers were often only partial — or the same piece of information was repeated across multiple questions, sometimes the answers were even contradicting. Still, from the business perspective the <strong>accurate answers were crucial, as these documents could be a subject of investigation of external audits</strong>." },
+      { type: "p", html: "As the owner of the system, we knew about the problem and we tried to solve it before in various ways: providing webinars, reframing questions, putting additional guidance on the website, including examples. That was helpful to some extent, but never resolved the issues. After the burst of GenAI, business started to see the <strong>opportunity of applying this technology to provide better governance over the user inputs</strong>, and this high-level idea was the starting point for the project." },
     ],
   },
   {
     id: "phase-two",
     title: "Problem Discovery",
     blocks: [
-      { type: "p", html: "The first stage of the project was about learning what the typical users' struggles with the questions are specifically. To discover these patterns, I scheduled 6 interviews with people who advise our users on the content and with people who do the review and audits. Based on the interviews I created a list of the typical mistakes people do." },
-      { type: "p", html: "The insights from these conversations were invaluable in understanding not just what mistakes were being made, but why they were happening and what patterns emerged across different types of documentation. Some of these were simple as just trying to ignore the question, confusion of similar terms, invalid references, generic answers without referring to a specific process. I translated these problem statements into a set of rules applicable for different questions that we ask in the forms. For example:" },
+      { type: "p", html: "The first stage of the project was about learning what the typical users' struggles with the questions are specifically. To discover these patterns, I <strong>scheduled 6 interviews with people who advise our users on the content and with people who do the review and audits</strong>. Based on the interviews I <strong>created a list of the typical mistakes people do</strong>." },
+      { type: "p", html: "The insights from these conversations were invaluable in understanding not just what mistakes were being made, but <strong>why they were happening and what patterns emerged</strong> across different types of documentation. Some of these were simple as just trying to ignore the question, confusion of similar terms, invalid references, generic answers without referring to a specific process. I <strong>translated these problem statements into a set of rules applicable for different questions</strong> that we ask in the forms. For example:" },
       { type: "list", items: [
         "Users don't describe what their project is about — check whether the \"project information\" includes: project name, project dates, project purpose.",
         "Users confuse \"project information\" with \"document information\" fields — check whether \"project information\" does not include any description related to concept of a document.",
@@ -84,11 +84,11 @@ const DEFAULT_PHASE_SECTIONS: { id: string; title: string; blocks: ContentBlock[
         "Incorporate the solution on an already cluttered form? We already had commenting and compare-changes mode — not much empty space left for yet another feature.",
         "How to integrate the solution with UI, without disturbing users while they're typing?",
       ] },
-      { type: "p", html: "<strong>1. Reusing familiar patterns.</strong> To reduce the number of design patterns we were familiarising our users with, I wanted to reuse patterns from an already existing, somewhat similar feature — comment mode. Since we could think of the AI suggestions as comments, but provided by the machine, we could also reuse the mechanism of signalling a comment, showing their number, and resolving them." },
-      { type: "p", html: "<strong>2. Feedback, not autocorrect.</strong> Together with the business stakeholders we took a decision to rather inform users what mistakes they have done and ask them for the \"manual\" improvement, rather than provide an autocorrect or text to paste. Primarily because the most likely AI wouldn't have a good source of truth. The other aspect was that we wanted users to feel the personal responsibility for the content, which we felt would be diminished if AI replaced them with figuring out the content. Whenever a mistake happened, the solution highlighted the paragraphs with the issues, and users were asked to address a specific issue." },
-      { type: "p", html: "<strong>3. Delayed, non-disruptive notifications.</strong> To avoid constant user disruptions with incoming feedback, we decided for a mechanism of delayed feedback without a need for users to wait before proceeding to the next fields. On the other hand, we didn't want to postpone the feedback too much, as users would forget the context necessary for the content improvement. Once the field is evaluated by the AI, users would receive a gentle notification in the corner of the screen." },
-      { type: "p", html: "<strong>4. Critical vs. non-critical issues.</strong> Not all user mistakes should have the same weight. For example, imprecise language shouldn't be treated the same way as inputing \"lorem ipsum\" content. That's why I proposed classifying mistakes into two categories: critical mistake and non-critical issue. The solution was designed so that users wouldn't be able to proceed with a critical mistake. However, they should be able to proceed with a non-critical issue, unless they accumulated too many of them. We set up a threshold for the number of acceptable non-critical issues, as well as a mechanism to inform the users about the overall score of the document. Users could check their score ad hoc, but also they would be informed about the score before marking the document as completed." },
-      { type: "p", html: "<strong>5. Reporting AI mistakes.</strong> Though we felt like we exhausted the list of potential issues, we couldn't be 100% sure. Also, we had to count with the AI hallucination scenarios. Therefore, I designed the mechanism to report a mistake of the validation agent. Whenever a user reported a specific suggestion as invalid, this specific criterion wouldn't be checked ever again against the text provided for the input. To decrease the chance of reporting the mistake just to be able to ignore validation, the copy suggested that each report will be checked for improving the accuracy of the solution — and that wasn't a lie, we wanted to see these reports, quantise them, and act upon them." },
+      { type: "p", html: "<strong>1. Reusing familiar patterns.</strong> To <strong>reduce the number of design patterns we were familiarising our users with</strong>, I wanted to reuse patterns from an already existing, somewhat similar feature — comment mode. Since we could think of the AI suggestions as comments, but provided by the machine, we could also reuse the mechanism of signalling a comment, showing their number, and resolving them." },
+      { type: "p", html: "<strong>2. Feedback, not autocorrect.</strong> Together with the business stakeholders we took a decision to rather <strong>inform users what mistakes they have done and ask them for the \"manual\" improvement</strong>, rather than provide an autocorrect or text to paste. Primarily because the most likely AI wouldn't have a good source of truth. The other aspect was that we wanted <strong>users to feel the personal responsibility for the content</strong>, which we felt would be diminished if AI replaced them with figuring out the content. Whenever a mistake happened, the solution highlighted the paragraphs with the issues, and users were asked to address a specific issue." },
+      { type: "p", html: "<strong>3. Delayed, non-disruptive notifications.</strong> To <strong>avoid constant user disruptions with incoming feedback</strong>, we decided for a mechanism of delayed feedback without a need for users to wait before proceeding to the next fields. On the other hand, we didn't want to postpone the feedback too much, as users would forget the context necessary for the content improvement. Once the field is evaluated by the AI, users would receive a gentle notification in the corner of the screen." },
+      { type: "p", html: "<strong>4. Critical vs. non-critical issues.</strong> Not all user mistakes should have the same weight. For example, imprecise language shouldn't be treated the same way as inputing \"lorem ipsum\" content. That's why I <strong>proposed classifying mistakes into two categories: critical mistake and non-critical issue</strong>. The solution was designed so that users wouldn't be able to proceed with a critical mistake. However, they should be able to proceed with a non-critical issue, unless they accumulated too many of them. We <strong>set up a threshold for the number of acceptable non-critical issues</strong>, as well as a mechanism to inform the users about the <strong>overall score of the document</strong>. Users could check their score ad hoc, but also they would be informed about the score before marking the document as completed." },
+      { type: "p", html: "<strong>5. Reporting AI mistakes.</strong> Though we felt like we exhausted the list of potential issues, we couldn't be 100% sure. Also, we had to <strong>count with the AI hallucination scenarios</strong>. Therefore, I <strong>designed the mechanism to report a mistake of the validation agent</strong>. Whenever a user reported a specific suggestion as invalid, this specific criterion wouldn't be checked ever again against the text provided for the input. To decrease the chance of reporting the mistake just to be able to ignore validation, the copy suggested that each report will be <strong>checked for improving the accuracy of the solution</strong> — and that wasn't a lie, we wanted to see these reports, quantise them, and act upon them." },
     ],
   },
 ];
@@ -236,23 +236,23 @@ export default function CaseStudy() {
 
   const details = caseData.details;
   const heroTitle = details?.heroTitle ?? "AI-based validation in forms";
-  const overview = details?.overview ?? "This project addressed issues in an ERP system where users struggled to provide accurate answers to open-ended form questions, often missing important points in responses that were subjected to a strict review. Providing more guidance, tooltips, or framing the question in a different way were not effective. To understand the problem, I conducted interviews with reviewers to identify typical user mistakes and understand how we could use AI to improve the quality of the information put to the system. The proposed solution used AI to provide feedback, telling users what mistakes they made and how to mitigate them, rather than automatically re-writing the content, ensuring people rely on their own information. I designed high-level sketches in Figma; later they were reviewed by both the business owner and AI developers to validate feasibility for desktop and mobile solutions. The development of the project started, but the project was stopped due to resource issues.";
+  const overview = details?.overview ?? "This project addressed issues in an <strong>ERP system</strong> where users struggled to provide accurate answers to <strong>open-ended form questions</strong>, often missing important points in responses that were <strong>subjected to a strict review</strong>. Providing more guidance, tooltips, or framing the question in a different way were not effective. To understand the problem, I <strong>conducted interviews with reviewers to identify typical user mistakes</strong> and understand how we could use AI to improve the quality of the information put to the system. The proposed solution used <strong>AI to provide feedback, telling users what mistakes they made</strong> and how to mitigate them, <strong>rather than automatically re-writing the content</strong>, ensuring people rely on their own information. I <strong>designed high-level sketches in Figma</strong>; later they were <strong>reviewed by both the business owner and AI developers to validate feasibility</strong> for desktop and mobile solutions. The development of the project started, but the project was stopped due to resource issues.";
   const context = details?.context ?? DEFAULT_CONTEXT;
   const mainOutcomes = details?.mainOutcomes ?? {
     heading: "The Main Outcomes and Learning Points",
     items: [
-      "Solution for supervising user inputs, motivating them to improve their work, and quantising the quality of documents written by them",
-      "Positive feedback on the proposed design solution from stakeholders",
-      "Reviewed and validated concepts from AI developers, ready to follow up in the future",
-      "The team and I got an understanding of how specific and granular AI task statements must be for agentic AI implementation",
-      "The project helped develop skills in working across multiple disciplines, including cooperation with AI devs",
+      "<strong>Solution for supervising user inputs, motivating them to improve their work, and quantising the quality</strong> of documents written by them",
+      "<strong>Positive feedback on the proposed design solution from stakeholders</strong>",
+      "Reviewed and <strong>validated concepts from AI developers</strong>, ready to follow up in the future",
+      "The team and I got an understanding of <strong>how specific and granular AI task statements must be for agentic AI implementation</strong>",
+      "The project helped develop skills in <strong>working across multiple disciplines, including cooperation with AI devs</strong>",
     ],
   };
   const processCards = details?.processCards ?? DEFAULT_PROCESS_CARDS;
   const phaseSections = details?.phaseSections ?? DEFAULT_PHASE_SECTIONS;
   const conclusion = details?.conclusion ?? {
     heading: "Outcomes",
-    html: "What was quite challenging in the project was re-iterating on programming the AI behaviour. Once we were testing the rules defined after the research phase, quite often it turned out the rules were too specific or not specific enough. Together with AI developers we had to check the AI behaviour against the real documents provided by users combined with our human judgement on the AI feedback. Unfortunately, the project was stopped in the development phase due to resource issues, though the business was pleased with the proposed solution.",
+    html: "What was quite challenging in the project was <strong>re-iterating on programming the AI behaviour</strong>. Once we were testing the rules defined after the research phase, quite often it turned out the rules were too specific or not specific enough. <strong>Together with AI developers we had to check the AI behaviour against the real documents provided by users</strong> combined with our human judgement on the AI feedback. Unfortunately, the project was stopped in the development phase due to resource issues, though <strong>the business was pleased with the proposed solution</strong>.",
   };
 
   // Decide grid column count for process cards based on how many phases we have (max 4)
@@ -306,9 +306,10 @@ export default function CaseStudy() {
               <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Overview
               </h2>
-              <p className="text-base text-gray-600 leading-relaxed">
-                {overview}
-              </p>
+              <p
+                className="text-base text-gray-600 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: overview }}
+              />
             </div>
 
             <div className="lg:col-span-5">
@@ -422,7 +423,7 @@ export default function CaseStudy() {
             {otherProjects.map((p) => (
               <div key={p.slug} className="relative group flex-shrink-0 w-[340px]">
                 <div className="absolute inset-0 bg-[#FFC133] group-hover:bg-[#F09065] transform translate-x-4 translate-y-4 border-4 border-[#374151] transition-colors"></div>
-                <div className="relative bg-white border-4 border-[#374151] overflow-hidden">
+                <Link to={`/projects/${p.slug}`} className="relative bg-white border-4 border-[#374151] overflow-hidden block">
                   <div className="relative overflow-hidden aspect-[16/12] border-b-4 border-[#374151]">
                     <ImageWithFallback
                       src={p.image}
@@ -437,19 +438,15 @@ export default function CaseStudy() {
                   </div>
                   <div className="p-6 relative">
                     <div className="absolute top-6 right-6">
-                      <Link
-                        to={`/projects/${p.slug}`}
-                        className="p-3 bg-[#FFC133] border-4 border-[#374151] text-[#374151] hover:bg-[#FF8A5B] group-hover:bg-[#FF8A5B] transition-colors block shrink-0"
-                        aria-label="View project"
-                      >
+                      <div className="p-3 bg-[#FFC133] border-4 border-[#374151] text-[#374151] group-hover:bg-[#FF8A5B] transition-colors block shrink-0">
                         <ExternalLink size={20} />
-                      </Link>
+                      </div>
                     </div>
-                    <div className="mb-1 pr-16">
-                      <h3 className="text-[28px] font-bold text-[#261d08] inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>{p.title}</h3>
+                    <div className="mb-1 pr-16 min-h-[108px]">
+                      <h3 className="text-[28px] font-bold text-[#261d08] inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px', whiteSpace: 'pre-line' }}>{p.cardTitle ?? p.title}</h3>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

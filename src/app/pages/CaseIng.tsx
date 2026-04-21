@@ -4,12 +4,12 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const otherProjects = [
-  { title: "Ericsson IoT", tags: ["Customer Research", "Iterative Prototyping"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61030d6e7ff1602f83c7a8e2_erikson2.png", link: "#" },
+  { title: "Ericsson IoT", tags: ["Customer Research", "Iterative Prototyping"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61030d6e7ff1602f83c7a8e2_erikson2.png", link: "/projects/ericsson" },
   { title: "UX Research in VR", tags: ["VR", "Usability Tests", "Scientific Research"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317f629928f84e0f3b3f_vrcover.png", link: "#" },
-  { title: "AR Navigation", tags: ["UX Research", "AR", "Rapid Prototyping"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317e4d5af21060f0c9d3_arcover.jpg", link: "#" },
+  { title: "AI-based validation in forms", cardTitle: "AI-based Validation", tags: ["GenAI", "ML Engineers Collaboration", "ERP"], image: "/UX-Portfolio/ar-cover.png", link: "/projects/ai-validation" },
   { title: "UX & Food Allergy", tags: ["UX Research", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109612e8870c62666a65f78_squirrel.jpg", link: "#" },
   { title: "PSE Innovation", tags: ["UX Audit", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317e3e51cbc7dbd228bf_psecover.jpg", link: "#" },
-  { title: "Other Projects", tags: ["Commercial", "Non-commercial"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61040d72bf74a0e0f9ca5b4b_others2.jpg", link: "#" },
+  { title: "Other Projects", tags: ["Commercial", "Non-commercial"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61040d72bf74a0e0f9ca5b4b_others2.jpg", link: "/projects/other" },
 ];
 
 const DOT_COUNT = 5;
@@ -96,10 +96,10 @@ export default function CaseIng() {
                 Overview
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
-                The project focused on improving the process of approving vendors in a regulated industry where suppliers need to fulfill a long list of requirements. The old process used off-the-shelf software with poor UX, and required significant manual intervention and review from company employees — which caused the process to be heavily dependent on resources and not scaleable. A new solution needed to handle this process more efficiently, through enabling a 100% self-service approach — and that meant investing heavily in UX so users wouldn't get stuck in the process.
+                The project focused on <strong className="text-[#374151]">improving the process of approving vendors in a regulated industry</strong> where suppliers need to fulfill a long list of requirements. The old process used off-the-shelf software with poor UX, and required significant manual intervention and review from company employees — which caused the process to be <strong className="text-[#374151]">heavily dependent on resources and not scaleable</strong>. A new solution needed to handle this process more efficiently, through enabling a <strong className="text-[#374151]">100% self-service approach</strong> — and that meant <strong className="text-[#374151]">investing heavily in UX</strong> so users wouldn't get stuck in the process.
               </p>
               <p className="text-base text-gray-600 leading-relaxed mt-4">
-                The solution involved users defining supplier attributes through predefined questions, then reviewing applicable requirements statements based on those attributes. I joined the project at an early stage with evaluation of the pilot experience conducted by an external agency. Once initial conclusions were drawn, I led the design phase — organizing co-design workshops and creating UI designs matching the user journey while keeping stakeholders aligned. I later conducted four research studies, including a usability study of the new user flow prototype and comprehension testing of assessment questions — the part considered riskiest. The final evaluation survey confirmed the project's success.
+                The solution involved users defining supplier attributes through predefined questions, then reviewing applicable requirements statements based on those attributes. I joined the project at an early stage with evaluation of the pilot experience conducted by an external agency. Once initial conclusions were drawn, <strong className="text-[#374151]">I led the design phase</strong> — organizing <strong className="text-[#374151]">co-design workshops</strong> and creating UI designs matching the user journey while <strong className="text-[#374151]">keeping stakeholders aligned</strong>. I later <strong className="text-[#374151]">conducted four research studies</strong>, including a usability study of the new user flow prototype and comprehension testing of assessment questions — the part considered riskiest. The <strong className="text-[#374151]">final evaluation survey confirmed the project's success</strong>.
               </p>
             </div>
 
@@ -134,17 +134,17 @@ export default function CaseIng() {
           </h2>
           <h3 className="text-[24px] font-bold text-[#374151] mb-3 mt-2">Business Outcomes</h3>
           <ul className="text-base text-gray-600 leading-relaxed list-disc pl-6 space-y-2">
-            <li>Reduced cycle time of the assessment by 40%</li>
-            <li>Streamlined the process which allowed the business to collect data, further enabling insights generation</li>
-            <li>50% of people reported the new process was faster and 62% had an improved experience</li>
-            <li>Users received a self-service process on a single platform, compared to a scattered experience across many different tools dependent on other people's availability</li>
-            <li>Received refined questions with additional guidance and improved content that was easier to understand, compared to the older process</li>
+            <li><strong className="text-[#374151]">Reduced cycle time of the assessment by 40%</strong></li>
+            <li>Streamlined the process which allowed the business to <strong className="text-[#374151]">collect data, further enabling insights generation</strong></li>
+            <li><strong className="text-[#374151]">50% of people reported the new process was faster</strong> and <strong className="text-[#374151]">62% had an improved experience</strong></li>
+            <li>Users received a <strong className="text-[#374151]">self-service process on a single platform</strong>, compared to a scattered experience across many different tools dependent on other people's availability</li>
+            <li>Received refined questions with additional guidance and <strong className="text-[#374151]">improved content that was easier to understand</strong>, compared to the older process</li>
           </ul>
           <h3 className="text-[24px] font-bold text-[#374151] mb-3 mt-8">My Lessons Learnt</h3>
           <ul className="text-base text-gray-600 leading-relaxed list-disc pl-6 space-y-2">
-            <li>The project taught me the importance of using objective yet simple evidence — like readability assessments — to convince resistant stakeholders. This quantitative data opened the door for further testing and provided specific, actionable feedback that content owners could act upon.</li>
-            <li>I learned how to work with user research methods to improve content — for example, that it's usually better to engage experts in the topic rather than beginners.</li>
-            <li>How to utilize design to support myself in high-level, abstract discussions with business stakeholders.</li>
+            <li>The project taught me the importance of using <strong className="text-[#374151]">objective yet simple evidence</strong> — like readability assessments — to <strong className="text-[#374151]">convince resistant stakeholders</strong>. This <strong className="text-[#374151]">quantitative data</strong> opened the door for further testing and provided specific, <strong className="text-[#374151]">actionable feedback</strong> that content owners could act upon.</li>
+            <li>I learned how to work with <strong className="text-[#374151]">user research methods to improve content</strong> — for example, that it's usually better to engage experts in the topic rather than beginners.</li>
+            <li>How to utilize design to support myself in <strong className="text-[#374151]">high-level, abstract discussions with business stakeholders</strong>.</li>
           </ul>
         </div>
       </section>
@@ -256,7 +256,7 @@ export default function CaseIng() {
             Project Origins
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-6">
-            The company needed to improve the process of approving vendors in a regulated industry where it was critical that suppliers were free from risks related to communication and technology. Historically this process was handled through a couple of off-the-shelf solutions that couldn't be customised, had poor UX, were not integrated, and weren't self-service — requiring extensive manual interventions and therefore not scaleable. Based on the available data, we knew it could take even 20 days to complete the process. The goal of the new solution was to eliminate all these issues: give users a single platform with excellent UX, so the self-service aspect wouldn't be a problem but an advantage.
+            The company needed to improve the process of approving vendors in a regulated industry where it was critical that suppliers were free from risks related to communication and technology. Historically this process was handled through a couple of off-the-shelf solutions that couldn't be customised, had poor UX, were not integrated, and weren't self-service — <strong className="text-[#374151]">requiring extensive manual interventions and therefore not scaleable</strong>. Based on the available data, we knew it <strong className="text-[#374151]">could take even 20 days to complete the process</strong>. The goal of the new solution was to eliminate all these issues: give users a <strong className="text-[#374151]">single platform with excellent UX</strong>, so the self-service aspect wouldn't be a problem but an advantage.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
             Before I stepped into the project there was already an overall agreement about the shape of the new solution — it should contain two assessments. The goal of the first one (a 10 to 25 question questionnaire) was to recognise supplier attributes. Those attributes would then become the baseline for generating a list of requirements a specific vendor had to follow. What wasn't yet set in stone was the language of the questions and requirements, the platform users would use, and the user flow.
@@ -271,10 +271,10 @@ export default function CaseIng() {
             Early Pilot Evaluation
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-8">
-            My work began with evaluating the initial pilot. The pilot was organised in a very lightweight way — participants were walked through an Excel sheet with questions and statements, which later were supposed to be part of the final assessment (since at this stage no technology had been applied yet). After they completed the sheet I distributed a form to participants of the pilot, supported with a couple of interviews. I managed to collect 10 survey answers — half of the group who participated in the pilot.
+            My work began with <strong className="text-[#374151]">evaluating the initial pilot</strong>. The pilot was organised in a very lightweight way — participants were walked through an Excel sheet with questions and statements, which later were supposed to be part of the final assessment (since at this stage no technology had been applied yet). After they completed the sheet I distributed a form to participants of the pilot, supported with a couple of interviews. I managed to <strong className="text-[#374151]">collect 10 survey answers — half of the group</strong> who participated in the pilot.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
-            The feedback I collected focused on complicated language used in the questionnaire, lack of communicating how the new process could be different than the current one, while still overlapping with a different assessment people had to follow. Additionally, participants noted that the assessment should involve multiple specialists from different backgrounds — such as marketing communication, product, and technology specialists — rather than being completed by a single person, suggesting that the solution should include a cooperation mode. Based on the feedback and other factors, the team decided to use one of the company's custom platforms, as covering all the user experience aspects would be much easier there than adding custom features to an off-the-shelf software (the other considered option).
+            The feedback I collected focused on <strong className="text-[#374151]">complicated language</strong> used in the questionnaire, lack of communicating how the new process could be different than the current one, while still overlapping with a different assessment people had to follow. Additionally, participants noted that the assessment should <strong className="text-[#374151]">involve multiple specialists from different backgrounds</strong> — such as marketing communication, product, and technology specialists — rather than being completed by a single person, suggesting that the solution should include a <strong className="text-[#374151]">cooperation mode</strong>. Based on the feedback and other factors, the team decided to use one of the company's custom platforms, as covering all the user experience aspects would be much easier there than adding custom features to an off-the-shelf software (the other considered option).
           </p>
         </div>
       </section>
@@ -286,7 +286,7 @@ export default function CaseIng() {
             Co-Design Workshop
           </h2>
           <p className="text-base text-gray-600 leading-relaxed">
-            To keep stakeholders aligned and accelerate the design process, I organised a co-design session. First, I split the participants into two groups — each one had to ideate on the general user flow, the steps users need to take to complete it. Then we came together as one group and consolidated the ideas into a single user flow. Next, using the Crazy 8 technique, each participant had two minutes to sketch two screens incorporating parts of that flow. These design ideas were collected from about 10 stakeholders including technical leads, marketing SMEs, and business owners, giving each the opportunity to express not only their design vision but also explain what they believed would work well from the user's perspective. Rather than arriving at a final design, the session helped move the process forward by putting stakeholders in the UX shoes — surfacing design challenges, uncovering non-obvious requirements, understanding personal preferences, and securing buy-in to tackle the issues we discussed. And some genuinely good ideas emerged too!
+            To <strong className="text-[#374151]">keep stakeholders aligned and accelerate the design process</strong>, I organised a co-design session. First, I split the participants into two groups — each one had to ideate on the general user flow, the steps users need to take to complete it. Then we came together as one group and consolidated the ideas into a single user flow. Next, using the Crazy 8 technique, each participant had two minutes to sketch two screens incorporating parts of that flow. These design ideas were collected from <strong className="text-[#374151]">about 10 stakeholders including technical leads, marketing SMEs, and business owners</strong>, giving each the opportunity to express not only their design vision but also explain what they believed would work well from the user's perspective. Rather than arriving at a final design, the session helped move the process forward by putting stakeholders in the UX shoes — surfacing design challenges, <strong className="text-[#374151]">uncovering non-obvious requirements</strong>, understanding personal preferences, and <strong className="text-[#374151]">securing buy-in</strong> to tackle the issues we discussed. And some genuinely good ideas emerged too!
           </p>
         </div>
       </section>
@@ -298,7 +298,7 @@ export default function CaseIng() {
             Prototyping and usability testing
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-10">
-            As mentioned before, we decided to use the frontend of a custom platform I had been designing before, which made the challenge a bit easier. We reused the part of the tool that handled the vendor registration process — but the challenge was to significantly expand it to about 25 questions. We knew people struggled with the 8 questions we'd had before, so the prospect of tripling that number was quite daunting. During the design phase I faced a couple of bigger challenges — I've listed them below with the solutions.
+            As mentioned before, we decided to use the frontend of a custom platform I had been designing before, which made the challenge a bit easier. We reused the part of the tool that handled the vendor registration process — but the <strong className="text-[#374151]">challenge was to significantly expand it to about 25 questions</strong>. We knew people struggled with the 8 questions we'd had before, so the prospect of tripling that number was quite daunting. During the design phase I faced a couple of bigger challenges — I've listed them below with the solutions.
           </p>
 
           {/* Problem 1 */}
@@ -307,7 +307,7 @@ export default function CaseIng() {
               <strong className="text-[#374151]">Problem 1:</strong> The primary design challenge was making the experience less intimidating. The profiling questionnaire had around 20 questions — a number substantial enough to cause users to feel stuck or even abandon the process, which could have serious consequences for the company.
             </p>
             <p className="text-base text-gray-600 leading-relaxed mb-2">
-              <strong className="text-[#374151]">Solution 1A)</strong> I identified that the questions could be grouped into a few labelled categories — business-related, finance-related, technology-related. Splitting them into groups and assigning them to different contributors reduced the burden on any single person, and conveyed that it's okay not to know every answer — encouraging collaboration with colleagues who had the right expertise, and increasing the chances of accurate responses.
+              <strong className="text-[#374151]">Solution 1A)</strong> I identified that the questions could be <strong className="text-[#374151]">grouped into a few labelled categories</strong> — business-related, finance-related, technology-related. Splitting them into groups and assigning them to different contributors <strong className="text-[#374151]">reduced the burden on any single person</strong>, and conveyed that it's okay not to know every answer — <strong className="text-[#374151]">encouraging collaboration with colleagues who had the right expertise</strong>, and increasing the chances of accurate responses.
             </p>
             <p className="text-base text-gray-600 leading-relaxed mb-2">
               <strong className="text-[#374151]">Solution 1B)</strong> I added the option to save progress, so users wouldn't have to start over if their session was interrupted, they needed to continue another day, or simply didn't have all the answers at hand.
@@ -358,7 +358,7 @@ export default function CaseIng() {
               <strong className="text-[#374151]">Problem 3:</strong> The requirements assessment was also quite lengthy — depending on the vendor profile, it could have between 30 and 120 items to verify. Some requirements were hard to assess at registration time, as not all vendor cooperation details were known yet. Verifying such a large number of statements in one sitting risked disengaging users entirely.
             </p>
             <p className="text-base text-gray-600 leading-relaxed">
-              <strong className="text-[#374151]">Solution 3:</strong> I convinced the process owners to categorise the requirements by stage of vendor cooperation. Each requirement received a process-stage label on the UI, and the progress bar I designed was split into those timeline categories. The list also included a filtering option, letting users focus on the requirements relevant to their current phase.
+              <strong className="text-[#374151]">Solution 3:</strong> <strong className="text-[#374151]">I convinced the process owners to categorise the requirements by stage of vendor cooperation</strong>. Each requirement received a process-stage label on the UI, and the progress bar I designed was split into those timeline categories. The list also included a filtering option, letting users focus on the requirements relevant to their current phase.
             </p>
             <figure className="border-4 border-[#374151] overflow-hidden mt-6">
               <img
@@ -389,14 +389,14 @@ export default function CaseIng() {
           {/* Usability Testing */}
           <h3 className="text-[32px] font-bold text-[#374151] mb-4 mt-12">Usability Testing</h3>
           <p className="text-base text-gray-600 leading-relaxed mb-6">
-            I designed the usability test study together with another designer, but led the research myself. We had several hypotheses, some focused on new design elements such as the grouped questions, divided requirements sections, and the collaboration mode. Sessions were conducted remotely in a two-to-one format — myself as researcher and a note-taker. We tested the end-to-end user flow with an interactive Axure prototype, with 10 participants matching the target group: half already experienced with the process, half with no prior experience.
+            I <strong className="text-[#374151]">designed the usability test study</strong> together with another designer, but <strong className="text-[#374151]">led the research myself</strong>. We had several hypotheses, some focused on new design elements such as the grouped questions, divided requirements sections, and the collaboration mode. Sessions were conducted remotely in a two-to-one format — myself as researcher and a note-taker. We tested the <strong className="text-[#374151]">end-to-end user flow with an interactive Axure prototype</strong>, with <strong className="text-[#374151]">10 participants matching the target group</strong>: half already experienced with the process, half with no prior experience.
           </p>
           <p className="text-base text-gray-600 leading-relaxed mb-6">
             The hypothesis challenged the most was that users would recognise from the interface that they could collaborate on the vendor questionnaire. While they generally had no trouble completing the prototype flow and showed good intuition for most new elements, they were hesitant about whether collaboration was actually possible — and unsure whether saving would preserve their progress. Based on these findings I made three changes:
           </p>
-          <ul className="text-base text-gray-600 leading-relaxed list-decimal pl-6 space-y-2">
+          <ol className="text-base text-gray-600 leading-relaxed list-decimal pl-6 space-y-2">
             <li>Added explanatory text above the "add collaborators" section.</li>
-          </ul>
+          </ol>
           <figure className="border-4 border-[#374151] overflow-hidden mt-4 mb-6">
             <div className="relative overflow-hidden" style={{ paddingBottom: "52%" }}>
               <img
@@ -406,10 +406,26 @@ export default function CaseIng() {
               />
             </div>
           </figure>
-          <ul className="text-base text-gray-600 leading-relaxed list-decimal pl-6 space-y-2" start={2}>
+          <ol className="text-base text-gray-600 leading-relaxed list-decimal pl-6 space-y-2" start={2}>
             <li>Added a comment mode to the questionnaire — a pattern users already knew from other parts of the system — to signal that collaboration was possible.</li>
             <li>Changed the button label from "Save" to "Save the Progress" to make the save behaviour unambiguous.</li>
-          </ul>
+          </ol>
+          <div className="grid grid-cols-2 gap-6 mt-6">
+            <figure className="border-4 border-[#374151] overflow-hidden">
+              <img
+                src="/UX-Portfolio/comments fix.png"
+                alt="NDApp – Comments panel on questionnaire"
+                className="w-full object-cover"
+              />
+            </figure>
+            <figure className="border-4 border-[#374151] overflow-hidden">
+              <img
+                src="/UX-Portfolio/button update.png"
+                alt="NDApp – Save the Progress button update"
+                className="w-full object-cover"
+              />
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -420,10 +436,10 @@ export default function CaseIng() {
             Comprehension Testing
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-6">
-            Despite the usability issues that could appear in the newly designed flow, we knew that the biggest struggle for our users would be the assessment questions themselves. Already at the pilot stage, testers reported that the questions and answers contained difficult language, raising concerns that even if users understood them, they might lack the knowledge to answer properly. Apart from the pilot results, I put the assessment content through a readability scan, which showed that some texts scored above 10–12 on the Flesch-Kincaid Grade Level scale — way too much, considering that most employees were not native English speakers.
+            Despite the usability issues that could appear in the newly designed flow, we knew that the <strong className="text-[#374151]">biggest struggle for our users would be the assessment questions themselves</strong>. Already at the pilot stage, testers reported that the questions and answers contained difficult language, raising concerns that even if users understood them, they might lack the knowledge to answer properly. Apart from the pilot results, I <strong className="text-[#374151]">put the assessment content through a readability scan</strong>, which showed that some texts scored above 10–12 on the <strong className="text-[#374151]">Flesch-Kincaid Grade Level scale</strong> — way too much, considering that most employees were not native English speakers.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
-            However, the readability scan couldn't tell us or the content owners how to improve the language. That's why I designed a moderated comprehension testing exercise. I selected participants who would potentially go through the assessment, carefully considering different backgrounds to match questions with appropriate expertise rather than asking a single person about all questions. Six testers had a lot of experience with the topic, and six of them had much less. During the sessions participants were asked to read the questions aloud and explain how they would answer them based on their last vendor experience. This provided feedback not only on the questions themselves but also on the multiple-choice answers, revealing issues like mutually exclusive options, insufficient choices, or missing options people commonly encountered. What helped translate the results into action was inviting one of the content owners to take notes during the sessions — especially valuable given that I wasn't the subject matter expert who could explain the questions in detail.
+            However, the readability scan couldn't tell us or the content owners how to improve the language. That's why I <strong className="text-[#374151]">designed a moderated comprehension testing exercise</strong>. I selected participants who would potentially go through the assessment, <strong className="text-[#374151]">carefully considering different backgrounds to match questions with appropriate expertise</strong> rather than asking a single person about all questions. <strong className="text-[#374151]">Six testers had a lot of experience with the topic, and six of them had much less</strong>. During the sessions participants were asked to read the questions aloud and explain how they would answer them based on their last vendor experience. This provided feedback not only on the questions themselves but also on the multiple-choice answers, revealing issues like mutually exclusive options, insufficient choices, or missing options people commonly encountered. What helped <strong className="text-[#374151]">translate the results into action</strong> was <strong className="text-[#374151]">inviting one of the content owners to take notes during the sessions</strong> — especially valuable given that I wasn't the subject matter expert who could explain the questions in detail.
           </p>
         </div>
       </section>
@@ -435,7 +451,7 @@ export default function CaseIng() {
             Launch & Measurement
           </h2>
           <p className="text-base text-gray-600 leading-relaxed">
-            6 months after the project was launched, we measured the outcomes. By comparing the old process cycle time with the cycle time we measured in Google Analytics, we noticed a 60% reduction in assessment cycle time. On top of analytics, I distributed a survey to people who had completed the new process — they were asked to compare the old and new experience, considering satisfaction and perception of which process seemed faster. Approximately 60% of users reported that the new process was faster, and about 62% said they had a positive experience with the new assessment. These insights were gathered through a survey completed by 77 respondents.
+            <strong className="text-[#374151]">6 months after the project was launched, we measured the outcomes</strong>. By comparing the old process cycle time with the cycle time we measured in <strong className="text-[#374151]">Google Analytics</strong>, we noticed a <strong className="text-[#374151]">60% reduction in assessment cycle time</strong>. On top of analytics, I distributed a survey to people who had completed the new process — they were asked to compare the old and new experience, considering satisfaction and perception of which process seemed faster. <strong className="text-[#374151]">Approximately 60% of users reported that the new process was faster, and about 62% said they had a positive experience with the new assessment</strong>. These insights were gathered through a <strong className="text-[#374151]">survey completed by 77 respondents</strong>.
           </p>
         </div>
       </section>
@@ -457,7 +473,7 @@ export default function CaseIng() {
             {otherProjects.map((p) => (
               <div key={p.title} className="relative group flex-shrink-0 w-[340px]">
                 <div className="absolute inset-0 bg-[#FFC133] group-hover:bg-[#F09065] transform translate-x-4 translate-y-4 border-4 border-[#374151] transition-colors"></div>
-                <div className="relative bg-white border-4 border-[#374151] overflow-hidden">
+                <Link to={p.link} className="relative bg-white border-4 border-[#374151] overflow-hidden block">
                   <div className="relative overflow-hidden aspect-[16/12] border-b-4 border-[#374151]">
                     <ImageWithFallback
                       src={p.image}
@@ -472,19 +488,15 @@ export default function CaseIng() {
                   </div>
                   <div className="p-6 relative">
                     <div className="absolute top-6 right-6">
-                      <Link
-                        to={p.link}
-                        className="p-3 bg-[#FFC133] border-4 border-[#374151] text-[#374151] hover:bg-[#FF8A5B] group-hover:bg-[#FF8A5B] transition-colors block shrink-0"
-                        aria-label="View project"
-                      >
+                      <div className="p-3 bg-[#FFC133] border-4 border-[#374151] text-[#374151] group-hover:bg-[#FF8A5B] transition-colors block shrink-0">
                         <ExternalLink size={20} />
-                      </Link>
+                      </div>
                     </div>
-                    <div className="mb-1 pr-16">
-                      <h3 className="text-[28px] font-bold text-[#261d08] inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>{p.title}</h3>
+                    <div className="mb-1 pr-16 min-h-[108px]">
+                      <h3 className="text-[28px] font-bold text-[#261d08] inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px', whiteSpace: 'pre-line' }}>{p.cardTitle ?? p.title}</h3>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

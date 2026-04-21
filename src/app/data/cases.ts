@@ -48,6 +48,7 @@ export type CaseData = {
   slug: string;
   id: number;
   title: string;
+  cardTitle?: string; // optional override for card display, supports \n line breaks
   subtitle: string;
   category: "research" | "design" | "other";
   description: string;
@@ -86,12 +87,13 @@ export const cases: CaseData[] = [
       "Despite webinars, tooltips and reframed questions, users kept getting their open-ended form answers rejected. I talked to the reviewers, figured out what was actually going wrong, and designed a solution where AI tells users what's off — without fixing it for them.",
     image: "/UX-Portfolio/ar-cover.png",
     icon: Cpu,
-    tags: ["GenAI", "UX Research", "ERP"],
+    tags: ["GenAI", "ML Engineers Collaboration", "ERP"],
   },
   {
     slug: "ericsson",
     id: 3,
     title: "Ericsson IoT",
+    cardTitle: "Ericsson\nIoT",
     subtitle: "How to improve an IoT design process?",
     category: "research",
     description:
@@ -103,7 +105,7 @@ export const cases: CaseData[] = [
     details: {
       heroTitle: "Ericsson IoT",
       overview:
-        "In this project, I wanted to find bottlenecks in the general IoT design process and support them with an analog toolkit or digital tool. After review of IoT challenges and several already existing tools, I decided to focus on the aspect of supporting technology selection. I created an initial prototype which was improved by insights from individual interviews and RITE (Rapid Iterative Testing and Evaluation) with industry experts. Then, to decrease the difficulty of using the tool, I applied RITE again, but with novice users.",
+        "In this project, I wanted to <strong>find bottlenecks in the general IoT design process</strong> and support them with an analog toolkit or digital tool. After <strong>review of IoT challenges and several already existing tools</strong>, I decided to <strong>focus on the aspect of supporting technology selection</strong>. I created an <strong>initial prototype</strong> which was improved by insights from <strong>individual interviews and RITE (Rapid Iterative Testing and Evaluation) with industry experts</strong>. Then, to <strong>decrease the difficulty of using the tool</strong>, I applied RITE again, but with <strong>novice users</strong>.",
       context: [
         { label: "Contribution:", value: "UX research, UX design" },
         { label: "Context:", value: "Commercial project, 5-months duration" },
@@ -120,7 +122,7 @@ export const cases: CaseData[] = [
           "<strong>Insights about design process challenges</strong> and corresponding ideas on how they can be addressed by IoT SA.",
         ],
         outro:
-          "Personally, I learned a lot about IoT, its design process, and telecommunications. I practiced RITE methodology intensively. I understood the difficulties of user research in Business-to-Business projects.<br /><br />As the project was also the topic of my Master's Thesis, it followed scientific research procedures. Therefore, the general aim of the project was to address the following research questions:<br /><br /><strong>RQ1:</strong> <em>What characteristics and features should the IoT Solution Advisor have to address technological challenges that design projects face?</em><br /><br /><strong>RQ2:</strong> <em>What improvements could be implemented in the IoT Solution Advisor so IoT beginners could still successfully use it?</em>",
+          "Personally, I learned a lot about IoT, its design process, and telecommunications. I <strong>practiced RITE methodology intensively</strong>. I understood the <strong>difficulties of user research in Business-to-Business projects</strong>.<br /><br />As the project was also the topic of my <strong>Master's Thesis, it followed scientific research procedures</strong>. Therefore, the general aim of the project was to address the following research questions:<br /><br /><strong>RQ1:</strong> <em>What characteristics and features should the IoT Solution Advisor have to address technological challenges that design projects face?</em><br /><br /><strong>RQ2:</strong> <em>What improvements could be implemented in the IoT Solution Advisor so IoT beginners could still successfully use it?</em>",
       },
       processCards: [
         {
@@ -149,7 +151,7 @@ export const cases: CaseData[] = [
           blocks: [
             {
               type: "p",
-              html: "One of the first steps was to find and analyze printable toolkits for supporting the IoT design process. They were reviewed to get inspiration for the IoT-SA interface and discover important areas that should be addressed while planning an IoT project. For each one, I listed the part of the design / implementation process that they tried to handle, what aspects are solved well, and what are their bottlenecks. Based on the review, I created a map of the solutions, where they are placed according to the stage of the process they support.",
+              html: "One of the first steps was to <strong>find and analyze printable toolkits for supporting the IoT design process</strong>. They were reviewed to get inspiration for the IoT-SA interface and <strong>discover important areas that should be addressed</strong> while planning an IoT project. For each one, I listed the part of the design / implementation process that they tried to handle, <strong>what aspects are solved well, and what are their bottlenecks</strong>. Based on the review, I <strong>created a map of the solutions</strong>, where they are placed according to the stage of the process they support.",
             },
             {
               type: "figure",
@@ -211,7 +213,7 @@ export const cases: CaseData[] = [
             { type: "h3", text: "1st cycle of research" },
             {
               type: "p",
-              html: "The primary focus of the research was to discover what decisions need to be considered in order to create a sufficient IoT system for a defined operational and business context – so to answer the first research question. Although the initial design tried to address technological challenges and was based on already existing tools, I wanted to verify the way they were addressed on the prototype. For this research cycle, the expertise of 6 industrial experts was used (including 1 for a pilot session). For this research cycle, I engaged people fulfilling specific criteria:",
+              html: "The primary focus of the research was to <strong>discover what decisions need to be considered in order to create a sufficient IoT system</strong> for a defined operational and business context – so to answer the first research question. Although the initial design tried to address technological challenges and was based on already existing tools, I wanted to verify the way they were addressed on the prototype. For this research cycle, the <strong>expertise of 6 industrial experts was used</strong> (including 1 for a pilot session). For this research cycle, I engaged people fulfilling specific criteria:",
             },
             {
               type: "list",
@@ -224,7 +226,7 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "I decided to conduct semi-structured interviews as the first applied method. Such interviews were preferred, as each interviewee could have different experiences, and structured questions would not allow for exploration of each discussed IoT design case. The purpose of the interview was to gather information on how decision-making is structured in a business environment. That would allow addressing needs that are not strictly related to the technical aspects but still bring value to the user group. The questions were related to roles in the IoT industry that interviewees occupied, challenges they experienced, cooperation between project specialists, and tools applicable during the design process. Secondly, just after the interviews, explorative prototype testing was carried out.",
+              html: "I decided to conduct <strong>semi-structured interviews</strong> as the first applied method. Such interviews were preferred, as each interviewee could have different experiences, and structured questions would not allow for exploration of each discussed IoT design case. The purpose of the interview was to <strong>gather information on how decision-making is structured in a business environment</strong>. That would allow addressing needs that are not strictly related to the technical aspects but still bring value to the user group. The questions were related to roles in the IoT industry that interviewees occupied, challenges they experienced, cooperation between project specialists, and tools applicable during the design process. Secondly, just after the interviews, <strong>explorative prototype testing</strong> was carried out.",
             },
             {
               type: "figure",
@@ -242,9 +244,9 @@ export const cases: CaseData[] = [
             {
               type: "list",
               items: [
-                "The tool might be used by different experts, none of whom is a specialist in the end-to-end IoT design process, so all of them need some kind of knowledge support to use the tool. Also, the IoT-SA should provide results (so the specification of the system) that are relevant to different specialists – from a financial, software, hardware, and UX point of view.",
-                "I've learned that experts use data flow – a diagram which helps them understand how data is circulating between devices, the type of data and its size – as it creates requirements for them, and based on that it is possible to choose their parameters and also communication protocols.",
-                "On the way of making different choices, experts wanted to see how they affect the final parameters of the system (so device costs, battery lifetime, latency, and availability of devices).",
+                "The tool might be used by <strong>different experts, none of whom is a specialist in the end-to-end IoT design process</strong>, so all of them need some kind of knowledge support to use the tool. Also, the IoT-SA should provide results (so the specification of the system) that are <strong>relevant to different specialists – from a financial, software, hardware, and UX point of view</strong>.",
+                "I've learned that experts use <strong>data flow</strong> – a diagram which helps them understand how data is circulating between devices, the type of data and its size – as it creates requirements for them, and based on that it is possible to choose their parameters and also communication protocols.",
+                "On the way of making different choices, experts wanted to see <strong>how they affect the final parameters of the system</strong> (so device costs, battery lifetime, latency, and availability of devices).",
               ],
             },
           ],
@@ -255,7 +257,7 @@ export const cases: CaseData[] = [
           blocks: [
             {
               type: "p",
-              html: "The focus of the second cycle was increasing the learnability of the tool by inviting IoT beginners to test IoT-SA. Here, learnability is understood as how easily users can learn to use the system. In this cycle of research, it was decided to use two target groups – five IoT beginners and one expert. The beginners had to fulfill the criteria:",
+              html: "The focus of the second cycle was <strong>increasing the learnability of the tool</strong> by inviting IoT beginners to test IoT-SA. Here, learnability is understood as how easily users can learn to use the system. In this cycle of research, it was decided to use <strong>two target groups – five IoT beginners and one expert</strong>. The beginners had to fulfill the criteria:",
             },
             {
               type: "list",
@@ -269,7 +271,7 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "The purpose of the last test was to validate the correctness of the design changes from an IoT expert's perspective. The first method, an interview, was applied to discover participants' knowledge gaps. That helped provide a distinction whenever an included functionality was unclear due to the interviewee's lack of knowledge or design reasons. Just after the interview, the prototype testing was conducted – the RITE method was used again. Thirdly, structured interviews were conducted just after prototype testing. Post-testing interviews were focused on the impression from testing. They included questions about parts of the system that could be difficult or easy to understand, incomprehensible terminology, or unclear visualizations.",
+              html: "The purpose of the last test was to <strong>validate the correctness of the design changes from an IoT expert's perspective</strong>. The first method, an interview, was applied to <strong>discover participants' knowledge gaps</strong>. That helped provide a distinction whenever an included functionality was unclear due to the interviewee's lack of knowledge or design reasons. Just after the interview, the prototype testing was conducted – the <strong>RITE method was used again</strong>. Thirdly, structured interviews were conducted just after prototype testing. Post-testing interviews were focused on the impression from testing. They included questions about parts of the system that could be difficult or easy to understand, incomprehensible terminology, or unclear visualizations.",
             },
             {
               type: "figure",
@@ -287,9 +289,9 @@ export const cases: CaseData[] = [
             {
               type: "list",
               items: [
-                "As the system presented a lot of data and options, it was crucial to make all labels / explanations as clear as possible, and it plays an important role especially on the first use of IoT-SA. During the research I discovered which expressions were difficult to understand.",
-                "The initial idea was to show general guidelines on the first step of IoT-SA, but it turned out that it increased cognitive load, while anyway users had to familiarize themselves with the mechanics of the prototype. Contextual guidelines, so explanations placed just next to the related options, worked better.",
-                "As I used a linear prototype, it was not always possible to see what consequences of selecting an option on, for example, Step 2 would have on options on Step 3, so users felt hesitant while selecting options. That's why it is important to include in explanations also the outcomes of actions if they are not visible on the same step.",
+                "As the system presented a lot of data and options, it was <strong>crucial to make all labels / explanations as clear as possible</strong>, and it plays an important role especially on the first use of IoT-SA. During the research I discovered which expressions were difficult to understand.",
+                "The initial idea was to show general guidelines on the first step of IoT-SA, but it turned out that it <strong>increased cognitive load</strong>, while anyway users had to familiarize themselves with the mechanics of the prototype. <strong>Contextual guidelines</strong>, so explanations placed just next to the related options, worked better.",
+                "As I used a linear prototype, it was not always possible to see what consequences of selecting an option on, for example, Step 2 would have on options on Step 3, so users felt hesitant while selecting options. That's why it is important to <strong>include in explanations also the outcomes of actions</strong> if they are not visible on the same step.",
               ],
             },
             {
@@ -312,7 +314,7 @@ export const cases: CaseData[] = [
       ],
       conclusion: {
         heading: "Final outcomes",
-        html: "4 out of 6 experts said that IoT-SA could be a very useful tool. It can save time for exploring the technology stack, help to structure the process, and provide interesting information.<br /><br />3 out of 5 beginners admitted that IoT-SA could be a nice learning tool. All of them said that they learned something new by exploring the interface.<br /><br />It is very likely that the project will be incorporated into the Ericsson system. Based on this experience I wrote my Master's Thesis.<br /><br /><strong>Resources:</strong><br />– <a href=\"https://www.researchgate.net/publication/353527189_Investigating_a_decision_support_tool_for_designing_Internet_of_Things_solutions\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#F09065] underline hover:text-[#374151] transition-colors\">Investigating a decision support tool for designing Internet of Things solutions – Thesis</a><br />– <a href=\"https://9c94js.axshare.com/#id=wsus9l&p=step_1_-_video&g=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#F09065] underline hover:text-[#374151] transition-colors\">The final prototype</a>",
+        html: "<strong>4 out of 6 experts said that IoT-SA could be a very useful tool</strong>. It can <strong>save time for exploring the technology stack</strong>, help to structure the process, and provide interesting information.<br /><br /><strong>3 out of 5 beginners admitted that IoT-SA could be a nice learning tool</strong>. All of them said that they learned something new by exploring the interface.<br /><br />It is very likely that the <strong>project will be incorporated into the Ericsson system</strong>. Based on this experience I wrote my <strong>Master's Thesis</strong>.<br /><br /><strong>Resources:</strong><br />– <a href=\"https://www.researchgate.net/publication/353527189_Investigating_a_decision_support_tool_for_designing_Internet_of_Things_solutions\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#F09065] underline hover:text-[#374151] transition-colors\">Investigating a decision support tool for designing Internet of Things solutions – Thesis</a><br />– <a href=\"https://9c94js.axshare.com/#id=wsus9l&p=step_1_-_video&g=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#F09065] underline hover:text-[#374151] transition-colors\">The final prototype</a>",
       },
     },
   },
@@ -320,6 +322,7 @@ export const cases: CaseData[] = [
     slug: "vr",
     id: 3,
     title: "UX Research in VR",
+    cardTitle: "UX\nResearch\nin VR",
     subtitle: "What is the best menu for VR experiences?",
     category: "research",
     description:
@@ -331,7 +334,7 @@ export const cases: CaseData[] = [
     details: {
       heroTitle: "UX research in VR",
       overview:
-        "The problem of the research was the unsatisfactory usability of handheld and contextual menus designed for Virtual Reality. Based on analyzed scientific publications, we discovered that menus with higher potency to support immersive experience are in general worse in terms of usability (like 3D or handheld menus). Our goal was to design and test 2 new types of menus supporting immersion and compare them with a traditional flat menu manipulated by a pointer. We conducted 10 tests.",
+        "The problem of the research was the <strong>unsatisfactory usability of handheld and contextual menus</strong> designed for Virtual Reality. Based on analyzed scientific publications, we discovered that menus with higher potency to support <strong>immersive experience</strong> are in general worse in terms of usability (like 3D or handheld menus). Our goal was to <strong>design and test 2 new types of menus</strong> supporting immersion and compare them with a traditional flat menu manipulated by a pointer. We conducted <strong>10 tests</strong>.",
       context: [
         { label: "Contribution:", value: "Environment design, research planning, moderation and analysis" },
         { label: "Context:", value: "University research project (KTH Royal Institute of Technology, Stockholm), non-profit" },
@@ -342,11 +345,11 @@ export const cases: CaseData[] = [
       mainOutcomes: {
         heading: "The main deliverables / learning points",
         items: [
-          "Still, simple flat menus perform the best in terms of usability, though their immersion score is the worst",
-          "The main aspect that influenced the results was a sense of precision and forcing users to move their whole bodies to use the menus",
-          "Touch can't be the only indicator of selection – it is too easy for an unintentional touch of different objects. Grasp could be an additional trigger of selection",
-          "3D menus manipulated with touch require a special approach when it comes to communicating achieved reach between the hand and object – like change of color, animation",
-          "It is necessary to use the delay between consecutive menu components, especially if they are displayed in the reach of a user's hand",
+          "<strong>Simple flat menus perform the best in terms of usability</strong>, though their immersion score is the worst",
+          "The main aspect that influenced the results was a <strong>sense of precision</strong> and forcing users to move their whole bodies to use the menus",
+          "<strong>Touch can't be the only indicator of selection</strong> – it is too easy for an unintentional touch of different objects. Grasp could be an additional trigger of selection",
+          "3D menus manipulated with touch require a special approach when it comes to <strong>communicating achieved reach</strong> between the hand and object – like change of color, animation",
+          "It is necessary to use the <strong>delay between consecutive menu components</strong>, especially if they are displayed in the reach of a user's hand",
         ],
         outro:
           "<strong>Research question answer:</strong> \"Which is the most effective configuration of handheld (contextual) VR menus considering the design principles of usability without losing on immersion?\" The configuration which gives users a strong sense of control by eliminating any kind of undesired actions, like for example by the solutions mentioned above.",
@@ -382,7 +385,7 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "Based on scientific research done in the past, we discovered that flat and fixed types of menus offer the best usability in terms of efficiency (how quickly it is possible to accomplish a task), safety (number of errors), and satisfaction of use. However, such flat menus offer a poor immersion experience. By immersion, I mean a state where users forgot about an artificial aspect of reality. As a consequence of immersion, users put more attention into task execution, the memory of presented information performs better. Immersion is one of the advantages of VR over 2D interfaces. <strong>From this stage, our main findings were:</strong>",
+              html: "Based on scientific research done in the past, we discovered that <strong>flat and fixed types of menus offer the best usability</strong> in terms of <strong>efficiency</strong> (how quickly it is possible to accomplish a task), <strong>safety</strong> (number of errors), and <strong>satisfaction of use</strong>. However, such flat menus offer a <strong>poor immersion experience</strong>. By immersion, I mean a state where users forgot about an artificial aspect of reality. As a consequence of immersion, users put more attention into task execution, the memory of presented information performs better. Immersion is one of the advantages of VR over 2D interfaces. <strong>From this stage, our main findings were:</strong>",
             },
             {
               type: "list",
@@ -490,12 +493,12 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "Testers had to follow the same tasks for every type of menu. The order of tested menus was random and different for each participant. During the tests (which we recorded), we counted the number of actions, errors and measured time spent per task. After each tested menu, we asked users to fill the SUS questionnaire. After all tests, we asked questions about overall experience and comparison between different menus.",
+              html: "Testers had to follow the same tasks for every type of menu. The order of tested menus was <strong>random and different for each participant</strong>. During the tests (which we recorded), we counted the <strong>number of actions, errors and measured time spent per task</strong>. After each tested menu, we asked users to fill the <strong>SUS questionnaire</strong>. After all tests, we asked questions about overall experience and comparison between different menus.",
             },
             { type: "h3", text: "Results" },
             {
               type: "p",
-              html: "Based on quantitative measures (of time per task, actions, and errors) we stated that <strong>the flat menu turned out to be the best in all possible measures.</strong> The same result came from the qualitative part (semi-structured interview), where 9 out of 10 respondents chose a flat, fixed menu as the easiest to use. For the reasons for that, they mentioned high precision thanks to the pointing laser, and control on action moment by pressing the controllers' button. From the perspective of the users, the menu was convenient as it did not require whole-body involvement, it was clear to read and \"well-known\" due to its similarity with menus used for flat interfaces. The perceived usability was also the highest, and the system usability scale classified it for grade A according to the SUS framework. From the perspective of safety (low number of errors) and perceived usability (SUS), the second menu was the contextual 3D menu. Moreover, for 50% of test participants, this menu was described as the most natural. From all menus, the handheld menu turned out to perform the worst.",
+              html: "Based on <strong>quantitative measures</strong> (of time per task, actions, and errors) we stated that <strong>the flat menu turned out to be the best in all possible measures.</strong> The same result came from the <strong>qualitative part (semi-structured interview)</strong>, where <strong>9 out of 10 respondents</strong> chose a flat, fixed menu as the easiest to use. For the reasons for that, they mentioned <strong>high precision</strong> thanks to the pointing laser, and control on action moment by pressing the controllers' button. From the perspective of the users, the menu was convenient as it did not require whole-body involvement, it was clear to read and \"well-known\" due to its similarity with menus used for flat interfaces. The perceived usability was also the highest, and <strong>the system usability scale classified it for grade A</strong> according to the SUS framework. From the perspective of safety (low number of errors) and perceived usability (SUS), the second menu was the contextual 3D menu. Moreover, <strong>for 50% of test participants</strong>, this menu was described as the most natural. From all menus, the handheld menu turned out to perform the worst.",
             },
           ],
         },
@@ -510,6 +513,7 @@ export const cases: CaseData[] = [
     slug: "pse",
     id: 6,
     title: "PSE Innovation",
+    cardTitle: "PSE Innovation\n\u00A0",
     subtitle: "UX supporting Polish power lines",
     category: "design",
     description:
@@ -683,6 +687,7 @@ export const cases: CaseData[] = [
     slug: "food-allergy",
     id: 5,
     title: "UX & Food Allergy",
+    cardTitle: "UX &\nFood\nAllergy",
     subtitle: "Technology vs allergies. Who would win?",
     category: "design",
     description:
@@ -951,6 +956,7 @@ export const cases: CaseData[] = [
     slug: "other",
     id: 7,
     title: "Other Projects",
+    cardTitle: "Other\nProjects",
     subtitle: "A collection of smaller commercial and non-commercial work",
     category: "other",
     description:
