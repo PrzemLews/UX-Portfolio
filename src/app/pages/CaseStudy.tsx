@@ -54,8 +54,8 @@ const DEFAULT_PHASE_SECTIONS: { id: string; title: string; blocks: ContentBlock[
     id: "phase-one",
     title: "Project Origins",
     blocks: [
-      { type: "p", html: "The system which is the baseline for this case was used for filling out a certain process documentation that had to be completed by members of the company. The document forms contained <strong>open-ended questions, which couldn't be replaced by more granular closed questions</strong>. Even though the completed documents were reviewed by other members, filling out these forms was not the core job of these authors or reviewers, therefore the content and reviewers often did not pay enough attention to the quality of the content." },
-      { type: "p", html: "Due to the complex nature of the questions, provided answers were often only partial — or the same piece of information was repeated across multiple questions, sometimes the answers were even contradicting. Still, from the business perspective the <strong>accurate answers were crucial, as these documents could be a subject of investigation of external audits</strong>." },
+      { type: "p", html: "The system which is the baseline for this case was used for filling out process documentation - including forms such as the <strong>New Headcount Request</strong> - that had to be completed by members of the company. These forms contained <strong>open-ended questions, which couldn't be replaced by more granular closed questions</strong>. Even though the completed documents were reviewed by other members, filling out these forms was not the core job of these authors or reviewers, therefore the content and reviewers often did not pay enough attention to the quality of the content." },
+      { type: "p", html: "Due to the complex nature of the questions, provided answers were often only partial - or the same piece of information was repeated across multiple questions, sometimes the answers were even contradicting. Still, from the business perspective the <strong>accurate answers were crucial, as these documents could be a subject of investigation of external audits</strong>." },
       { type: "p", html: "As the owner of the system, we knew about the problem and we tried to solve it before in various ways: providing webinars, reframing questions, putting additional guidance on the website, including examples. That was helpful to some extent, but never resolved the issues. After the burst of GenAI, business started to see the <strong>opportunity of applying this technology to provide better governance over the user inputs</strong>, and this high-level idea was the starting point for the project." },
     ],
   },
@@ -66,8 +66,8 @@ const DEFAULT_PHASE_SECTIONS: { id: string; title: string; blocks: ContentBlock[
       { type: "p", html: "The first stage of the project was about learning what the typical users' struggles with the questions are specifically. To discover these patterns, I <strong>scheduled 6 interviews with people who advise our users on the content and with people who do the review and audits</strong>. Based on the interviews I <strong>created a list of the typical mistakes people do</strong>." },
       { type: "p", html: "The insights from these conversations were invaluable in understanding not just what mistakes were being made, but <strong>why they were happening and what patterns emerged</strong> across different types of documentation. Some of these were simple as just trying to ignore the question, confusion of similar terms, invalid references, generic answers without referring to a specific process. I <strong>translated these problem statements into a set of rules applicable for different questions</strong> that we ask in the forms. For example:" },
       { type: "list", items: [
-        "Users don't describe what their project is about — check whether the \"project information\" includes: project name, project dates, project purpose.",
-        "Users confuse \"project information\" with \"document information\" fields — check whether \"project information\" does not include any description related to concept of a document.",
+        "Users don't describe what their project is about - check whether the \"project information\" includes: project name, project dates, project purpose.",
+        "Users confuse \"project information\" with \"document information\" fields - check whether \"project information\" does not include any description related to concept of a document.",
       ] },
       { type: "p", html: "This enabled us to think how actually we could employ a real use case for artificial intelligence; however, many questions about the shape of the solution were unanswered yet." },
     ],
@@ -81,14 +81,17 @@ const DEFAULT_PHASE_SECTIONS: { id: string; title: string; blocks: ContentBlock[
         "Should AI autocorrect the answers, or should we just let the users know what inputs are wrong?",
         "When the solution provides wrong suggestion, how users can react to that?",
         "How to motivate users to address as many remarks as possible?",
-        "Incorporate the solution on an already cluttered form? We already had commenting and compare-changes mode — not much empty space left for yet another feature.",
+        "Incorporate the solution on an already cluttered form? We already had commenting and compare-changes mode - not much empty space left for yet another feature.",
         "How to integrate the solution with UI, without disturbing users while they're typing?",
       ] },
-      { type: "p", html: "<strong>1. Reusing familiar patterns.</strong> To <strong>reduce the number of design patterns we were familiarising our users with</strong>, I wanted to reuse patterns from an already existing, somewhat similar feature — comment mode. Since we could think of the AI suggestions as comments, but provided by the machine, we could also reuse the mechanism of signalling a comment, showing their number, and resolving them." },
+      { type: "p", html: "<strong>1. Reusing familiar patterns.</strong> To <strong>reduce the number of design patterns we were familiarising our users with</strong>, I wanted to reuse patterns from an already existing, somewhat similar feature - comment mode. Since we could think of the AI suggestions as comments, but provided by the machine, we could also reuse the mechanism of signalling a comment, showing their number, and resolving them." },
+      { type: "figure", figure: { src: "/UX-Portfolio/validation-screen-1.png", alt: "AI validation indicators on the New Headcount Request form", maxWidth: "70%" } },
       { type: "p", html: "<strong>2. Feedback, not autocorrect.</strong> Together with the business stakeholders we took a decision to rather <strong>inform users what mistakes they have done and ask them for the \"manual\" improvement</strong>, rather than provide an autocorrect or text to paste. Primarily because the most likely AI wouldn't have a good source of truth. The other aspect was that we wanted <strong>users to feel the personal responsibility for the content</strong>, which we felt would be diminished if AI replaced them with figuring out the content. Whenever a mistake happened, the solution highlighted the paragraphs with the issues, and users were asked to address a specific issue." },
+      { type: "figure", figure: { src: "/UX-Portfolio/validation-screen-2.png", alt: "Feedback-based AI validation highlighting issues in the form", maxWidth: "70%" } },
       { type: "p", html: "<strong>3. Delayed, non-disruptive notifications.</strong> To <strong>avoid constant user disruptions with incoming feedback</strong>, we decided for a mechanism of delayed feedback without a need for users to wait before proceeding to the next fields. On the other hand, we didn't want to postpone the feedback too much, as users would forget the context necessary for the content improvement. Once the field is evaluated by the AI, users would receive a gentle notification in the corner of the screen." },
       { type: "p", html: "<strong>4. Critical vs. non-critical issues.</strong> Not all user mistakes should have the same weight. For example, imprecise language shouldn't be treated the same way as inputing \"lorem ipsum\" content. That's why I <strong>proposed classifying mistakes into two categories: critical mistake and non-critical issue</strong>. The solution was designed so that users wouldn't be able to proceed with a critical mistake. However, they should be able to proceed with a non-critical issue, unless they accumulated too many of them. We <strong>set up a threshold for the number of acceptable non-critical issues</strong>, as well as a mechanism to inform the users about the <strong>overall score of the document</strong>. Users could check their score ad hoc, but also they would be informed about the score before marking the document as completed." },
-      { type: "p", html: "<strong>5. Reporting AI mistakes.</strong> Though we felt like we exhausted the list of potential issues, we couldn't be 100% sure. Also, we had to <strong>count with the AI hallucination scenarios</strong>. Therefore, I <strong>designed the mechanism to report a mistake of the validation agent</strong>. Whenever a user reported a specific suggestion as invalid, this specific criterion wouldn't be checked ever again against the text provided for the input. To decrease the chance of reporting the mistake just to be able to ignore validation, the copy suggested that each report will be <strong>checked for improving the accuracy of the solution</strong> — and that wasn't a lie, we wanted to see these reports, quantise them, and act upon them." },
+      { type: "p", html: "<strong>5. Reporting AI mistakes.</strong> Though we felt like we exhausted the list of potential issues, we couldn't be 100% sure. Also, we had to <strong>count with the AI hallucination scenarios</strong>. Therefore, I <strong>designed the mechanism to report a mistake of the validation agent</strong>. Whenever a user reported a specific suggestion as invalid, this specific criterion wouldn't be checked ever again against the text provided for the input. To decrease the chance of reporting the mistake just to be able to ignore validation, the copy suggested that each report will be <strong>checked for improving the accuracy of the solution</strong> - and that wasn't a lie, we wanted to see these reports, quantise them, and act upon them." },
+      { type: "figure", figure: { src: "/UX-Portfolio/validation-screen-3.png", alt: "Reporting AI validation mistakes mechanism", maxWidth: "70%" } },
     ],
   },
 ];
@@ -118,7 +121,7 @@ function renderBlock(block: ContentBlock, idx: number) {
     );
   }
   if (block.type === "figure") {
-    const { src, alt, caption, narrow, zoomable } = block.figure;
+    const { src, alt, caption, narrow, zoomable, maxWidth } = block.figure;
     const inner = (
       <figure className={narrow ? "" : "my-8"}>
         <div className="border-4 border-[#374151] overflow-hidden bg-white">
@@ -134,6 +137,13 @@ function renderBlock(block: ContentBlock, idx: number) {
     if (narrow) {
       return (
         <div key={idx} className="my-8 max-w-sm mx-auto">
+          {inner}
+        </div>
+      );
+    }
+    if (maxWidth) {
+      return (
+        <div key={idx} style={{ maxWidth, margin: "0 auto" }}>
           {inner}
         </div>
       );
@@ -169,7 +179,7 @@ function renderBlock(block: ContentBlock, idx: number) {
       >
         <p dangerouslySetInnerHTML={{ __html: block.html }} />
         {block.attribution && (
-          <footer className="mt-2 text-sm not-italic text-gray-500">— {block.attribution}</footer>
+          <footer className="mt-2 text-sm not-italic text-gray-500">- {block.attribution}</footer>
         )}
       </blockquote>
     );

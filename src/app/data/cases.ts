@@ -7,6 +7,7 @@ export type Figure = {
   caption?: string;
   narrow?: boolean;  // renders the figure centred at ~1/3 width
   zoomable?: boolean; // adds a click-to-enlarge lightbox
+  maxWidth?: string; // e.g. "70%" or "400px" - wraps figure in a centred container
 };
 
 export type ContentBlock =
@@ -84,7 +85,7 @@ export const cases: CaseData[] = [
     subtitle: "Utilising GenAI where education, supporting materials, and providing examples failed",
     category: "research",
     description:
-      "Despite webinars, tooltips and reframed questions, users kept getting their open-ended form answers rejected. I talked to the reviewers, figured out what was actually going wrong, and designed a solution where AI tells users what's off — without fixing it for them.",
+      "Despite webinars, tooltips and reframed questions, users kept getting their open-ended form answers rejected. I talked to the reviewers, figured out what was actually going wrong, and designed a solution where AI tells users what's off - without fixing it for them.",
     image: "/UX-Portfolio/ar-cover.png",
     icon: Cpu,
     tags: ["GenAI", "ML Engineers Collaboration", "ERP"],
@@ -571,7 +572,7 @@ export const cases: CaseData[] = [
               type: "p",
               html: "As a first step, my colleague delivered training about usability and user experience to the whole team of PSE Innovation – developers, project managers, system analysts. We wanted to make sure that the PSE team would not only listen to our advice, but would co-create the system with us. The next big step was 100% my task – usability evaluation of all systems. As a reference source, I used Nielsen's Heuristics, Gestalt design principles and industrial benchmarks. During that phase, I discovered 32 areas for improvement, including 13 of the most crucial ones. Here are some examples of them:",
             },
-            { type: "h3", text: "Problem 1 — Generic, non-contextual copy on buttons related to undo, overwrite and deleting data (or interrupting processes)" },
+            { type: "h3", text: "Problem 1 - Generic, non-contextual copy on buttons related to undo, overwrite and deleting data (or interrupting processes)" },
             {
               type: "p",
               html: "In the case of confirmation pop-ups it's better to use customized messages and texts on the buttons. There was also inconsistent use of red colour for buttons – once it was used for closing a pop-up window, another time for deleting data.",
@@ -584,7 +585,7 @@ export const cases: CaseData[] = [
                 caption: "Screenshot with visualisation of problems with the buttons.",
               },
             },
-            { type: "h3", text: "Problem 2 — Using many \"saving buttons\" on the same screen" },
+            { type: "h3", text: "Problem 2 - Using many \"saving buttons\" on the same screen" },
             {
               type: "p",
               html: "Due to nesting multiple forms on the same page, users might be confused whether they should use only one or more buttons, and what is the correct sequence of use – it would be better if there were no nested forms on the same page.",
@@ -597,7 +598,7 @@ export const cases: CaseData[] = [
                 caption: "Screenshot with visualisation of problems with using too many buttons.",
               },
             },
-            { type: "h3", text: "Problem 3 — Major problems with the records filtration mechanism" },
+            { type: "h3", text: "Problem 3 - Major problems with the records filtration mechanism" },
             {
               type: "list",
               items: [
@@ -615,7 +616,7 @@ export const cases: CaseData[] = [
                 caption: "Screenshot showing the problem with the filtration.",
               },
             },
-            { type: "h3", text: "Problem 4 — Need to use nested tables and datasets" },
+            { type: "h3", text: "Problem 4 - Need to use nested tables and datasets" },
             {
               type: "p",
               html: "In the previous version, when the user displayed details about a record of data, a new pop-up was opened. And again, if the user wanted to see more details about data already displayed on the pop-up, the next pop-up was displayed. To repair this problematic navigation model I had to come up with a completely new structure of the user interface.",
@@ -638,7 +639,7 @@ export const cases: CaseData[] = [
               type: "p",
               html: "The next phase started with the presentation of the usability analysis report. Together with our client, we discussed the most important problems and potential solutions. Equipped with the point of view of PSE Innovation, I could design mid-fidelity design proposals. After 3 iterations of design and feedback, we co-created concepts for improvements like:",
             },
-            { type: "h3", text: "Improvement 1 — New scheme of data nesting" },
+            { type: "h3", text: "Improvement 1 - New scheme of data nesting" },
             {
               type: "figure",
               figure: {
@@ -647,7 +648,7 @@ export const cases: CaseData[] = [
                 caption: "Visualisation of the new mechanism for data nesting.",
               },
             },
-            { type: "h3", text: "Improvement 2 — Improved filtering mechanism" },
+            { type: "h3", text: "Improvement 2 - Improved filtering mechanism" },
             {
               type: "figure",
               figure: {
@@ -656,7 +657,7 @@ export const cases: CaseData[] = [
                 caption: "Visualisation of the new filtering mechanism.",
               },
             },
-            { type: "h3", text: "Improvement 3 — Tools for more efficient data modification" },
+            { type: "h3", text: "Improvement 3 - Tools for more efficient data modification" },
             {
               type: "figure",
               figure: {
@@ -665,7 +666,7 @@ export const cases: CaseData[] = [
                 caption: "Visualisation of a new method of quick data modification.",
               },
             },
-            { type: "h3", text: "Improvement 4 — Patterns for better communication between system and users" },
+            { type: "h3", text: "Improvement 4 - Patterns for better communication between system and users" },
             {
               type: "figure",
               figure: {
