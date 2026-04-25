@@ -15,10 +15,12 @@ export default function Projects() {
     { id: "other", label: "Other" },
   ];
 
-  const projects = cases.map((c) => ({
-    ...c,
-    link: `/projects/${c.slug}`,
-  }));
+  const projects = cases
+    .filter((c) => c.slug !== "other")
+    .map((c) => ({
+      ...c,
+      link: `/projects/${c.slug}`,
+    }));
 
   const filteredProjects =
     filter === "all" ? projects : projects.filter((p) => p.category === filter);

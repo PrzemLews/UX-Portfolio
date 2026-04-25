@@ -195,7 +195,7 @@ function renderBlock(block: ContentBlock, idx: number) {
 export default function CaseStudy() {
   const { slug = "" } = useParams();
   const caseData = getCaseBySlug(slug);
-  const otherProjects = getOtherCases(slug);
+  const otherProjects = getOtherCases(slug).filter((p) => p.slug !== "other");
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeDot, setActiveDot] = useState(0);
@@ -380,8 +380,8 @@ export default function CaseStudy() {
                 )}
                 <p className="text-base text-gray-300 leading-relaxed w-full">
                   <a href={`#${phase.anchor}`} className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>{phase.title}</strong></a>
-                  {phase.lines.map((line) => (
-                    <span key={line}><br />{line}</span>
+                  {phase.lines.map((line, i) => (
+                    <span key={line}>{i === 0 ? <><br /><br /></> : <br />}{line}</span>
                   ))}
                 </p>
               </div>

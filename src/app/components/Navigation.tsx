@@ -4,7 +4,9 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import LogoIcon from "./LogoIcon";
 import { cases as caseData } from "../data/cases";
 
-const cases = caseData.map((c) => ({ label: c.title, link: `/projects/${c.slug}` }));
+const cases = caseData
+  .filter((c) => c.slug !== "other")
+  .map((c) => ({ label: c.title, link: `/projects/${c.slug}` }));
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

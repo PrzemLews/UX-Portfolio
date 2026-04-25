@@ -9,7 +9,6 @@ const otherProjects = [
   { title: "AI-based validation in forms", cardTitle: "AI-based Validation", tags: ["GenAI", "ML Engineers Collaboration", "ERP"], image: "/UX-Portfolio/ar-cover.png", link: "/projects/ai-validation" },
   { title: "UX & Food Allergy", tags: ["UX Research", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109612e8870c62666a65f78_squirrel.jpg", link: "#" },
   { title: "PSE Innovation", tags: ["UX Audit", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317e3e51cbc7dbd228bf_psecover.jpg", link: "#" },
-  { title: "Other Projects", tags: ["Commercial", "Non-commercial"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61040d72bf74a0e0f9ca5b4b_others2.jpg", link: "/projects/other" },
 ];
 
 const DOT_COUNT = 5;
@@ -167,7 +166,7 @@ export default function CaseIng() {
               </svg>
               <p className="text-base text-gray-300 leading-relaxed w-full">
                 <a href="#phase-one" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Early Pilot Evaluation</strong></a>
-                <br />Surveyed 10 people who went through a pilot exercise to gather feedback on the process and take decision about used platform
+                <br /><br />Surveyed 10 people who went through a pilot exercise to gather feedback on the process and take decision about used platform
               </p>
             </div>
             {/* Phase 2 */}
@@ -186,7 +185,7 @@ export default function CaseIng() {
               </svg>
               <p className="text-base text-gray-300 leading-relaxed w-full">
                 <a href="#phase-two" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Co-Design Workshop</strong></a>
-                <br />Used Crazy 8 technique with stakeholders to rapidly sketch flows and interface ideas
+                <br /><br />Used technique inspired by Crazy 8 with stakeholders to rapidly sketch flows and interface ideas
               </p>
             </div>
             {/* Phase 3 */}
@@ -205,7 +204,7 @@ export default function CaseIng() {
               </svg>
               <p className="text-base text-gray-300 leading-relaxed w-full">
                 <a href="#phase-three" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Prototyping and usability testing</strong></a>
-                <br />Designed an interface, tested the flow with users
+                <br /><br />Designed an interface, tested the flow with users
               </p>
             </div>
             {/* Phase 4 */}
@@ -221,7 +220,7 @@ export default function CaseIng() {
               </svg>
               <p className="text-base text-gray-300 leading-relaxed w-full">
                 <a href="#phase-four" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Comprehension Testing</strong></a>
-                <br />Conducted a study which aimed to evaluate and improve the experience of answering the assessment questions
+                <br /><br />Conducted a study which aimed to evaluate and improve the experience of answering the assessment questions
               </p>
             </div>
             {/* Phase 5 */}
@@ -242,7 +241,7 @@ export default function CaseIng() {
               </svg>
               <p className="text-base text-gray-300 leading-relaxed w-full">
                 <a href="#phase-five" className="text-[#FFC133] underline hover:text-[#F09065] transition-colors"><strong>Launch & Measurement</strong></a>
-                <br />Tracking the performance of the new solution with analytics and survey
+                <br /><br />Tracking the performance of the new solution with analytics and survey
               </p>
             </div>
           </div>
@@ -286,8 +285,139 @@ export default function CaseIng() {
             Co-Design Workshop
           </h2>
           <p className="text-base text-gray-600 leading-relaxed">
-            To <strong className="text-[#374151]">keep stakeholders aligned and accelerate the design process</strong>, I organised a co-design session. First, I split the participants into two groups - each one had to ideate on the general user flow, the steps users need to take to complete it. Then we came together as one group and consolidated the ideas into a single user flow. Next, using the Crazy 8 technique, each participant had two minutes to sketch two screens incorporating parts of that flow. These design ideas were collected from <strong className="text-[#374151]">about 10 stakeholders including technical leads, marketing SMEs, and business owners</strong>, giving each the opportunity to express not only their design vision but also explain what they believed would work well from the user's perspective. Rather than arriving at a final design, the session helped move the process forward by putting stakeholders in the UX shoes - surfacing design challenges, <strong className="text-[#374151]">uncovering non-obvious requirements</strong>, understanding personal preferences, and <strong className="text-[#374151]">securing buy-in</strong> to tackle the issues we discussed. And some genuinely good ideas emerged too!
+            To <strong className="text-[#374151]">keep stakeholders aligned and accelerate the design process</strong>, I organised a co-design session. First, I split the participants into two groups - each one had to ideate on the general user flow, the steps users need to take to complete it. Then we came together as one group and consolidated the ideas into a single user flow. Next, using the Crazy 8 technique, each participant had two minutes to sketch two screens incorporating parts of that flow. These design ideas were collected from <strong className="text-[#374151]">about 10 stakeholders including technical leads, Vendors SMEs, and business owners</strong>, giving each the opportunity to express not only their design vision but also explain what they believed would work well from the user's perspective. Rather than arriving at a final design, the session helped move the process forward by putting stakeholders in the UX shoes - surfacing design challenges, <strong className="text-[#374151]">uncovering non-obvious requirements</strong>, understanding personal preferences, and <strong className="text-[#374151]">securing buy-in</strong> to tackle the issues we discussed. And some genuinely good ideas emerged too!
           </p>
+
+          {/* Process visualisation */}
+          <div className="mt-12">
+            <h3 className="text-[24px] font-bold text-[#374151] mb-6 inline-block border-b-4 border-[#FFC133] pb-1">
+              How the session ran
+            </h3>
+
+            {/* Step flow */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+              {[
+                {
+                  step: "01",
+                  title: "Split into 2 groups",
+                  desc: "Each group ideated independently on the general user flow",
+                  svg: (
+                    <svg viewBox="0 0 130 130" className="w-full h-auto" fill="none" stroke="#374151" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <circle cx="38" cy="65" r="28" />
+                      <circle cx="30" cy="58" r="5" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <circle cx="46" cy="58" r="5" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <circle cx="38" cy="74" r="5" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <circle cx="92" cy="65" r="28" />
+                      <circle cx="84" cy="58" r="5" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <circle cx="100" cy="58" r="5" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <circle cx="92" cy="74" r="5" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                    </svg>
+                  ),
+                },
+                {
+                  step: "02",
+                  title: "Consolidate ideas",
+                  desc: "Came back together as one group to merge flows into a single user journey",
+                  svg: (
+                    <svg viewBox="0 0 130 130" className="w-full h-auto" fill="none" stroke="#374151" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <circle cx="25" cy="35" r="12" fill="#FFC133" stroke="#374151" strokeWidth="4" />
+                      <circle cx="25" cy="95" r="12" fill="#FFC133" stroke="#374151" strokeWidth="4" />
+                      <path d="M40 40 L70 62" />
+                      <path d="M40 90 L70 68" />
+                      <path d="M62 56 L72 64 L62 72" />
+                      <path d="M62 58 L72 66 L62 74" opacity="0" />
+                      <rect x="74" y="52" width="28" height="28" rx="3" fill="#FFC133" stroke="#374151" strokeWidth="4" />
+                      <line x1="80" y1="60" x2="96" y2="60" />
+                      <line x1="80" y1="66" x2="96" y2="66" />
+                      <line x1="80" y1="72" x2="92" y2="72" />
+                    </svg>
+                  ),
+                },
+                {
+                  step: "03",
+                  title: "Sketching exercise",
+                  desc: "Each participant had 2 minutes to sketch 2 screens from the flow",
+                  svg: (
+                    <svg viewBox="0 0 130 130" className="w-full h-auto" fill="none" stroke="#374151" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <rect x="14" y="22" width="78" height="62" rx="2" fill="#FFF8F0" stroke="#374151" strokeWidth="4" />
+                      <line x1="14" y1="42" x2="92" y2="42" />
+                      <line x1="14" y1="62" x2="92" y2="62" />
+                      <line x1="40" y1="22" x2="40" y2="84" />
+                      <line x1="66" y1="22" x2="66" y2="84" />
+                      <path d="M78 96 L112 62 L120 70 L86 104 Z" fill="#FFC133" stroke="#374151" strokeWidth="4" />
+                      <line x1="78" y1="96" x2="86" y2="104" />
+                      <path d="M78 96 L70 112 L86 104" fill="#374151" />
+                    </svg>
+                  ),
+                },
+                {
+                  step: "04",
+                  title: "Presentation of the designs",
+                  desc: "Each participant walked the group through their sketches and reasoning",
+                  svg: (
+                    <svg viewBox="0 0 130 130" className="w-full h-auto" fill="none" stroke="#374151" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      {/* Presenter */}
+                      <circle cx="34" cy="42" r="10" fill="#FFC133" stroke="#374151" strokeWidth="4" />
+                      <path d="M20 80 Q20 60 34 60 Q48 60 48 80 L48 92 L20 92 Z" fill="#FFC133" stroke="#374151" strokeWidth="4" />
+                      {/* Presentation board */}
+                      <rect x="66" y="22" width="52" height="40" rx="2" fill="#FFF8F0" stroke="#374151" strokeWidth="4" />
+                      <line x1="74" y1="34" x2="104" y2="34" />
+                      <line x1="74" y1="44" x2="104" y2="44" />
+                      <line x1="74" y1="54" x2="96" y2="54" />
+                      {/* Board stand */}
+                      <line x1="92" y1="62" x2="92" y2="80" />
+                      <line x1="78" y1="82" x2="106" y2="82" />
+                      {/* Pointer line from presenter to board */}
+                      <line x1="52" y1="56" x2="68" y2="42" stroke="#F09065" strokeWidth="4" />
+                    </svg>
+                  ),
+                },
+              ].map((item, idx) => (
+                <div key={item.step} className="relative">
+                  <div className="absolute inset-0 bg-[#FFC133] transform translate-x-2 translate-y-2 border-4 border-[#374151]"></div>
+                  <div className="relative bg-white border-4 border-[#374151] p-5 h-full flex flex-col">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="inline-block bg-[#FFC133] border-2 border-[#374151] px-2 py-0.5 text-[13px] font-bold text-[#374151]">
+                        STEP {item.step}
+                      </span>
+                      {idx < 3 && (
+                        <span className="hidden md:inline-block text-[#F09065] font-bold text-[20px]">→</span>
+                      )}
+                    </div>
+                    <div className="flex justify-center mb-3">
+                      <div className="w-[100px] h-[100px]">{item.svg}</div>
+                    </div>
+                    <h4 className="font-bold text-[#374151] text-[16px] mb-1 leading-tight">{item.title}</h4>
+                    <p className="text-[13px] text-gray-600 leading-snug">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Outcomes banner */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#FFC133] transform translate-x-2 translate-y-2 border-4 border-[#374151]"></div>
+              <div className="relative bg-[#374151] border-4 border-[#374151] p-6">
+                <h4 className="text-[#FFC133] font-bold text-[18px] mb-4 inline-block border-b-4 border-[#FFC133] pb-1">
+                  What the session delivered
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    "Surfaced design challenges",
+                    "Uncovered non-obvious requirements",
+                    "Understanding of personal preferences",
+                    "Stakeholder buy-in secured",
+                  ].map((outcome) => (
+                    <div key={outcome} className="flex items-start gap-3 text-gray-300">
+                      <span className="inline-block w-4 h-4 bg-[#FFC133] border-2 border-[#FFC133] shrink-0 mt-1" />
+                      <span className="text-[14px] leading-snug">{outcome}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
