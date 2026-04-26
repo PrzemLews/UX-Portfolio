@@ -74,11 +74,16 @@ export default function CaseIng() {
                 Back to all the cases
               </Link>
             </div>
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 relative">
               <ImageWithFallback
                 src="/UX-Portfolio/ing-cover.png"
                 alt="ING Netherlands case study cover"
                 className="w-full h-full object-contain min-h-[300px] lg:min-h-[500px]"
+              />
+              <div
+                aria-hidden="true"
+                className="hidden lg:block absolute inset-0 pointer-events-none"
+                style={{ background: "linear-gradient(to right, rgba(156,163,175,0.55) 0%, rgba(156,163,175,0) 35%)" }}
               />
             </div>
           </div>
@@ -260,6 +265,90 @@ export default function CaseIng() {
           <p className="text-base text-gray-600 leading-relaxed">
             Before I stepped into the project there was already an overall agreement about the shape of the new solution - it should contain two assessments. The goal of the first one (a 10 to 25 question questionnaire) was to recognise supplier attributes. Those attributes would then become the baseline for generating a list of requirements a specific vendor had to follow. What wasn't yet set in stone was the language of the questions and requirements, the platform users would use, and the user flow.
           </p>
+
+          {/* Problems with the previous process */}
+          <div className="mt-12">
+            <h3 className="text-[20px] font-bold text-[#374151] mb-6 inline-block border-b-4 border-[#FFC133] pb-1">
+              Problems with the previous process
+            </h3>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                {
+                  title: "Not customisable",
+                  desc: "Off-the-shelf tools that couldn't bend to the process",
+                  svg: (
+                    <svg viewBox="0 0 60 60" className="w-full h-full" fill="none" stroke="#374151" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <rect x="10" y="10" width="40" height="40" rx="2" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <line x1="16" y1="16" x2="44" y2="44" stroke="#F09065" strokeWidth="4" />
+                      <line x1="44" y1="16" x2="16" y2="44" stroke="#F09065" strokeWidth="4" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Poor UX",
+                  desc: "Confusing interfaces that frustrated users",
+                  svg: (
+                    <svg viewBox="0 0 60 60" className="w-full h-full" fill="none" stroke="#374151" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <circle cx="30" cy="30" r="20" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <circle cx="23" cy="26" r="2" fill="#374151" />
+                      <circle cx="37" cy="26" r="2" fill="#374151" />
+                      <path d="M22 40 Q30 34 38 40" stroke="#374151" strokeWidth="3" fill="none" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Not integrated",
+                  desc: "Disconnected silos with no shared data",
+                  svg: (
+                    <svg viewBox="0 0 60 60" className="w-full h-full" fill="none" stroke="#374151" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      {/* Left puzzle piece with tab on right */}
+                      <path d="M6 18 L22 18 L22 26 Q26 26 26 30 Q26 34 22 34 L22 42 L6 42 Z" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      {/* Right puzzle piece with notch on left, pulled apart */}
+                      <path d="M54 18 L38 18 L38 26 Q34 26 34 30 Q34 34 38 34 L38 42 L54 42 Z" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      {/* Break / crack mark in the gap */}
+                      <path d="M30 18 L28 30 L32 30 L30 42" stroke="#F09065" strokeWidth="3" fill="none" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Not self-service",
+                  desc: "Manual interventions blocked scale",
+                  svg: (
+                    <svg viewBox="0 0 60 60" className="w-full h-full" fill="none" stroke="#374151" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <circle cx="30" cy="22" r="8" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <path d="M16 50 Q16 36 30 36 Q44 36 44 50" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <circle cx="44" cy="20" r="6" fill="#F09065" stroke="#374151" strokeWidth="3" />
+                      <line x1="44" y1="17" x2="44" y2="23" stroke="#374151" strokeWidth="3" />
+                      <line x1="41" y1="20" x2="47" y2="20" stroke="#374151" strokeWidth="3" />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Up to 20 days",
+                  desc: "Slow turnaround on each vendor",
+                  svg: (
+                    <svg viewBox="0 0 60 60" className="w-full h-full" fill="none" stroke="#374151" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <circle cx="30" cy="32" r="18" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+                      <line x1="30" y1="32" x2="30" y2="20" stroke="#374151" strokeWidth="3" />
+                      <line x1="30" y1="32" x2="40" y2="36" stroke="#374151" strokeWidth="3" />
+                      <line x1="24" y1="10" x2="36" y2="10" stroke="#374151" strokeWidth="3" />
+                      <line x1="30" y1="10" x2="30" y2="14" stroke="#374151" strokeWidth="3" />
+                    </svg>
+                  ),
+                },
+              ].map((problem) => (
+                <div key={problem.title} className="relative">
+                  <div className="absolute inset-0 bg-[#FFC133] transform translate-x-1.5 translate-y-1.5 border-4 border-[#374151]"></div>
+                  <div className="relative bg-white border-4 border-[#374151] p-4 h-full flex flex-col">
+                    <div className="w-[50px] h-[50px] mb-3">{problem.svg}</div>
+                    <h4 className="font-bold text-[#374151] text-[14px] mb-1 leading-tight">{problem.title}</h4>
+                    <p className="text-[12px] text-gray-600 leading-snug">{problem.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -543,7 +632,7 @@ export default function CaseIng() {
           <div className="grid grid-cols-2 gap-6 mt-6">
             <figure className="border-4 border-[#374151] overflow-hidden">
               <img
-                src="/UX-Portfolio/comments fix.png"
+                src="/UX-Portfolio/comments_fix.png"
                 alt="NDApp – Comments panel on questionnaire"
                 className="w-full object-cover"
               />

@@ -59,7 +59,7 @@ export default function Home() {
               </div>
             </div>
             <div className="order-3">
-              <p className="text-base text-gray-700 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                 With nearly a <strong>decade of experience in UX</strong>, I specialize in supporting <strong>complex systems</strong>, covering all the activities in the <strong>end-to-end design process</strong>. I can help you improve your <strong>product metrics</strong> with my up-to the newest standards skillset and academic background in <strong>Human-Computer Interaction</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

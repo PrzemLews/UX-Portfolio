@@ -8,6 +8,7 @@ export type Figure = {
   narrow?: boolean;  // renders the figure centred at ~1/3 width
   zoomable?: boolean; // adds a click-to-enlarge lightbox
   maxWidth?: string; // e.g. "70%" or "400px" - wraps figure in a centred container
+  objectPosition?: string; // e.g. "center 20%" - controls crop when used in figureRow
 };
 
 export type ContentBlock =
@@ -82,11 +83,11 @@ export const cases: CaseData[] = [
     slug: "ai-validation",
     id: 2,
     title: "AI-based validation in forms",
-    subtitle: "Utilising GenAI where education, supporting materials, and providing examples failed",
+    subtitle: "Utilising GenAI where education, supporting materials, and examples failed",
     category: "research",
     description:
       "Despite webinars, tooltips and reframed questions, users kept getting their open-ended form answers rejected. I talked to the reviewers, figured out what was actually going wrong, and designed a solution where AI tells users what's off - without fixing it for them.",
-    image: "/UX-Portfolio/ar-cover.png",
+    image: "/UX-Portfolio/validation-screen-2.png",
     icon: Cpu,
     tags: ["GenAI", "ML Engineers Collaboration", "ERP"],
   },
@@ -98,7 +99,7 @@ export const cases: CaseData[] = [
     subtitle: "How to improve an IoT design process?",
     category: "research",
     description:
-      "I looked for a way to improve experience in participating in a design process of IoT systems. As a result of individual interviews and RITE testing I designed IoT Solution Advisor - a platform for matching system requirements with an IoT technology stack.",
+      "I looked for a way to improve the experience of participating in an IoT design process. As a result of individual interviews and RITE testing, I designed IoT Solution Advisor - a platform for matching system requirements with an IoT technology stack.",
     image:
       "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61030d6e7ff1602f83c7a8e2_erikson2.png",
     icon: Cpu,
@@ -106,7 +107,7 @@ export const cases: CaseData[] = [
     details: {
       heroTitle: "Ericsson IoT",
       overview:
-        "In this project, I wanted to <strong>find bottlenecks in the general IoT design process</strong> and support them with an analog toolkit or digital tool. After <strong>review of IoT challenges and several already existing tools</strong>, I decided to <strong>focus on the aspect of supporting technology selection</strong>. I created an <strong>initial prototype</strong> which was improved by insights from <strong>individual interviews and RITE (Rapid Iterative Testing and Evaluation) with industry experts</strong>. Then, to <strong>decrease the difficulty of using the tool</strong>, I applied RITE again, but with <strong>novice users</strong>.",
+        "In this project, I wanted to <strong>find bottlenecks in the general IoT design process</strong> and address them with an analog toolkit or digital tool. After <strong>a review of IoT challenges and several already existing tools</strong>, I decided to <strong>focus on the aspect of supporting technology selection</strong>. I created an <strong>initial prototype</strong> which was improved by insights from <strong>individual interviews and RITE (Rapid Iterative Testing and Evaluation) with industry experts</strong>. Then, to <strong>decrease the difficulty of using the tool</strong>, I applied RITE again, but with <strong>novice users</strong>.",
       context: [
         { label: "Contribution:", value: "UX research, UX design" },
         { label: "Context:", value: "Commercial project, 5-months duration" },
@@ -118,8 +119,8 @@ export const cases: CaseData[] = [
         heading: "The main deliverables / learning points",
         items: [
           "<strong>Clickable, complex prototype of the IoT Solution Advisor (IoT SA)</strong> – a tool that helps to match technical / operational requirements of an IoT system with a specific technology stack (devices / connectivity types).",
-          "<strong>Analysis of already existing analog toolkits and digital tools</strong> which aim to support the IoT process. The goal of such analysis was to explore which areas of IoT design / implementation are not covered well.",
-          "<strong>List of discoveries about industry problems</strong> and recommendations on how to handle such problems with a digital tool.",
+          "<strong>Analysis of already existing analog toolkits and digital tools</strong>, which aim to support the IoT process. The goal of such analysis was to explore which areas of IoT design / implementation are not covered well.",
+          "<strong>List of discoveries about industry problems</strong> and recommendations on how to handle these problems with a digital tool.",
           "<strong>Insights about design process challenges</strong> and corresponding ideas on how they can be addressed by IoT SA.",
         ],
         outro:
@@ -152,7 +153,7 @@ export const cases: CaseData[] = [
           blocks: [
             {
               type: "p",
-              html: "One of the first steps was to <strong>find and analyze printable toolkits for supporting the IoT design process</strong>. They were reviewed to get inspiration for the IoT-SA interface and <strong>discover important areas that should be addressed</strong> while planning an IoT project. For each one, I listed the part of the design / implementation process that they tried to handle, <strong>what aspects are solved well, and what are their bottlenecks</strong>. Based on the review, I <strong>created a map of the solutions</strong>, where they are placed according to the stage of the process they support.",
+              html: "One of the first steps was to <strong>find and analyze printable toolkits for supporting the IoT design process</strong>. They were reviewed to get inspiration for the IoT-SA interface and <strong>discover important areas that should be addressed</strong> while planning an IoT project. For each one, I listed the part of the design / implementation process that they tried to handle, <strong>what aspects were solved well, and what their bottlenecks were</strong>. Based on the review, I <strong>created a map of the solutions</strong>, where they are placed according to the stage of the process they support.",
             },
             {
               type: "figure",
@@ -182,7 +183,7 @@ export const cases: CaseData[] = [
             { type: "h3", text: "The initial prototype of IoT SA" },
             {
               type: "p",
-              html: "Based on work done at the previous stage, I created the initial prototype. Except for addressing challenges mentioned in the previous paragraph, I also followed:",
+              html: "Based on work done at the previous stage, I created the initial prototype. In addition to addressing challenges mentioned in the previous paragraph, I also followed:",
             },
             {
               type: "list",
@@ -214,20 +215,20 @@ export const cases: CaseData[] = [
             { type: "h3", text: "1st cycle of research" },
             {
               type: "p",
-              html: "The primary focus of the research was to <strong>discover what decisions need to be considered in order to create a sufficient IoT system</strong> for a defined operational and business context – so to answer the first research question. Although the initial design tried to address technological challenges and was based on already existing tools, I wanted to verify the way they were addressed on the prototype. For this research cycle, the <strong>expertise of 6 industrial experts was used</strong> (including 1 for a pilot session). For this research cycle, I engaged people fulfilling specific criteria:",
+              html: "The primary focus of the research was to <strong>discover what decisions need to be considered in order to create a well-designed IoT system</strong> for a defined operational and business context – so to answer the first research question. Although the initial design tried to address technological challenges and was based on already existing tools, I wanted to verify the way they were addressed on the prototype. For this research cycle, the <strong>expertise of 6 industrial experts was used</strong> (including 1 for a pilot session). I engaged people fulfilling specific criteria:",
             },
             {
               type: "list",
               items: [
-                "Have an IT background; working as a project manager, software / hardware developer, or researcher",
+                "Have an IT background, working as a project manager, software / hardware developer, or researcher",
                 "Understand the role of sensors, gateways, cloud, and their desired features and parameters",
-                "Aware of the benefits, limitations, and disadvantages of different network protocols",
+                "Be aware of the benefits, limitations, and disadvantages of different network protocols",
                 "At least three years of experience in the IoT industry, including participation in at least one IoT project",
               ],
             },
             {
               type: "p",
-              html: "I decided to conduct <strong>semi-structured interviews</strong> as the first applied method. Such interviews were preferred, as each interviewee could have different experiences, and structured questions would not allow for exploration of each discussed IoT design case. The purpose of the interview was to <strong>gather information on how decision-making is structured in a business environment</strong>. That would allow addressing needs that are not strictly related to the technical aspects but still bring value to the user group. The questions were related to roles in the IoT industry that interviewees occupied, challenges they experienced, cooperation between project specialists, and tools applicable during the design process. Secondly, just after the interviews, <strong>explorative prototype testing</strong> was carried out.",
+              html: "I decided to conduct <strong>semi-structured interviews</strong> as the first applied method. Such interviews were preferred, as each interviewee could have different experiences, and structured questions would not allow for exploration of each discussed IoT design case. The purpose of the interview was to <strong>gather information on how decision-making is structured in a business environment</strong>. That would allow us to address needs that are not strictly related to the technical aspects but still bring value to the user group. The questions were related to roles in the IoT industry that interviewees occupied, challenges they experienced, cooperation between project specialists, and tools applicable during the design process. Secondly, just after the interviews, <strong>explorative prototype testing</strong> was carried out.",
             },
             {
               type: "figure",
@@ -247,7 +248,7 @@ export const cases: CaseData[] = [
               items: [
                 "The tool might be used by <strong>different experts, none of whom is a specialist in the end-to-end IoT design process</strong>, so all of them need some kind of knowledge support to use the tool. Also, the IoT-SA should provide results (so the specification of the system) that are <strong>relevant to different specialists – from a financial, software, hardware, and UX point of view</strong>.",
                 "I've learned that experts use <strong>data flow</strong> – a diagram which helps them understand how data is circulating between devices, the type of data and its size – as it creates requirements for them, and based on that it is possible to choose their parameters and also communication protocols.",
-                "On the way of making different choices, experts wanted to see <strong>how they affect the final parameters of the system</strong> (so device costs, battery lifetime, latency, and availability of devices).",
+                "While making different choices, experts wanted to see <strong>how they affect the final parameters of the system</strong> (so device costs, battery lifetime, latency, and availability of devices).",
               ],
             },
           ],
@@ -263,7 +264,7 @@ export const cases: CaseData[] = [
             {
               type: "list",
               items: [
-                "Have an IT background and current occupancy as an HCI specialist, project manager, IoT developer intern, IT analyst, UX designer / researcher, Product Owner, or Product Manager",
+                "Have an IT background and currently working as an HCI specialist, project manager, IoT developer intern, IT analyst, UX designer / researcher, Product Owner, or Product Manager",
                 "Understand the role of sensors and cloud",
                 "Understand what network protocols are",
                 "At least initial experience working with simple IoT starter kits, like Arduino",
@@ -272,7 +273,7 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "The purpose of the last test was to <strong>validate the correctness of the design changes from an IoT expert's perspective</strong>. The first method, an interview, was applied to <strong>discover participants' knowledge gaps</strong>. That helped provide a distinction whenever an included functionality was unclear due to the interviewee's lack of knowledge or design reasons. Just after the interview, the prototype testing was conducted – the <strong>RITE method was used again</strong>. Thirdly, structured interviews were conducted just after prototype testing. Post-testing interviews were focused on the impression from testing. They included questions about parts of the system that could be difficult or easy to understand, incomprehensible terminology, or unclear visualizations.",
+              html: "The purpose of the last test was to <strong>validate the correctness of the design changes from an IoT expert's perspective</strong>. The first method, an interview, was applied to <strong>discover participants' knowledge gaps</strong>. That helped clarify whether an included functionality was unclear due to the interviewee's lack of knowledge or design reasons. Just after the interview, the prototype testing was conducted – the <strong>RITE method was used again</strong>. Thirdly, structured interviews were conducted just after prototype testing. Post-testing interviews were focused on the impression from testing. They included questions about parts of the system that could be difficult or easy to understand, incomprehensible terminology, or unclear visualizations.",
             },
             {
               type: "figure",
@@ -292,7 +293,7 @@ export const cases: CaseData[] = [
               items: [
                 "As the system presented a lot of data and options, it was <strong>crucial to make all labels / explanations as clear as possible</strong>, and it plays an important role especially on the first use of IoT-SA. During the research I discovered which expressions were difficult to understand.",
                 "The initial idea was to show general guidelines on the first step of IoT-SA, but it turned out that it <strong>increased cognitive load</strong>, while anyway users had to familiarize themselves with the mechanics of the prototype. <strong>Contextual guidelines</strong>, so explanations placed just next to the related options, worked better.",
-                "As I used a linear prototype, it was not always possible to see what consequences of selecting an option on, for example, Step 2 would have on options on Step 3, so users felt hesitant while selecting options. That's why it is important to <strong>include in explanations also the outcomes of actions</strong> if they are not visible on the same step.",
+                "As I used a linear prototype, it was not always possible to see what effect selecting an option on, for example, Step 2 would have on options on Step 3, so users felt hesitant while selecting options. That's why it is important to <strong>include in explanations also the outcomes of actions</strong> if they are not visible on the same step.",
               ],
             },
             {
@@ -518,7 +519,7 @@ export const cases: CaseData[] = [
     subtitle: "UX supporting Polish power lines",
     category: "design",
     description:
-      "The project required UX analysis of a few ERP systems, designing a new system which integrates functionalities of previous ones. Additionally, we created a new design system for future products of PSE Innovation.",
+      "The project required UX analysis of a few ERP systems, designing a new system that integrates functionalities of previous ones. Additionally, we created a new design system for future products of PSE Innovation.",
     image:
       "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317e3e51cbc7dbd228bf_psecover.jpg",
     icon: Monitor,
@@ -526,7 +527,7 @@ export const cases: CaseData[] = [
     details: {
       heroTitle: "PSE Innovation",
       overview:
-        "The client of this project was a Polish public entity providing IT solutions for the energy sector. My task was to analyze their existing systems, indicate areas for improvement in the usability area, and then create an exemplary ERP application with corresponding system design. The new project was supposed to become a role-model system for improving existing applications and creating new ones. At every stage, I consulted progress with the client and its programmers. An important aspect of the project was an explanation of design decisions and customer education in the field of usability.",
+        "The client of this project was a Polish public entity providing IT solutions for the energy sector. My task was to <strong>analyze their existing systems</strong>, <strong>indicate usability areas for improvement</strong>, and then <strong>create an exemplary ERP application with corresponding system design</strong>. The new project was supposed to become a <strong>reference system</strong> for improving existing applications and creating new ones. At every stage, I consulted progress with the client and its programmers. An important aspect of the project was an explanation of design decisions and <strong>client education in the field of usability</strong>.",
       context: [
         { label: "Contribution:", value: "Usability analysis, hi-fi prototyping, negotiations with the customer" },
         { label: "Context:", value: "Commercial project, with PSE Innovation" },
@@ -537,13 +538,13 @@ export const cases: CaseData[] = [
       mainOutcomes: {
         heading: "The main deliverables / learning points",
         items: [
-          "The audit was very extensive – it included 3 different ERP systems that were designed by programmers, so in consequence the systems had to be redesigned from scratch.",
-          "ERP systems used a multi-level data structure, which was a serious challenge in visualization and designing interaction for each level of data.",
-          "It was a cooperation with a client inexperienced in UX design, so translating the project and comparing different solutions was very important to establish further success of the project.",
-          "The process of creating system design – it turns out that it should be an iterative process, and a good design system should be created based on the needs of the system, which clarified continuously during the project.",
+          "The audit was very extensive – it included <strong>3 different ERP systems</strong> that were designed by programmers, and consequently the systems had to be <strong>redesigned from scratch</strong>.",
+          "ERP systems used a <strong>multi-level data structure</strong>, which was a serious challenge in <strong>visualization and interaction design</strong> for each level of data.",
+          "It was a cooperation with a <strong>client inexperienced in UX design</strong>, so translating the project and <strong>comparing different solutions</strong> was very important to establish further success of the project.",
+          "The process of creating system design – it turned out that it should be an <strong>iterative process</strong>, and a good <strong>design system should be created based on the needs of the system</strong>, which continued to evolve throughout the project.",
         ],
         outro:
-          "As a result of the cooperation, high-fidelity mock-ups of an exemplary ERP system were created, together with the design of the system and a description of interactions. The client planned to use them in its future projects.",
+          "As a result of the cooperation, <strong>high-fidelity mock-ups</strong> of an exemplary ERP system were created, together with the <strong>design system and a description of interactions</strong>. The client planned to use them in its future projects.",
       },
       processCards: [
         {
@@ -566,16 +567,16 @@ export const cases: CaseData[] = [
           blocks: [
             {
               type: "p",
-              html: "Our team was requested to help improve ERP solutions developed by PSE Innovation – a Polish public entity created to support power-network companies and their employees. They had already designed and developed 3 different systems, but without the help of any UX specialist. Apart from major usability problems, the lack of a coherent design system implied difficulties with further development. Our promise was to deliver knowledge and tools which would help them to create better systems.",
+              html: "Our team was asked to help improve ERP solutions developed by PSE Innovation – a Polish public entity created to support power-network companies and their employees. They had already designed and developed <strong>3 different systems, but without the help of any UX specialist</strong>. Apart from major usability problems, the <strong>lack of a coherent design system</strong> implied difficulties with further development. Our promise was to deliver knowledge and tools which would help them to create better systems.",
             },
             {
               type: "p",
-              html: "As a first step, my colleague delivered training about usability and user experience to the whole team of PSE Innovation – developers, project managers, system analysts. We wanted to make sure that the PSE team would not only listen to our advice, but would co-create the system with us. The next big step was 100% my task – usability evaluation of all systems. As a reference source, I used Nielsen's Heuristics, Gestalt design principles and industrial benchmarks. During that phase, I discovered 32 areas for improvement, including 13 of the most crucial ones. Here are some examples of them:",
+              html: "As a first step, my colleague delivered <strong>training about usability and user experience</strong> to the whole team of PSE Innovation – developers, project managers, system analysts. We wanted to make sure that the PSE team would not only listen to our advice, but would <strong>co-create the system with us</strong>. The next big step was 100% my task – <strong>usability evaluation of all systems</strong>. As a reference source, I used <strong>Nielsen's Heuristics, Gestalt design principles and industrial benchmarks</strong>. During that phase, I discovered <strong>32 areas for improvement, including 13 of the most crucial ones</strong>. Here are some examples of them:",
             },
-            { type: "h3", text: "Problem 1 - Generic, non-contextual copy on buttons related to undo, overwrite and deleting data (or interrupting processes)" },
+            { type: "h3", text: "Problem 1 - Generic, non-contextual copy on buttons related to undoing, overwriting, and deleting data (or interrupting processes)" },
             {
               type: "p",
-              html: "In the case of confirmation pop-ups it's better to use customized messages and texts on the buttons. There was also inconsistent use of red colour for buttons – once it was used for closing a pop-up window, another time for deleting data.",
+              html: "In the case of confirmation pop-ups, it's better to use <strong>customized messages and button labels</strong>. There was also <strong>inconsistent use of red colour</strong> for buttons – once it was used for closing a pop-up window, another time for deleting data.",
             },
             {
               type: "figure",
@@ -588,7 +589,7 @@ export const cases: CaseData[] = [
             { type: "h3", text: "Problem 2 - Using many \"saving buttons\" on the same screen" },
             {
               type: "p",
-              html: "Due to nesting multiple forms on the same page, users might be confused whether they should use only one or more buttons, and what is the correct sequence of use – it would be better if there were no nested forms on the same page.",
+              html: "Due to <strong>nesting multiple forms on the same page</strong>, users might be confused about whether they should use only one or more buttons, and what is the correct sequence of use – it would be better if there were <strong>no nested forms on the same page</strong>.",
             },
             {
               type: "figure",
@@ -602,10 +603,10 @@ export const cases: CaseData[] = [
             {
               type: "list",
               items: [
-                "Filtration looked and worked a bit different in each application",
+                "Filtration looked and worked a bit differently in each application",
                 "In one system filters were in a place that didn't correspond to related data",
-                "In the case of some tables dynamic filtration was implemented, but in other cases – not",
-                "After applying filters, there was no feedback that they had been applied",
+                "In the case of some tables, dynamic filtration was implemented, but in other cases – not",
+                "After applying filters, there was <strong>no feedback that they had been applied</strong>",
               ],
             },
             {
@@ -619,7 +620,7 @@ export const cases: CaseData[] = [
             { type: "h3", text: "Problem 4 - Need to use nested tables and datasets" },
             {
               type: "p",
-              html: "In the previous version, when the user displayed details about a record of data, a new pop-up was opened. And again, if the user wanted to see more details about data already displayed on the pop-up, the next pop-up was displayed. To repair this problematic navigation model I had to come up with a completely new structure of the user interface.",
+              html: "In the previous version, when the user displayed details about a data record, a new pop-up was opened. And again, if the user wanted to see more details about data already displayed on the pop-up, the next pop-up was displayed. To fix this problematic navigation model, I had to come up with a <strong>completely new structure of the user interface</strong>.",
             },
             {
               type: "figure",
@@ -637,7 +638,7 @@ export const cases: CaseData[] = [
           blocks: [
             {
               type: "p",
-              html: "The next phase started with the presentation of the usability analysis report. Together with our client, we discussed the most important problems and potential solutions. Equipped with the point of view of PSE Innovation, I could design mid-fidelity design proposals. After 3 iterations of design and feedback, we co-created concepts for improvements like:",
+              html: "The next phase started with the presentation of the <strong>usability analysis report</strong>. Together with our client, we discussed the most important problems and potential solutions. Equipped with the point of view of PSE Innovation, I could design <strong>mid-fidelity proposals</strong>. After <strong>3 iterations of design and feedback</strong>, we co-created concepts for improvements such as:",
             },
             { type: "h3", text: "Improvement 1 - New scheme of data nesting" },
             {
@@ -680,7 +681,7 @@ export const cases: CaseData[] = [
       ],
       conclusion: {
         heading: "The final outcomes",
-        html: "Based on the designed proposals we created a design system – so developers could use predefined elements, know the rules of developing UI of datasets, etc. As an outcome, all proposals were accepted and will be used in new systems developed by PSE Innovation.",
+        html: "Based on the proposals, we created a <strong>design system</strong> – so developers could use predefined elements, know the rules of developing UI of datasets, etc. As an outcome, <strong>all proposals were accepted</strong> and would be used in new systems developed by PSE Innovation.",
       },
     },
   },
@@ -692,7 +693,7 @@ export const cases: CaseData[] = [
     subtitle: "Technology vs allergies. Who would win?",
     category: "design",
     description:
-      "My university designed a non-commercial product for those, who can't eat everything. Thanks to the database of products, our users could go exactly, where they would find everything that they need and stay inspired for their daily diet.",
+      "My university designed a non-commercial product for those who can't eat everything. Thanks to the database of products, our users could go exactly where they would find everything that they need and stay inspired for their daily diet.",
     image:
       "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109612e8870c62666a65f78_squirrel.jpg",
     icon: Utensils,
@@ -700,7 +701,7 @@ export const cases: CaseData[] = [
     details: {
       heroTitle: "Healthy Squirrel",
       overview:
-        "In this project we wanted to improve the shopping experience of people suffering from food intolerances / allergies. In this 8-month-long project we used a full UCD process including user needs research, low / hi-fi prototyping and 2 rounds of usability tests.",
+        "In this project we wanted to improve the <strong>shopping experience of people suffering from food intolerances / allergies</strong>. In this <strong>8-month-long project</strong> we used a <strong>full UCD process</strong> including <strong>user needs research, low-fi and hi-fi prototyping, and 2 rounds of usability tests</strong>.",
       context: [
         { label: "Contribution:", value: "UX research, Product design" },
         { label: "Context:", value: "Non-commercial project, realized during 1-year \"UX & Product Design\" postgraduate studies" },
@@ -711,13 +712,13 @@ export const cases: CaseData[] = [
       mainOutcomes: {
         heading: "The main deliverables / learning points",
         items: [
-          "Understanding the necessity of doing groceries in many shops instead of one",
-          "Discovering the problem of diet monotony of people with many food allergies",
-          "Indelible habit of checking composition of the product, despite given recommendations",
-          "Understanding how allergies / intolerances may influence the lifestyle",
+          "Understanding the <strong>necessity of doing groceries in many shops</strong> instead of one",
+          "Discovering the problem of <strong>diet monotony</strong> of people with many food allergies",
+          "<strong>Persistent habit of checking the composition</strong> of the product, despite given recommendations",
+          "Understanding how <strong>allergies / intolerances may influence the lifestyle</strong>",
         ],
         outro:
-          "As an outcome of the whole project we created an advanced prototype of an aggregator, where the target group could find shops / ideas / ingredients – a response to the discovered problem. During the last usability test iteration the project got very positive feedback from the end users, and most of the usability problems were fixed.",
+          "As an outcome of the whole project we created an <strong>advanced prototype of an aggregator</strong>, where the target group could find shops / ideas / ingredients – a response to the discovered problem. During the last usability test iteration, the project got <strong>very positive feedback from the end users</strong>, and <strong>most of the usability problems were fixed</strong>.",
       },
       processCards: [
         {
@@ -746,11 +747,11 @@ export const cases: CaseData[] = [
           blocks: [
             {
               type: "p",
-              html: "Our group didn't start with a predefined problem statement or solution to improve. At the beginning of the process we selected a target group to improve their user experience – we chose people with food allergies / intolerances and we focused on potential shopping problems they might have. So in our case the main issue was to actually find the target group, discover its problem, find a digital solution, and test our proposal within the same target group.",
+              html: "Our group didn't start with a predefined problem statement or a solution to improve upon. At the beginning of the process we selected a target group to improve their user experience – we chose people with food allergies / intolerances and we focused on potential shopping problems they might have. So in our case, the main issue was to actually find the target group, discover its problem, find a digital solution, and test our proposal within the same target group.",
             },
             {
               type: "p",
-              html: "To investigate the context of the selected target group, we decided to conduct a series of in-depth interviews. <strong>We interviewed 11 users</strong> and asked about the shopping process, the most positive experiences, shopping in new places; we used \"explain me how\" questions. Successfully, we discovered some problems:",
+              html: "To investigate the context of the selected target group, we decided to conduct a <strong>series of in-depth interviews</strong>. <strong>We interviewed 11 users</strong> and asked about the shopping process, the most positive experiences, shopping in new places; we used <strong>\"walk me through how\" type questions</strong>. Through this, we discovered some problems:",
             },
             {
               type: "figureRow",
@@ -777,22 +778,22 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "We also gathered quantitative data by collecting answers from surveys posted on Facebook groups for people with food intolerances / allergies (we collected 180 answers). <strong>Main conclusions from both research methods were:</strong>",
+              html: "We also gathered <strong>quantitative data</strong> by collecting answers from surveys posted on Facebook groups for people with food intolerances / allergies (we collected <strong>180 answers</strong>). <strong>Main conclusions from both research methods were:</strong>",
             },
             {
               type: "list",
               items: [
                 "To collect all the food they need, they have <strong>to visit more than just one shop</strong>",
                 "<strong>Monotonic diet</strong> – eating the same meals all the time",
-                "The long duration of shopping and shopping planning",
+                "<strong>Long duration of shopping and shopping planning</strong>",
                 "<strong>Prices</strong> of gluten-free, lactose-free (etc.) products <strong>are usually higher</strong> than the price of traditional products",
-                "The necessity of ingredients review",
+                "The <strong>necessity of reviewing ingredients</strong>",
               ],
             },
             { type: "h3", text: "Personas" },
             {
               type: "p",
-              html: "Based on the conducted research we created 2 personas – representations of our target group. They were helpful during major design discussions.",
+              html: "Based on the conducted research we created <strong>2 personas</strong> – representations of our target group. They were helpful during major design discussions.",
             },
             {
               type: "figureRow",
@@ -819,7 +820,7 @@ export const cases: CaseData[] = [
           blocks: [
             {
               type: "p",
-              html: "By asking about respondents' shopping habits we could recreate their customer journey map, which turned out to be a very good tool to look for areas of experience improvement.",
+              html: "By asking about respondents' shopping habits we could recreate their <strong>customer journey map</strong>, which turned out to be a very good tool to look for <strong>areas of experience improvement</strong>.",
             },
             {
               type: "figure",
@@ -832,7 +833,7 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "The next steps were to figure out functionalities and put them in a natural user flow. We proceeded with creating user scenarios, then we created a set of paper wireflows. Based on the feedback gathered from more experienced UX professionals, we moved to a high-fidelity, clickable prototype.",
+              html: "The next steps were to figure out the key functionalities and put them in a natural user flow. We proceeded with creating <strong>user scenarios</strong>, then we created a set of <strong>paper wireflows</strong>. Based on the feedback gathered from more experienced UX professionals, we moved to a <strong>high-fidelity, clickable prototype</strong>.",
             },
             {
               type: "figure",
@@ -845,7 +846,7 @@ export const cases: CaseData[] = [
             },
             {
               type: "p",
-              html: "To think about future constant improvement of the product, <strong>we settled a set of KPIs to monitor:</strong>",
+              html: "To think about future constant improvement of the product, <strong>we defined a set of KPIs to monitor:</strong>",
             },
             {
               type: "list",
@@ -884,12 +885,12 @@ export const cases: CaseData[] = [
             { type: "h3", text: "Usability testing & improvements" },
             {
               type: "p",
-              html: "We tested the final prototype in 2 turns of usability tests. In total we tested the prototype with 12 users with food intolerances / allergies. Thanks to that, we found major areas for improvement like:",
+              html: "We tested the final prototype in <strong>2 turns of usability tests</strong>. In total we tested the prototype with <strong>12 users</strong> with food intolerances / allergies. Thanks to that, we found major areas for improvement such as:",
             },
             { type: "h3", text: "1. Optimisation of the landing page" },
             {
               type: "p",
-              html: "In the 1st turn of tests it turned out that users didn't understand how to use the search tool. Instead of an infographic description (which anyway they didn't read), we just put the features on the top of the website with self-explanatory labels.",
+              html: "In the <strong>1st turn of tests</strong>, it turned out that <strong>users didn't understand how to use the search tool</strong>. Instead of an infographic description (which anyway they didn't read), we just put the features on the top of the website with <strong>self-explanatory labels</strong>.",
             },
             {
               type: "figure",
@@ -903,7 +904,7 @@ export const cases: CaseData[] = [
             { type: "h3", text: "2. Findability of product categories" },
             {
               type: "p",
-              html: "Users couldn't find the list of product categories which we put in the top navigation bar. To improve findability of the categories feature, we informed about such an option when users had 0 results from using the search tool. We also fixed the header, so the option with categories is visible all the time.",
+              html: "<strong>Users couldn't find the list of product categories</strong>, which we put in the top navigation bar. To <strong>improve findability</strong> of the categories feature, we surfaced this option when users had 0 results from using the search tool. We also fixed the header, so the option with categories is <strong>visible all the time</strong>.",
             },
             {
               type: "figureRow",
@@ -923,7 +924,7 @@ export const cases: CaseData[] = [
             { type: "h3", text: "3. Affordances of food inspirations" },
             {
               type: "p",
-              html: "In the feature for food inspirations we presented selected healthy products. In the 1st research turn we found out that components which were links to the inspiration feature <strong>were not perceived as clickable due to lack of affordances</strong>. We changed the visuals of the feature, so in the 2nd turn users had no problem with the perception of the elements' clickability.",
+              html: "In the feature for food inspirations we presented selected healthy products. In the <strong>1st research turn</strong> we found out that components which were links to the inspiration feature <strong>were not perceived as clickable due to lack of affordances</strong>. We changed the visuals of the feature, so in the <strong>2nd turn users had no problem</strong> with the perception of the elements' clickability.",
             },
             {
               type: "figureRow",
@@ -949,7 +950,7 @@ export const cases: CaseData[] = [
       ],
       conclusion: {
         heading: "The final outcomes",
-        html: "Even though it wasn't a commercial product, we know that we did a good job thanks to feedback from our users. From my perspective it was a very important project, as it was my first project with a full UCD process applied. Thanks to it I could understand that products designed based on real insights and feedback are really appreciated by the final users.<br /><br /><em>\"Generally – it's so great that I can go only to the one shop and buy everything that I need.\"</em> <strong>– Karina, 28, lactose intolerant</strong><br /><br /><em>\"At the beginning, I told you that I have never used such a website. When we started to talk I thought that I wouldn't need such a thing. But after I had tried it I thought: 'Oh my God, shopping with such a website would be so easy!'\"</em> <strong>– Marta, 25, gluten intolerant</strong><br /><br /><em>\"Wow, this website is much more than expected!\"</em> <strong>– Ala, 22, allergic to dairy</strong>",
+        html: "Even though it wasn't a commercial product, we know that we did a good job, thanks to feedback from our users. From my perspective it was a very important project, as it was my <strong>first project with a full UCD process</strong>. Thanks to it I could understand that <strong>products designed based on real insights and feedback are really appreciated by the final users</strong>.<br /><br /><em>\"Generally – it's so great that I can go only to the one shop and buy everything that I need.\"</em> <strong>– Karina, 28, lactose intolerant</strong><br /><br /><em>\"At the beginning, I told you that I have never used such a website. When we started to talk I thought that I wouldn't need such a thing. But after I had tried it I thought: 'Oh my God, shopping with such a website would be so easy!'\"</em> <strong>– Marta, 25, gluten intolerant</strong><br /><br /><em>\"Wow, this website is much more than expected!\"</em> <strong>– Ala, 22, allergic to dairy</strong>",
       },
     },
   },
