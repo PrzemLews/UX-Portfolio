@@ -90,16 +90,19 @@ export default function Navigation() {
 
               {isDropdownOpen && (
                 <div className="absolute right-0 top-full w-56 bg-white border-4 border-[#374151] shadow-[4px_4px_0px_#374151]">
-                  {cases.map((c) => (
-                    <Link
-                      key={c.label}
-                      to={c.link}
-                      onClick={() => setIsDropdownOpen(false)}
-                      className="block px-4 py-3 text-[#374151] font-semibold hover:bg-[#FFC133] transition-colors border-b-2 border-[#374151] last:border-b-0 text-[15px]"
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
+                  {cases.map((c) => {
+                    const isCurrentCase = location.pathname === c.link;
+                    return (
+                      <Link
+                        key={c.label}
+                        to={c.link}
+                        onClick={() => setIsDropdownOpen(false)}
+                        className={`block px-4 py-3 font-semibold transition-colors border-b-2 border-[#374151] last:border-b-0 text-[15px] ${isCurrentCase ? "bg-[#FFC133] text-[#374151]" : "text-[#374151] hover:bg-[#FFC133]"}`}
+                      >
+                        {c.label}
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -147,17 +150,20 @@ export default function Navigation() {
                 </span>
               </Link>
               <div>
-                {cases.map((c) => (
-                  <Link
-                    key={c.label}
-                    to={c.link}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center gap-2 pl-8 pr-4 py-2 text-[#374151] hover:text-[#F09065] transition-all text-[15px]"
-                  >
-                    <span className="w-1.5 h-1.5 bg-[#374151] rounded-full shrink-0" />
-                    {c.label}
-                  </Link>
-                ))}
+                {cases.map((c) => {
+                  const isCurrentCase = location.pathname === c.link;
+                  return (
+                    <Link
+                      key={c.label}
+                      to={c.link}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`flex items-center gap-2 pl-8 pr-4 py-2 transition-all text-[15px] font-semibold ${isCurrentCase ? "text-[#374151] bg-[#FFC133]" : "text-[#374151] hover:text-[#F09065]"}`}
+                    >
+                      <span className="w-1.5 h-1.5 bg-[#374151] rounded-full shrink-0" />
+                      {c.label}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>

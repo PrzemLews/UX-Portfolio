@@ -4,6 +4,12 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { getCaseBySlug, getOtherCases, type ContentBlock } from "../data/cases";
 import Lightbox from "../components/Lightbox";
+import IterationCycle from "../components/IterationCycle";
+import PseFormMock from "../components/PseFormMock";
+import PseFiltersMock from "../components/PseFiltersMock";
+import PsePopupsMock from "../components/PsePopupsMock";
+import PseSaveButtonsMock from "../components/PseSaveButtonsMock";
+import ScaledFrame from "../components/ScaledFrame";
 
 const DOT_COUNT = 5;
 
@@ -158,7 +164,11 @@ function renderBlock(block: ContentBlock, idx: number) {
     }
     if (maxWidth) {
       return (
-        <div key={idx} style={{ maxWidth, margin: "0 auto" }}>
+        <div
+          key={idx}
+          className="mx-auto md:max-w-[var(--fig-max-w)]"
+          style={{ "--fig-max-w": maxWidth } as React.CSSProperties}
+        >
           {inner}
         </div>
       );
@@ -167,15 +177,22 @@ function renderBlock(block: ContentBlock, idx: number) {
   }
   if (block.type === "figureRow") {
     const n = block.figures.length;
-    const colClass =
-      n >= 3 ? "md:grid-cols-3" : n === 2 ? "md:grid-cols-2" : "md:grid-cols-1";
+    const colClass = block.singleColumn
+      ? ""
+      : n >= 3 ? "md:grid-cols-3" : n === 2 ? "md:grid-cols-2" : "md:grid-cols-1";
     const hasCrop = block.figures.some(f => f.objectPosition);
-    return (
+    const grid = (
       <div key={idx} className={`grid grid-cols-1 ${colClass} gap-6 my-8`}>
         {block.figures.map((fig, i) => (
           <figure key={i}>
             <div className="border-4 border-[#374151] overflow-hidden bg-white">
-              {fig.zoomable
+              {fig.aspectRatio ? (
+                <div className="w-full [&>button]:h-full [&>button]:block" style={{ aspectRatio: fig.aspectRatio }}>
+                  {fig.zoomable
+                    ? <Lightbox src={fig.src} alt={fig.alt ?? ""} caption={fig.caption} className="w-full h-full object-cover object-top" />
+                    : <ImageWithFallback src={fig.src} alt={fig.alt ?? ""} className="w-full h-full object-cover object-top" />}
+                </div>
+              ) : fig.zoomable
                 ? <Lightbox src={fig.src} alt={fig.alt ?? ""} caption={fig.caption} />
                 : hasCrop
                   ? <div className="w-full aspect-[1/1] overflow-hidden"><ImageWithFallback src={fig.src} alt={fig.alt ?? ""} className="w-full h-full object-cover" style={{ objectPosition: fig.objectPosition ?? "center center" }} /></div>
@@ -188,6 +205,18 @@ function renderBlock(block: ContentBlock, idx: number) {
         ))}
       </div>
     );
+    if (block.maxWidth) {
+      return (
+        <div
+          key={idx}
+          className="mx-auto md:max-w-[var(--row-max-w)]"
+          style={{ "--row-max-w": block.maxWidth } as React.CSSProperties}
+        >
+          {grid}
+        </div>
+      );
+    }
+    return grid;
   }
   if (block.type === "quote") {
     return (
@@ -207,6 +236,85 @@ function renderBlock(block: ContentBlock, idx: number) {
       <h5 key={idx} className="text-[20px] font-semibold text-[#374151] mb-2 mt-4">
         {block.text}
       </h5>
+    );
+  }
+  if (block.type === "iterationCycle") {
+    return (
+      <IterationCycle
+        key={idx}
+        focus={block.focus}
+        steps={block.steps}
+        iterations={block.iterations}
+        caption={block.caption}
+      />
+    );
+  }
+  if (block.type === "pseFormMock") {
+    return (
+      <figure key={idx} className="my-8">
+        <div className="border-4 border-[#374151] overflow-hidden bg-white">
+          <ScaledFrame>
+            <PseFormMock variant={block.variant} highlight={block.highlight} />
+          </ScaledFrame>
+        </div>
+        {block.caption && (
+          <figcaption
+            className="mt-3 text-sm text-gray-500 italic leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: block.caption }}
+          />
+        )}
+      </figure>
+    );
+  }
+  if (block.type === "pseFiltersMock") {
+    return (
+      <figure key={idx} className="my-8">
+        <div className="border-4 border-[#374151] overflow-hidden bg-white">
+          <ScaledFrame>
+            <PseFiltersMock />
+          </ScaledFrame>
+        </div>
+        {block.caption && (
+          <figcaption
+            className="mt-3 text-sm text-gray-500 italic leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: block.caption }}
+          />
+        )}
+      </figure>
+    );
+  }
+  if (block.type === "psePopupsMock") {
+    return (
+      <figure key={idx} className="my-8">
+        <div className="border-4 border-[#374151] overflow-hidden bg-white">
+          <ScaledFrame>
+            <PsePopupsMock />
+          </ScaledFrame>
+        </div>
+        {block.caption && (
+          <figcaption
+            className="mt-3 text-sm text-gray-500 italic leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: block.caption }}
+          />
+        )}
+      </figure>
+    );
+  }
+  if (block.type === "pseSaveButtonsMock") {
+    return (
+      <figure key={idx} className="my-8">
+        <div className="border-4 border-[#374151] overflow-hidden bg-white">
+          <ScaledFrame>
+            <PseSaveButtonsMock />
+          </ScaledFrame>
+        </div>
+        {block.caption && (
+          <figcaption
+            className="mt-3 text-sm text-gray-500 italic leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: block.caption }}
+          />
+        )}
+      </figure>
     );
   }
   // h3
@@ -401,7 +509,7 @@ export default function CaseStudy() {
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-7">
-              <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Overview
               </h2>
               <p
@@ -411,7 +519,7 @@ export default function CaseStudy() {
             </div>
 
             <div className="lg:col-span-5">
-              <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Context
               </h2>
               <dl className="space-y-3 text-base">
@@ -430,7 +538,7 @@ export default function CaseStudy() {
       {/* Main Outcomes */}
       <section className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
             {mainOutcomes.heading ?? "The Main Outcomes"}
           </h2>
           {mainOutcomes.intro && (
@@ -450,7 +558,7 @@ export default function CaseStudy() {
       {/* Process */}
       <section className="bg-[#374151] border-y-4 border-[#FFC133]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#FFC133] mb-10 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#FFC133] mb-10 leading-tight">
             Process
           </h2>
           <div className={`grid grid-cols-1 ${processColClass} gap-[17px]`}>
@@ -486,7 +594,7 @@ export default function CaseStudy() {
           className={`border-b border-gray-200 ${idx % 2 === 1 ? "bg-[#FDF7F2]" : ""}`}
         >
           <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-            <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+            <h2 className="text-[32px] lg:text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
               {phase.title}
             </h2>
             {phase.blocks.map((block, i) => renderBlock(block, i))}
@@ -498,7 +606,7 @@ export default function CaseStudy() {
       {/* Conclusion */}
       <section className="bg-[#FDF7F2] border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             {conclusion.heading ?? "The outcomes"}
           </h2>
           <p className="text-base text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: conclusion.html }} />
@@ -509,7 +617,7 @@ export default function CaseStudy() {
       <section className="bg-[#FFF8F0] border-t-4 border-[#374151]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="mb-8">
-            <h2 className="text-[48px] font-bold text-[#374151] leading-tight inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>
+            <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] leading-tight inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>
               See more cases
             </h2>
           </div>

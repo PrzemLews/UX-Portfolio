@@ -63,7 +63,7 @@ export default function CaseIng() {
                 Vendor Validation Solution
               </h1>
               <div className="w-fit mb-8">
-                <p className="text-[20px] font-semibold text-[#261d08] leading-[20px] whitespace-nowrap">UX-driven Business Transformation</p>
+                <p className="text-[20px] font-semibold text-[#261d08] leading-[24px]">UX-driven Business Transformation</p>
                 <div className="mt-[4px] h-[5px] w-full bg-[#FFC133] -skew-x-12" />
               </div>
               <Link
@@ -96,7 +96,7 @@ export default function CaseIng() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Overview */}
             <div className="lg:col-span-7">
-              <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Overview
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
@@ -109,7 +109,7 @@ export default function CaseIng() {
 
             {/* Context */}
             <div className="lg:col-span-5">
-              <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Context
               </h2>
               <dl className="space-y-3 text-base">
@@ -133,7 +133,7 @@ export default function CaseIng() {
       {/* Deliverables */}
       <section className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#000000] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
             The Main Outcomes
           </h2>
           <h3 className="text-[24px] font-bold text-[#374151] mb-3 mt-2">Business Outcomes</h3>
@@ -156,7 +156,7 @@ export default function CaseIng() {
       {/* Process */}
       <section className="bg-[#374151] border-y-4 border-[#FFC133]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#FFC133] mb-10 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#FFC133] mb-10 leading-tight">
             Process
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-[17px]">
@@ -256,7 +256,7 @@ export default function CaseIng() {
       {/* Project Origins */}
       <section className="border-b border-gray-200 bg-[#FDF7F2]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             Project Origins
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-6">
@@ -272,7 +272,7 @@ export default function CaseIng() {
               Problems with the previous process
             </h3>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {[
                 {
                   title: "Not customisable",
@@ -355,7 +355,7 @@ export default function CaseIng() {
       {/* Phase 1 */}
       <section id="phase-one" className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             Early Pilot Evaluation
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-8">
@@ -370,7 +370,7 @@ export default function CaseIng() {
       {/* Phase 2 */}
       <section id="phase-two" className="border-b border-gray-200 bg-[#FDF7F2]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             Co-Design Workshop
           </h2>
           <p className="text-base text-gray-600 leading-relaxed">
@@ -513,7 +513,7 @@ export default function CaseIng() {
       {/* Phase 3 */}
       <section id="phase-three" className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             Prototyping and usability testing
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-10">
@@ -629,7 +629,7 @@ export default function CaseIng() {
             <li>Added a comment mode to the questionnaire - a pattern users already knew from other parts of the system - to signal that collaboration was possible.</li>
             <li>Changed the button label from "Save" to "Save the Progress" to make the save behaviour unambiguous.</li>
           </ol>
-          <div className="grid grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <figure className="border-4 border-[#374151] overflow-hidden">
               <img
                 src="/UX-Portfolio/comments_fix.png"
@@ -651,7 +651,7 @@ export default function CaseIng() {
       {/* Phase 4 */}
       <section id="phase-four" className="border-b border-gray-200 bg-[#FDF7F2]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             Comprehension Testing
           </h2>
           <p className="text-base text-gray-600 leading-relaxed mb-6">
@@ -666,7 +666,7 @@ export default function CaseIng() {
       {/* Phase 5 */}
       <section id="phase-five" className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
-          <h2 className="text-[48px] font-bold text-[#374151] mb-6 leading-tight">
+          <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] mb-6 leading-tight">
             Launch & Measurement
           </h2>
           <p className="text-base text-gray-600 leading-relaxed">
@@ -679,7 +679,7 @@ export default function CaseIng() {
       <section className="bg-[#FFF8F0] border-t-4 border-[#374151]">
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="mb-8">
-            <h2 className="text-[48px] font-bold text-[#374151] leading-tight inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>
+            <h2 className="text-[32px] lg:text-[48px] font-bold text-[#374151] leading-tight inline" style={{ textDecoration: 'underline', textDecorationColor: '#FFC133', textDecorationThickness: '4px', textUnderlineOffset: '2px' }}>
               See more cases
             </h2>
           </div>

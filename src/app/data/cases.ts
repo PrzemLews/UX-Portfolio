@@ -9,6 +9,7 @@ export type Figure = {
   zoomable?: boolean; // adds a click-to-enlarge lightbox
   maxWidth?: string; // e.g. "70%" or "400px" - wraps figure in a centred container
   objectPosition?: string; // e.g. "center 20%" - controls crop when used in figureRow
+  aspectRatio?: string;   // e.g. "4/3" - locks height of the figure cell in a figureRow
 };
 
 export type ContentBlock =
@@ -17,8 +18,24 @@ export type ContentBlock =
   | { type: "h3"; text: string }
   | { type: "h6"; text: string }
   | { type: "figure"; figure: Figure }
-  | { type: "figureRow"; figures: Figure[] }
-  | { type: "quote"; html: string; attribution?: string };
+  | { type: "figureRow"; figures: Figure[]; maxWidth?: string; singleColumn?: boolean }
+  | { type: "quote"; html: string; attribution?: string }
+  | {
+      type: "iterationCycle";
+      focus?: string;
+      steps: { title: string }[];
+      iterations?: string;
+      caption?: string;
+    }
+  | {
+      type: "pseFormMock";
+      variant?: "buttons" | "deletion";
+      highlight?: boolean;
+      caption?: string;
+    }
+  | { type: "pseFiltersMock"; caption?: string }
+  | { type: "psePopupsMock"; caption?: string }
+  | { type: "pseSaveButtonsMock"; caption?: string };
 
 export type CaseDetails = {
   heroTitle?: string; // overrides "Case N" label, e.g. "UX research in VR"
@@ -162,6 +179,7 @@ export const cases: CaseData[] = [
                 src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/610722f0f465e9e1e1cebbf9_map%20tools.jpg",
                 alt: "A map of stages, challenges and tools of the IoT design / implementation process",
                 caption: "A map of stages, challenges and tools of the IoT design / implementation process.",
+                zoomable: true,
               },
             },
             { type: "h3", text: "Challenges to address" },
@@ -232,12 +250,16 @@ export const cases: CaseData[] = [
               html: "I decided to conduct <strong>semi-structured interviews</strong> as the first applied method. Such interviews were preferred, as each interviewee could have different experiences, and structured questions would not allow for exploration of each discussed IoT design case. The purpose of the interview was to <strong>gather information on how decision-making is structured in a business environment</strong>. That would allow us to address needs that are not strictly related to the technical aspects but still bring value to the user group. The questions were related to roles in the IoT industry that interviewees occupied, challenges they experienced, cooperation between project specialists, and tools applicable during the design process. Secondly, just after the interviews, <strong>explorative prototype testing</strong> was carried out.",
             },
             {
-              type: "figure",
-              figure: {
-                src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61072da0e4bb7fb9c67f475a_scheme1.jpg",
-                alt: "Scheme of methods used in the first research cycle",
-                caption: "Scheme of methods used in the first research cycle.",
-              },
+              type: "iterationCycle",
+              focus: "Utility",
+              iterations: "6 iterations",
+              steps: [
+                { title: "Semi-structured Interview" },
+                { title: "Prototype testing" },
+                { title: "Data analysis" },
+                { title: "Prototype improvements" },
+              ],
+              caption: "Scheme of methods used in the first research cycle.",
             },
             { type: "h3", text: "Learning points and improvements (cycle 1)" },
             {
@@ -277,12 +299,16 @@ export const cases: CaseData[] = [
               html: "The purpose of the last test was to <strong>validate the correctness of the design changes from an IoT expert's perspective</strong>. The first method, an interview, was applied to <strong>discover participants' knowledge gaps</strong>. That helped clarify whether an included functionality was unclear due to the interviewee's lack of knowledge or design reasons. Just after the interview, the prototype testing was conducted – the <strong>RITE method was used again</strong>. Thirdly, structured interviews were conducted just after prototype testing. Post-testing interviews were focused on the impression from testing. They included questions about parts of the system that could be difficult or easy to understand, incomprehensible terminology, or unclear visualizations.",
             },
             {
-              type: "figure",
-              figure: {
-                src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6107b7fd9167e8c428179ead_learnability.png",
-                alt: "Scheme of methods used in the second research cycle",
-                caption: "Scheme of methods used in the second research cycle.",
-              },
+              type: "iterationCycle",
+              focus: "Learnability",
+              iterations: "6 iterations",
+              steps: [
+                { title: "Prototype testing" },
+                { title: "Structured Interview" },
+                { title: "Data analysis" },
+                { title: "Prototype improvements" },
+              ],
+              caption: "Scheme of methods used in the second research cycle.",
             },
             { type: "h3", text: "Learning points and improvements (cycle 2)" },
             {
@@ -304,11 +330,15 @@ export const cases: CaseData[] = [
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109c634aa1f61317d538afb_pierwszy%20screen.jpg",
                   alt: "3rd step of the IoT Solution Advisor",
                   caption: "3rd step of the IoT Solution Advisor – selection of device / cloud features and computing parameters.",
+                  zoomable: true,
+                  aspectRatio: "16/9",
                 },
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109c7354aa56b222ff58148_drugi%20screen.jpg",
                   alt: "4th step of the IoT Solution Advisor",
                   caption: "4th step of the IoT Solution Advisor – selection of communication protocols.",
+                  zoomable: true,
+                  aspectRatio: "16/9",
                 },
               ],
             },
@@ -405,11 +435,13 @@ export const cases: CaseData[] = [
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6106de41b5e45b0052f8d539_vr1.png",
                   alt: "Example of a flat menu",
                   caption: "An example of flat menu, manipulated by a pointer. Such menu was a baseline in our research.",
+                  aspectRatio: "16/9",
                 },
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6106de0dca4a74f200f1b5b0_vr2.png",
                   alt: "Example of a handheld menu",
                   caption: "Handheld menu manipulated by hand. According to previous research, such menus provide better immersion.",
+                  aspectRatio: "16/9",
                 },
               ],
             },
@@ -453,16 +485,19 @@ export const cases: CaseData[] = [
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6106e33624304a77fdcc1bd4_vr3.png",
                   alt: "Designed flat menu",
                   caption: "Designed / implemented flat menu",
+                  aspectRatio: "16/9",
                 },
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6106e3bd23ab404d4d50276d_vr4.jpg",
                   alt: "Designed handheld menu",
                   caption: "Handheld menu",
+                  aspectRatio: "16/9",
                 },
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6106e3cd915e0ad607b1631c_vr5.jpg",
                   alt: "Designed contextual 3D menu",
                   caption: "Contextual 3D menu",
+                  aspectRatio: "16/9",
                 },
               ],
             },
@@ -580,12 +615,10 @@ export const cases: CaseData[] = [
               html: "In the case of confirmation pop-ups, it's better to use <strong>customized messages and button labels</strong>. There was also <strong>inconsistent use of red colour</strong> for buttons – once it was used for closing a pop-up window, another time for deleting data.",
             },
             {
-              type: "figure",
-              figure: {
-                src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/610466c7384a70f0e48de2bd_pse1.png",
-                alt: "Screenshot with visualisation of problems with the buttons",
-                caption: "Screenshot with visualisation of problems with the buttons.",
-              },
+              type: "pseFormMock",
+              variant: "buttons",
+              highlight: true,
+              caption: "Translated reproduction of the PSE Innovation form — the highlighted button group illustrates the problem with generic, non-contextual labels.",
             },
             { type: "h3", text: "Problem 2 - Using many \"saving buttons\" on the same screen" },
             {
@@ -593,12 +626,8 @@ export const cases: CaseData[] = [
               html: "Due to <strong>nesting multiple forms on the same page</strong>, users might be confused about whether they should use only one or more buttons, and what is the correct sequence of use – it would be better if there were <strong>no nested forms on the same page</strong>.",
             },
             {
-              type: "figure",
-              figure: {
-                src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6104674925bbb77a4996a6bb_pse2.png",
-                alt: "Screenshot with visualisation of problems with using too many buttons",
-                caption: "Screenshot with visualisation of problems with using too many buttons.",
-              },
+              type: "pseSaveButtonsMock",
+              caption: "Translated reproduction with visualisation of problems with using too many buttons.",
             },
             { type: "h3", text: "Problem 3 - Major problems with the records filtration mechanism" },
             {
@@ -611,12 +640,8 @@ export const cases: CaseData[] = [
               ],
             },
             {
-              type: "figure",
-              figure: {
-                src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6104677b18905c6ba7ec1aab_pse3.png",
-                alt: "Screenshot showing the problem with the filtration",
-                caption: "Screenshot showing the problem with the filtration.",
-              },
+              type: "pseFiltersMock",
+              caption: "Translated reproduction showing the problem with the filtration.",
             },
             { type: "h3", text: "Problem 4 - Need to use nested tables and datasets" },
             {
@@ -624,12 +649,8 @@ export const cases: CaseData[] = [
               html: "In the previous version, when the user displayed details about a data record, a new pop-up was opened. And again, if the user wanted to see more details about data already displayed on the pop-up, the next pop-up was displayed. To fix this problematic navigation model, I had to come up with a <strong>completely new structure of the user interface</strong>.",
             },
             {
-              type: "figure",
-              figure: {
-                src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/610467efefee0df2f9a0bc36_pse4.png",
-                alt: "Screenshot with visualisation of problems with using too many popups",
-                caption: "Screenshot with visualisation of problems with using too many pop-ups.",
-              },
+              type: "psePopupsMock",
+              caption: "Translated reproduction with visualisation of problems with using too many pop-ups.",
             },
           ],
         },
@@ -756,6 +777,7 @@ export const cases: CaseData[] = [
             },
             {
               type: "figureRow",
+              singleColumn: true,
               figures: [
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109a67818c86b4d6ec8a352_wiewior1.png",
@@ -804,12 +826,14 @@ export const cases: CaseData[] = [
                   alt: "Marta persona",
                   caption: "Marta – persona.",
                   zoomable: true,
+                  aspectRatio: "4/3",
                 },
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109a80f29b5b62d279a0aac_marcin%20persona.png",
                   alt: "Marcin persona",
                   caption: "Marcin – persona.",
                   zoomable: true,
+                  aspectRatio: "4/3",
                 },
               ],
             },
@@ -909,16 +933,19 @@ export const cases: CaseData[] = [
             },
             {
               type: "figureRow",
+              maxWidth: "70%",
               figures: [
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109ba3373bf9159ff2ac92d_c6.png",
                   alt: "Before – categories findability",
                   caption: "Before – categories findability.",
+                  aspectRatio: "9/16",
                 },
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109ba33396379e10f5f583f_c7.png",
                   alt: "After – categories findability",
                   caption: "After – categories findability.",
+                  aspectRatio: "9/16",
                 },
               ],
             },
@@ -929,22 +956,21 @@ export const cases: CaseData[] = [
             },
             {
               type: "figureRow",
+              maxWidth: "70%",
               figures: [
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109ba33533fe3829b75615c_c8.png",
                   alt: "Before – food inspirations affordance",
                   caption: "Before – food inspirations affordance.",
+                  aspectRatio: "9/16",
                 },
                 {
                   src: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109ba32b8a8da6c024e3c06_c9.png",
                   alt: "After – food inspirations affordance",
                   caption: "After – food inspirations affordance.",
+                  aspectRatio: "9/16",
                 },
               ],
-            },
-            {
-              type: "p",
-              html: "<strong>Link to the clickable prototype:</strong> <a href=\"https://1p5p4r.axshare.com/#g=1&p=1_0_strona_g__wna\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#F09065] underline hover:text-[#374151] transition-colors\">1p5p4r.axshare.com</a>",
             },
           ],
         },

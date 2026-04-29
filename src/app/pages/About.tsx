@@ -88,8 +88,8 @@ export default function About() {
                 My full name is Przemyslaw Lewandowski, but you can call me Pshemek (or Přemek).
               </p>
             </div>
-            <div className="relative order-2 lg:row-span-2">
-              <div className="absolute inset-0 bg-[#FFC133] transform translate-x-6 translate-y-6 border-4 border-[#374151]"></div>
+            <div className="relative order-2 lg:row-span-2 mr-6 lg:mr-0">
+              <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
               <div className="relative border-4 border-[#374151] overflow-hidden">
                 <ImageWithFallback
                   src={profilePhoto}
@@ -136,10 +136,10 @@ export default function About() {
             {experience.map((exp, index) => (
               <div
                 key={index}
-                className="relative pl-12 border-l-6 border-[#FFC133]"
+                className="relative pl-6 lg:pl-12 border-l-6 border-[#FFC133]"
               >
                 <div className="absolute left-[-14px] top-0 w-6 h-6 bg-[#FFC133] border-4 border-[#374151]"></div>
-                <div className="relative">
+                <div className="relative mr-6 lg:mr-0">
                   <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
                   <div className="relative p-8 bg-white border-4 border-[#374151]">
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2 gap-4">

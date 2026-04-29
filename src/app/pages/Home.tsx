@@ -48,7 +48,7 @@ export default function Home() {
                 <div className="mt-[4px] h-[5px] w-full bg-[#FFC133] -skew-x-12" />
               </div>
             </div>
-            <div className="relative order-2 lg:row-span-2">
+            <div className="relative order-2 lg:row-span-2 mr-6 lg:mr-0">
               <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
               <div className="relative border-4 border-[#374151] overflow-hidden">
                 <ImageWithFallback
@@ -109,7 +109,7 @@ export default function Home() {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div key={index} className="relative">
+                <div key={index} className="relative mr-6 md:mr-0">
                   <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
                   <div className="relative p-8 bg-white border-4 border-[#374151]">
                     <div
