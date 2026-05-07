@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 const otherProjects = [
@@ -16,6 +16,7 @@ const DOT_COUNT = 5;
 export default function CaseIng() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeDot, setActiveDot] = useState(0);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const velocityRef = useRef(0);
   const rafRef = useRef<number | null>(null);
 
@@ -51,6 +52,12 @@ export default function CaseIng() {
     const maxScroll = scrollWidth - clientWidth;
     const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
     setActiveDot(Math.round(progress * (DOT_COUNT - 1)));
+    setCanScrollRight(scrollLeft < maxScroll - 4);
+  }
+
+  function scrollRight() {
+    if (!scrollRef.current) return;
+    scrollRef.current.scrollBy({ left: 372, behavior: "smooth" });
   }
   return (
     <div className="bg-white">
@@ -83,8 +90,17 @@ export default function CaseIng() {
               <div
                 aria-hidden="true"
                 className="hidden lg:block absolute inset-0 pointer-events-none"
-                style={{ background: "linear-gradient(to right, rgba(156,163,175,0.55) 0%, rgba(156,163,175,0) 35%)" }}
+                style={{ background: "linear-gradient(to right, rgba(107,114,128,1) 0%, rgba(107,114,128,0.95) 20%, rgba(107,114,128,0.55) 50%, rgba(107,114,128,0) 75%)" }}
               />
+              <div className="hidden lg:flex absolute bottom-4 left-4 items-center gap-2 pointer-events-none">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="#FFFFFF" strokeWidth="2" />
+                  <path d="M7 17V7l10 10V7" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="text-white font-bold text-[18px] tracking-tight leading-none">
+                  NDApp
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -683,6 +699,7 @@ export default function CaseIng() {
               See more cases
             </h2>
           </div>
+          <div className="relative">
           <div
             ref={scrollRef}
             onScroll={handleScroll}
@@ -699,6 +716,24 @@ export default function CaseIng() {
                       alt={p.title}
                       className="w-full h-full object-cover"
                     />
+                    {(p.link === "/projects/ai-validation" || p.link === "/projects/vendors") && (
+                      <>
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-0 pointer-events-none"
+                          style={{ background: "linear-gradient(to right, rgba(107,114,128,1) 0%, rgba(107,114,128,0.95) 20%, rgba(107,114,128,0.55) 50%, rgba(107,114,128,0) 75%)" }}
+                        />
+                        <div className="absolute bottom-3 left-3 flex items-center gap-1.5 pointer-events-none">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <rect x="2" y="2" width="20" height="20" rx="4" stroke="#FFFFFF" strokeWidth="2" />
+                            <path d="M7 17V7l10 10V7" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span className="text-white font-bold text-[14px] tracking-tight leading-none">
+                            NDApp
+                          </span>
+                        </div>
+                      </>
+                    )}
                     <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                       {p.tags.map((tag) => (
                         <span key={tag} className="px-3 py-1 bg-[#FFF8F0] text-[#374151] border-2 border-[#374151] text-sm font-bold">{tag}</span>
@@ -718,6 +753,15 @@ export default function CaseIng() {
                 </Link>
               </div>
             ))}
+          </div>
+          <button
+            type="button"
+            onClick={scrollRight}
+            aria-label="Scroll to next case"
+            className={`flex absolute top-1/2 right-2 -translate-y-1/2 items-center justify-center w-12 h-12 bg-[#FFC133] hover:bg-[#FF8A5B] border-4 border-[#374151] text-[#374151] transition-opacity duration-300 ${canScrollRight ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+          >
+            <ChevronRight size={24} strokeWidth={3} />
+          </button>
           </div>
           <div className="flex gap-2 mt-4 justify-center">
             {Array.from({ length: DOT_COUNT }).map((_, i) => (

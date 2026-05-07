@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import { Target, PenTool, Lightbulb } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import prmImage from "../../imports/jaja4.png";
 
@@ -13,22 +12,47 @@ export default function Home() {
 
   const services = [
     {
-      icon: Target,
+      icon: (
+        <svg viewBox="0 0 60 60" className="w-full h-full" aria-hidden="true">
+          <circle cx="30" cy="30" r="22" fill="#FFC133" stroke="#374151" strokeWidth="3" />
+          <circle cx="30" cy="30" r="14" fill="#FFFFFF" stroke="#374151" strokeWidth="3" />
+          <circle cx="30" cy="30" r="6" fill="#F09065" stroke="#374151" strokeWidth="3" />
+        </svg>
+      ),
       title: "UX Strategy",
       description: "I can set up the right metrics for your product and build a design strategy focused on improving them. Every decision we make together is tied to measurable outcomes — so you always know what's working and why",
-      color: "#FFC133",
     },
     {
-      icon: Lightbulb,
+      icon: (
+        <svg viewBox="0 0 60 60" className="w-full h-full" aria-hidden="true">
+          <path
+            d="M20 26 a10 10 0 1 1 20 0 c0 5 -3 8 -4 12 h-12 c-1 -4 -4 -7 -4 -12 z"
+            fill="#FFC133"
+            stroke="#374151"
+            strokeWidth="3"
+            strokeLinejoin="round"
+          />
+          <line x1="23" y1="44" x2="37" y2="44" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
+          <line x1="25" y1="48" x2="35" y2="48" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
+          <path d="M26 28 L30 32 L34 28" fill="none" stroke="#F09065" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
       title: "User Research",
       description: "I can help you resolve business challenges related to your users with the deep-dive qualitative and quantize research. Even if you are not sure about the questions you have in your head.",
-      color: "#FF8A5B",
     },
     {
-      icon: PenTool,
+      icon: (
+        <svg viewBox="0 0 60 60" className="w-full h-full" aria-hidden="true">
+          <g transform="rotate(135 30 30)">
+            <rect x="6" y="24" width="9" height="12" fill="#F09065" stroke="#374151" strokeWidth="3" strokeLinejoin="round" />
+            <rect x="15" y="24" width="26" height="12" fill="#FFC133" stroke="#374151" strokeWidth="3" strokeLinejoin="round" />
+            <polygon points="41,24 53,30 41,36" fill="#FFFFFF" stroke="#374151" strokeWidth="3" strokeLinejoin="round" />
+            <polygon points="48,27 53,30 48,33" fill="#374151" stroke="#374151" strokeWidth="2" strokeLinejoin="round" />
+          </g>
+        </svg>
+      ),
       title: "Product Design",
       description: "I specialize in design for complex commercial/in-house systems - so they can serve users well, look good, and fulfill their business goal. I know how to cooperate with developers, engage business in the process.",
-      color: "#10B981",
     },
   ];
 
@@ -107,16 +131,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             {services.map((service, index) => {
-              const Icon = service.icon;
               return (
                 <div key={index} className="relative mr-6 md:mr-0">
                   <div className="absolute inset-0 bg-[#FFC133] transform translate-x-4 translate-y-4 border-4 border-[#374151]"></div>
                   <div className="relative p-8 bg-white border-4 border-[#374151]">
-                    <div
-                      className="w-16 h-16 border-4 border-[#374151] flex items-center justify-center mb-6"
-                      style={{ backgroundColor: service.color }}
-                    >
-                      <Icon size={32} className="text-[#374151]" />
+                    <div className="w-16 h-16 mb-6">
+                      {service.icon}
                     </div>
                     <div className="mb-4">
                       <h3 className="font-bold text-[#261d08] border-b-4 border-[#FFC133] inline pb-1 text-[36px]">

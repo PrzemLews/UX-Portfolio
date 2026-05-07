@@ -50,11 +50,22 @@ export default function Projects() {
                         className="w-full h-full object-cover object-left"
                       />
                       {(project.slug === "ai-validation" || project.slug === "vendors") && (
-                        <div
-                          aria-hidden="true"
-                          className="absolute inset-0 pointer-events-none"
-                          style={{ background: "linear-gradient(to right, rgba(156,163,175,0.85) 0%, rgba(156,163,175,0) 50%)" }}
-                        />
+                        <>
+                          <div
+                            aria-hidden="true"
+                            className="absolute inset-0 pointer-events-none"
+                            style={{ background: "linear-gradient(to right, rgba(107,114,128,1) 0%, rgba(107,114,128,0.95) 20%, rgba(107,114,128,0.55) 50%, rgba(107,114,128,0) 75%)" }}
+                          />
+                          <div className="absolute bottom-4 left-4 flex items-center gap-2 pointer-events-none">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                              <rect x="2" y="2" width="20" height="20" rx="4" stroke="#FFFFFF" strokeWidth="2" />
+                              <path d="M7 17V7l10 10V7" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span className="text-white font-bold text-[18px] tracking-tight leading-none">
+                              NDApp
+                            </span>
+                          </div>
+                        </>
                       )}
                       <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                         {project.tags.map((tag, index) => (

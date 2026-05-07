@@ -122,6 +122,11 @@ export default function About() {
           <p className="text-xl text-white leading-relaxed mt-4">
             Apart from work, I like to spend my time pursuing my hobbies: Making electronic music, gym, psychology, painting, RPG games.
           </p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <img src="/UX-Portfolio/rpg.png" alt="RPG games" className="w-full h-64 object-cover border-4 border-[#FFC133]" />
+            <img src="/UX-Portfolio/paint.png" alt="Painting" className="w-full h-64 object-cover border-4 border-[#FFC133]" />
+            <img src="/UX-Portfolio/music.png" alt="Electronic music" className="w-full h-64 object-cover border-4 border-[#FFC133]" />
+          </div>
         </div>
       </section>
 
