@@ -16,7 +16,8 @@ export default function Projects() {
   ];
 
   const projects = cases
-    .filter((c) => c.slug !== "other")
+    // "pse" is hidden from the gallery; its page at /projects/pse stays reachable
+    .filter((c) => c.slug !== "other" && c.slug !== "pse")
     .map((c) => ({
       ...c,
       link: `/projects/${c.slug}`,
@@ -54,7 +55,13 @@ export default function Projects() {
                           <div
                             aria-hidden="true"
                             className="absolute inset-0 pointer-events-none"
-                            style={{ background: "linear-gradient(to right, rgba(107,114,128,1) 0%, rgba(107,114,128,0.95) 20%, rgba(107,114,128,0.55) 50%, rgba(107,114,128,0) 75%)" }}
+                            style={{
+                              // per-tile gradient colour (RGB); default gray
+                              background: (() => {
+                                const rgb = { vendors: "240,144,101", "ai-validation": "124,92,191" }[project.slug as string] ?? "107,114,128";
+                                return `linear-gradient(to right, rgba(${rgb},1) 0%, rgba(${rgb},0.95) 20%, rgba(${rgb},0.55) 50%, rgba(${rgb},0) 75%)`;
+                              })(),
+                            }}
                           />
                           <div className="absolute bottom-4 left-4 flex items-center gap-2 pointer-events-none">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
