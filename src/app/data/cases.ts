@@ -89,12 +89,12 @@ export const cases: CaseData[] = [
   {
     slug: "ai-test-cases",
     id: 8,
-    title: "AI Test Cases Writer",
-    cardTitle: "AI Test\nCases\nWriter",
+    title: "Test Script Automation Tool",
+    cardTitle: "Test Script\nAutomation\nTool",
     subtitle: "Steering a technology-first GenAI initiative with UX research",
     category: "research",
     description:
-      "Stakeholders wanted a GenAI tool before anyone had defined a problem. I turned three AI ideas into video explainers, tested them with users, validated the winner with a survey, and set the 70% quality benchmark the proof of concept had to pass.",
+      "Stakeholders wanted a GenAI tool before anyone had defined a problem. I turned three solutions utilising GenAI into video explainers, tested them with users, validated the winner with a survey, and set the 70% quality benchmark the proof of concept had to pass.",
     image: "/UX-Portfolio/ai-test-cases-card.png",
     icon: ClipboardCheck,
     tags: ["GenAI", "Concept Testing", "Survey"],

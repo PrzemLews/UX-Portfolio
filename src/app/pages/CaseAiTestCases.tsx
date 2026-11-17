@@ -213,7 +213,7 @@ export default function CaseAiTestCases() {
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-5 flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16 lg:py-24">
               <h1 className="text-[60px] font-bold text-[#000000] mb-4 leading-tight">
-                AI Test Cases Writer
+                Test Script Automation Tool
               </h1>
               <div className="w-fit mb-8">
                 <p className="text-[20px] font-semibold text-[#261d08] leading-[24px]">Steering a technology-first GenAI initiative with UX research</p>
@@ -230,7 +230,7 @@ export default function CaseAiTestCases() {
             <div className="lg:col-span-7 relative bg-[#FFF8F0]">
               <ImageWithFallback
                 src="/UX-Portfolio/ai-test-cases-cover.svg"
-                alt="AI Test Cases Writer case study cover"
+                alt="Test Script Automation Tool case study cover"
                 className="w-full h-full object-contain min-h-[300px] lg:min-h-[500px]"
               />
             </div>
