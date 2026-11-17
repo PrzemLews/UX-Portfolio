@@ -49,7 +49,7 @@ export default function Projects() {
                         alt={project.title}
                         className="w-full h-full object-cover object-left"
                       />
-                      {(project.slug === "ai-validation" || project.slug === "vendors") && (
+                      {(project.slug === "ai-validation" || project.slug === "vendors" || project.slug === "ai-test-cases") && (
                         <>
                           <div
                             aria-hidden="true"

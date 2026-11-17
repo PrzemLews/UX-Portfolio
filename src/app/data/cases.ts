@@ -87,6 +87,19 @@ const ITERATION = "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6
 
 export const cases: CaseData[] = [
   {
+    slug: "ai-test-cases",
+    id: 8,
+    title: "AI Test Cases Writer",
+    cardTitle: "AI Test\nCases\nWriter",
+    subtitle: "Steering a technology-first GenAI initiative with UX research",
+    category: "research",
+    description:
+      "Stakeholders wanted a GenAI tool before anyone had defined a problem. I turned three AI ideas into video explainers, tested them with users, validated the winner with a survey, and set the 70% quality benchmark the proof of concept had to pass.",
+    image: "/UX-Portfolio/ai-test-cases-card.png",
+    icon: ClipboardCheck,
+    tags: ["GenAI", "Concept Testing", "Survey"],
+  },
+  {
     slug: "vendors",
     id: 1,
     title: "Vendor Validation Solution",
@@ -989,19 +1002,6 @@ export const cases: CaseData[] = [
         html: "Even though it wasn't a commercial product, we know that we did a good job, thanks to feedback from our users. From my perspective it was a very important project, as it was my <strong>first project with a full UCD process</strong>. Thanks to it I could understand that <strong>products designed based on real insights and feedback are really appreciated by the final users</strong>.<br /><br /><em>\"Generally – it's so great that I can go only to the one shop and buy everything that I need.\"</em> <strong>– Karina, 28, lactose intolerant</strong><br /><br /><em>\"At the beginning, I told you that I have never used such a website. When we started to talk I thought that I wouldn't need such a thing. But after I had tried it I thought: 'Oh my God, shopping with such a website would be so easy!'\"</em> <strong>– Marta, 25, gluten intolerant</strong><br /><br /><em>\"Wow, this website is much more than expected!\"</em> <strong>– Ala, 22, allergic to dairy</strong>",
       },
     },
-  },
-  {
-    slug: "ai-test-cases",
-    id: 8,
-    title: "AI Test Cases Writer",
-    cardTitle: "AI Test\nCases\nWriter",
-    subtitle: "Steering a technology-first GenAI initiative with UX research",
-    category: "research",
-    description:
-      "Stakeholders wanted a GenAI tool before anyone had defined a problem. I turned three AI ideas into video explainers, tested them with users, validated the winner with a survey, and set the 70% quality benchmark the proof of concept had to pass.",
-    image: "/UX-Portfolio/ai-test-cases-cover.svg",
-    icon: ClipboardCheck,
-    tags: ["GenAI", "Concept Testing", "Survey"],
   },
   {
     slug: "other",
