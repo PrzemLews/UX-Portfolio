@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import CaseIng from "./pages/CaseIng";
 import CaseStudy from "./pages/CaseStudy";
+import CaseAiTestCases from "./pages/CaseAiTestCases";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       { path: "about", Component: About },
       { path: "projects", Component: Projects },
       { path: "projects/vendors", Component: CaseIng },
+      { path: "projects/ai-test-cases", Component: CaseAiTestCases },
       { path: "projects/:slug", Component: CaseStudy },
     ],
   },
