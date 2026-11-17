@@ -229,7 +229,7 @@ export default function CaseAiTestCases() {
             </div>
             <div className="lg:col-span-7 relative overflow-hidden">
               <ImageWithFallback
-                src="/UX-Portfolio/ai-test-cases-card.png"
+                src="/UX-Portfolio/ai-test-cases-cover.png"
                 alt="Test Script Automation Tool case study cover"
                 className="w-full h-full object-cover object-left min-h-[300px] lg:min-h-[500px]"
               />

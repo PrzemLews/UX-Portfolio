@@ -95,7 +95,7 @@ export const cases: CaseData[] = [
     category: "research",
     description:
       "Stakeholders wanted a GenAI tool before anyone had defined a problem. I turned three solutions utilising GenAI into video explainers, tested them with users, validated the winner with a survey, and set the 70% quality benchmark the proof of concept had to pass.",
-    image: "/UX-Portfolio/ai-test-cases-card.png",
+    image: "/UX-Portfolio/ai-test-cases-cover.png",
     icon: ClipboardCheck,
     tags: ["GenAI", "Concept Testing", "Discovery", "Validating AI"],
   },
