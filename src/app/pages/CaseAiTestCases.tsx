@@ -227,12 +227,27 @@ export default function CaseAiTestCases() {
                 Back to all the cases
               </Link>
             </div>
-            <div className="lg:col-span-7 relative bg-[#FFF8F0]">
+            <div className="lg:col-span-7 relative overflow-hidden">
               <ImageWithFallback
-                src="/UX-Portfolio/ai-test-cases-cover.svg"
+                src="/UX-Portfolio/ai-test-cases-card.png"
                 alt="Test Script Automation Tool case study cover"
-                className="w-full h-full object-contain min-h-[300px] lg:min-h-[500px]"
+                className="w-full h-full object-cover object-left min-h-[300px] lg:min-h-[500px]"
               />
+              {/* Same NDApp overlay as the gallery tile */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: "linear-gradient(to right, rgba(107,114,128,1) 0%, rgba(107,114,128,0.95) 20%, rgba(107,114,128,0.55) 50%, rgba(107,114,128,0) 75%)" }}
+              />
+              <div className="absolute bottom-4 left-4 flex items-center gap-2 pointer-events-none">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="4" stroke="#FFFFFF" strokeWidth="2" />
+                  <path d="M7 17V7l10 10V7" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="text-white font-bold text-[18px] tracking-tight leading-none">
+                  NDApp
+                </span>
+              </div>
             </div>
           </div>
         </div>
