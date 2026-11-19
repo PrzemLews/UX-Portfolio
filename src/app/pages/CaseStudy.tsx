@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, useParams, Navigate } from "react-router";
 import { ArrowLeft, ChevronRight, ExternalLink, Signal, Wifi, BatteryFull, Home, Search, Heart, User } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { getCaseBySlug, getOtherCases, type ContentBlock } from "../data/cases";
+import { getCaseBySlug, getCarouselCases, getNdappGradient, type ContentBlock } from "../data/cases";
 import Lightbox from "../components/Lightbox";
 import IterationCycle from "../components/IterationCycle";
 import PseFormMock from "../components/PseFormMock";
@@ -412,7 +412,7 @@ function PreviousStateDiagram() {
 export default function CaseStudy() {
   const { slug = "" } = useParams();
   const caseData = getCaseBySlug(slug);
-  const otherProjects = getOtherCases(slug).filter((p) => p.slug !== "other");
+  const otherProjects = getCarouselCases(slug ?? "");
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeDot, setActiveDot] = useState(0);
@@ -684,12 +684,12 @@ export default function CaseStudy() {
                       alt={p.title}
                       className="w-full h-full object-cover"
                     />
-                    {(p.slug === "ai-validation" || p.slug === "vendors") && (
+                    {getNdappGradient(p.slug) && (
                       <>
                         <div
                           aria-hidden="true"
                           className="absolute inset-0 pointer-events-none"
-                          style={{ background: "linear-gradient(to right, rgba(107,114,128,1) 0%, rgba(107,114,128,0.95) 20%, rgba(107,114,128,0.55) 50%, rgba(107,114,128,0) 75%)" }}
+                          style={{ background: getNdappGradient(p.slug)! }}
                         />
                         <div className="absolute bottom-3 left-3 flex items-center gap-1.5 pointer-events-none">
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">

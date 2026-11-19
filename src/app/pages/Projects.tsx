@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { ExternalLink } from "lucide-react";
-import { cases } from "../data/cases";
+import { getListedCases, getNdappGradient } from "../data/cases";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
@@ -15,9 +15,7 @@ export default function Projects() {
     { id: "other", label: "Other" },
   ];
 
-  const projects = cases
-    // "pse" is hidden from the gallery; its page at /projects/pse stays reachable
-    .filter((c) => c.slug !== "other" && c.slug !== "pse")
+  const projects = getListedCases()
     .map((c) => ({
       ...c,
       link: `/projects/${c.slug}`,
@@ -50,18 +48,12 @@ export default function Projects() {
                         alt={project.title}
                         className="w-full h-full object-cover object-left"
                       />
-                      {(project.slug === "ai-validation" || project.slug === "vendors" || project.slug === "ai-test-cases") && (
+                      {getNdappGradient(project.slug) && (
                         <>
                           <div
                             aria-hidden="true"
                             className="absolute inset-0 pointer-events-none"
-                            style={{
-                              // per-tile gradient colour (RGB); default gray
-                              background: (() => {
-                                const rgb = { vendors: "240,144,101", "ai-validation": "124,92,191" }[project.slug as string] ?? "107,114,128";
-                                return `linear-gradient(to right, rgba(${rgb},1) 0%, rgba(${rgb},0.95) 20%, rgba(${rgb},0.55) 50%, rgba(${rgb},0) 75%)`;
-                              })(),
-                            }}
+                            style={{ background: getNdappGradient(project.slug)! }}
                           />
                           <div className="absolute bottom-4 left-4 flex items-center gap-2 pointer-events-none">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">

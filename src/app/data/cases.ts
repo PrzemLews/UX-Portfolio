@@ -1024,3 +1024,27 @@ export const getCaseBySlug = (slug: string) =>
 
 export const getOtherCases = (slug: string) =>
   cases.filter((c) => c.slug !== slug);
+
+// Cases hidden from the gallery and "See more cases" carousels (their pages stay reachable).
+export const HIDDEN_FROM_LISTINGS = ["other", "pse"];
+
+export const getListedCases = () =>
+  cases.filter((c) => !HIDDEN_FROM_LISTINGS.includes(c.slug));
+
+// Cases for the "See more cases" carousel on a given case page.
+export const getCarouselCases = (currentSlug: string) =>
+  getListedCases().filter((c) => c.slug !== currentSlug);
+
+// NDApp overlay: gradient colour (RGB) per case. Cases not listed get no overlay.
+const NDAPP_GRADIENT_RGB: Record<string, string> = {
+  "ai-test-cases": "107,114,128", // gray
+  vendors: "240,144,101", // orange
+  "ai-validation": "124,92,191", // purple
+};
+
+export const getNdappGradient = (slug: string): string | null => {
+  const rgb = NDAPP_GRADIENT_RGB[slug];
+  return rgb
+    ? `linear-gradient(to right, rgba(${rgb},1) 0%, rgba(${rgb},0.95) 20%, rgba(${rgb},0.55) 50%, rgba(${rgb},0) 75%)`
+    : null;
+};

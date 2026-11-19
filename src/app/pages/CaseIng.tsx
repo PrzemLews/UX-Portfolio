@@ -2,14 +2,9 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router";
 import { ArrowLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import { getCarouselCases, getNdappGradient } from "../data/cases";
 
-const otherProjects = [
-  { title: "Ericsson IoT", tags: ["Customer Research", "Iterative Prototyping"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/61030d6e7ff1602f83c7a8e2_erikson2.png", link: "/projects/ericsson" },
-  { title: "UX Research in VR", tags: ["VR", "Usability Tests", "Scientific Research"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317f629928f84e0f3b3f_vrcover.png", link: "#" },
-  { title: "AI-based validation in forms", cardTitle: "AI-based Validation", tags: ["GenAI", "ML Engineers Collaboration", "ERP"], image: "/UX-Portfolio/ar-cover.png", link: "/projects/ai-validation" },
-  { title: "UX & Food Allergy", tags: ["UX Research", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6109612e8870c62666a65f78_squirrel.jpg", link: "#" },
-  { title: "PSE Innovation", tags: ["UX Audit", "UX+UI Design"], image: "https://cdn.prod.website-files.com/60f82d3f9214a9503e13d8fc/6103317e3e51cbc7dbd228bf_psecover.jpg", link: "#" },
-];
+const otherProjects = getCarouselCases("vendors");
 
 const DOT_COUNT = 5;
 
@@ -707,21 +702,21 @@ export default function CaseIng() {
             style={{ scrollbarWidth: "none", willChange: "scroll-position" }}
           >
             {otherProjects.map((p) => (
-              <div key={p.title} className="relative group flex-shrink-0 w-[340px]">
+              <div key={p.slug} className="relative group flex-shrink-0 w-[340px]">
                 <div className="absolute inset-0 bg-[#FFC133] group-hover:bg-[#F09065] transform translate-x-4 translate-y-4 border-4 border-[#374151] transition-colors"></div>
-                <Link to={p.link} className="relative bg-white border-4 border-[#374151] overflow-hidden block">
+                <Link to={`/projects/${p.slug}`} className="relative bg-white border-4 border-[#374151] overflow-hidden block">
                   <div className="relative overflow-hidden aspect-[16/12] border-b-4 border-[#374151]">
                     <ImageWithFallback
                       src={p.image}
                       alt={p.title}
                       className="w-full h-full object-cover"
                     />
-                    {(p.link === "/projects/ai-validation" || p.link === "/projects/vendors") && (
+                    {getNdappGradient(p.slug) && (
                       <>
                         <div
                           aria-hidden="true"
                           className="absolute inset-0 pointer-events-none"
-                          style={{ background: "linear-gradient(to right, rgba(107,114,128,1) 0%, rgba(107,114,128,0.95) 20%, rgba(107,114,128,0.55) 50%, rgba(107,114,128,0) 75%)" }}
+                          style={{ background: getNdappGradient(p.slug)! }}
                         />
                         <div className="absolute bottom-3 left-3 flex items-center gap-1.5 pointer-events-none">
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
