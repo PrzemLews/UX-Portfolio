@@ -253,7 +253,7 @@ export default function CaseAiTestCases() {
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-7">
-              <p className="text-sm text-gray-500 italic mb-6">*Details of the product and process have been adjusted due to NDA. The UX activities described below reflect what actually happened.</p>
+              <p className="text-sm text-gray-500 italic mb-6">*Details of the product and designs have been adjusted due to NDA. The UX activities described below reflect what actually happened.</p>
               <SectionHeading className="text-[#000000]">Overview</SectionHeading>
               <p className="text-base text-gray-600 leading-relaxed">
                 The project began when business stakeholders requested a <strong className={B}>generative AI tool to prove the product could successfully utilise this technology</strong>. Starting with a technology rather than a problem statement created an unconventional research challenge, so I decided to prepare <strong className={B}>three video explainers of the most promising GenAI concepts</strong>, based on known user issues. The winning concept focused on <strong className={B}>generating test cases and scripts for software testing based on high-level requirements</strong>. Potential users included both technical and business professionals responsible for software testing tasks within the organisation.
@@ -411,7 +411,6 @@ export default function CaseAiTestCases() {
           <p className="text-base text-gray-600 leading-relaxed mb-8">
             Each session started with a discovery discussion about participants' current operations and challenges in each area - creating requirements, preparing test scripts, and managing traceability documents. After watching the videos, participants discussed each idea in detail, described step-by-step improvements, and finally <strong className={B}>picked the concept they preferred and explained why</strong>. Through these <strong className={B}>11 interviews and focus groups</strong>, we identified the idea with the highest chance of success.
           </p>
-          <ScreenshotPlaceholder label="Visual coming soon - video explainer frames" />
         </div>
       </section>
 
@@ -446,7 +445,6 @@ export default function CaseAiTestCases() {
           <p className="text-base text-gray-600 leading-relaxed mb-8">
             The outcomes proved highly successful - <strong className={B}>many people were interested in the value proposition</strong>, we created a <strong className={B}>feature prioritisation based on preferred inputs</strong>, better understood the user profile, <strong className={B}>boosted the team's confidence</strong>, and recruited numerous volunteers for beta testing.
           </p>
-          <ScreenshotPlaceholder label="Visual coming soon - survey results" />
         </div>
       </section>
 
@@ -480,7 +478,6 @@ export default function CaseAiTestCases() {
             ))}
           </div>
 
-          <ScreenshotPlaceholder label="Visual coming soon - proof of concept interface" />
         </div>
       </section>
 

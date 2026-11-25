@@ -555,7 +555,7 @@ export default function CaseStudy() {
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-7">
-              <p className="text-sm text-gray-500 italic mb-6">*Details of the product and process have been adjusted due to NDA. The UX activities described below reflect what actually happened.</p>
+              <p className="text-sm text-gray-500 italic mb-6">*Details of the product and designs have been adjusted due to NDA. The UX activities described below reflect what actually happened.</p>
               <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Overview
               </h2>
