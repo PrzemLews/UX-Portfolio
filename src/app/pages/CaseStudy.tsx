@@ -470,7 +470,7 @@ export default function CaseStudy() {
 
   const details = caseData.details;
   const heroTitle = details?.heroTitle ?? "AI-based validation in forms";
-  const overview = details?.overview ?? "This project addressed issues in an <strong>ERP system</strong> where users struggled to provide accurate answers to a <strong>new headcount request form*</strong> (the questions were open-ended), often missing important points in responses that were <strong>subjected to a review</strong>. Providing more guidance, tooltips, or framing the question in a different way were not effective. To understand the problem, I <strong>conducted interviews with reviewers to identify typical user mistakes</strong> and understand how we could use AI to improve the quality of the information put to the system. The proposed solution used <strong>AI to provide feedback, telling users what mistakes they made</strong> and how to mitigate them, <strong>rather than automatically re-writing the content</strong>, ensuring people rely on their own information. I <strong>designed high-level sketches in Figma</strong>; later they were <strong>reviewed by both the business owner and AI developers to validate feasibility</strong>. The development of the project started, but the project was stopped due to resource issues.<br /><br /><em>*the process name has been changed because of the NDA</em>";
+  const overview = details?.overview ?? "This project addressed issues in an <strong>ERP system</strong> where users struggled to provide accurate answers to a <strong>new headcount request form*</strong> (the questions were open-ended), often missing important points in responses that were <strong>subjected to a review</strong>. Providing more guidance, tooltips, or framing the question in a different way were not effective. To understand the problem, I <strong>conducted interviews with reviewers to identify typical user mistakes</strong> and understand how we could use AI to improve the quality of the information put to the system. The proposed solution used <strong>AI to provide feedback, telling users what mistakes they made</strong> and how to mitigate them, <strong>rather than automatically re-writing the content</strong>, ensuring people rely on their own information. I <strong>designed high-level sketches in Figma</strong>; later they were <strong>reviewed by both the business owner and AI developers to validate feasibility</strong>. The development of the project started, but the project was stopped due to resource issues.";
   const context = details?.context ?? DEFAULT_CONTEXT;
   const mainOutcomes = details?.mainOutcomes ?? {
     heading: "The Main Outcomes and Learning Points",
@@ -555,6 +555,7 @@ export default function CaseStudy() {
         <div className="max-w-7xl mx-auto px-8 sm:px-12 lg:px-16 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-7">
+              <p className="text-sm text-gray-500 italic mb-6">*Details of the product and process have been adjusted due to NDA. The UX activities described below reflect what actually happened.</p>
               <h2 className="text-[32px] lg:text-[48px] font-bold text-[#000000] mb-6 leading-tight">
                 Overview
               </h2>
